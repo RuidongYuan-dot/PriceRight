@@ -66,5 +66,7 @@ test("切换条件隐藏旧答案，样本不足时展示明确状态", async ({
   await page.getByRole("button", { name: "查看结果" }).click();
   await expect(page.getByRole("heading", { name: "数据不足" })).toBeVisible();
   await expect(page.locator(".price")).toHaveCount(0);
-  expect((await request.get("/estimate/demo-lamp-install")).status()).toBe(404);
+  for (const path of ["/categories/home", "/services/demo-lamp-install", "/estimate/demo-lamp-install"]) {
+    expect((await request.get(path)).status()).toBe(404);
+  }
 });

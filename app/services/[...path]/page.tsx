@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { catalogHref, catalogParams, resolveCatalogPath } from "../../../lib/data/site-catalog";
 
-export const dynamicParams = false;
 export function generateStaticParams() {
   return catalogParams("services");
 }

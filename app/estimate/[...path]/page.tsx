@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { EstimateFlow } from "../../../components/estimate/flow";
 import { catalogHref, catalogParams, resolveCatalogPath } from "../../../lib/data/site-catalog";
 
-export const dynamicParams = false;
 export function generateStaticParams() {
   return catalogParams("estimate");
 }
