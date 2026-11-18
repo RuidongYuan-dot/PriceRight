@@ -1,0 +1,5 @@
+:HL["/PriceRight/_next/static/css/4afe6ae41ceb2f76.css","style"]
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"path","t":"c","k":"demo/home","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"categories","h":96,"c":"$Q2"}]]
+0:{"b":"LAXK2iyShET81dIegjxYC","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
