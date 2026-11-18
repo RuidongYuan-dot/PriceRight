@@ -70,3 +70,34 @@ test("切换条件隐藏旧答案，样本不足时展示明确状态", async ({
     expect((await request.get(path)).status()).toBe(404);
   }
 });
+
+test("从目录查询窗帘安装，显示导轨费用及当地样本状态", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/");
+  await page.getByRole("link", { name: /体验查询/ }).click();
+  await page.getByRole("link", { name: /窗帘安装/ }).click();
+  await page.getByRole("link", { name: "开始演示查询" }).click();
+
+  const next = page.getByRole("button", { name: "下一步" });
+  await page.getByRole("radio", { name: "安装新导轨" }).check();
+  await next.click();
+  await page.getByRole("spinbutton", { name: "需要安装几扇窗的窗帘？" }).fill("2");
+  await next.click();
+  await page.getByRole("spinbutton", { name: "新导轨总长（米）" }).fill("3.5");
+  await next.click();
+
+  const city = page.getByRole("combobox", { name: "选择服务地区" });
+  const showResult = page.getByRole("button", { name: "查看结果" });
+  await city.selectOption("beijing");
+  await showResult.click();
+  await expect(page.getByRole("heading", { name: "演示价格区间" })).toBeVisible();
+  await expect(page.locator(".price")).toHaveText("¥75–113");
+  await expect(page.getByText("导轨安装人工", { exact: true })).toBeVisible();
+  expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
+
+  await page.getByRole("button", { name: "更换地区" }).click();
+  await city.selectOption("shanghai");
+  await showResult.click();
+  await expect(page.getByRole("heading", { name: "数据不足" })).toBeVisible();
+  await expect(page.locator(".price")).toHaveCount(0);
+});

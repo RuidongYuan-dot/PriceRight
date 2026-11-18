@@ -1,0 +1,12 @@
+{
+  "id": "demo-curtain-bj",
+  "serviceId": "demo.curtain-install",
+  "regionId": "beijing",
+  "price": 90,
+  "currency": "CNY",
+  "sampleType": "manual_reference",
+  "source": "窗帘安装合成测试样本（demo）",
+  "collectedAt": "2026-11-18",
+  "verified": true,
+  "demo": true
+}

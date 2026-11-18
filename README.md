@@ -1,6 +1,6 @@
 # PriceRight
 
-面向普通消费者的开源线下服务参考价格查询项目。当前可体验吸顶灯安装的完整查询流程。演示使用合成数据，正式价格样本待审核收录。
+面向普通消费者的开源线下服务参考价格查询项目。当前可体验吸顶灯和窗帘安装的完整查询流程。演示使用合成数据，正式价格样本待审核收录。
 
 ## 本地开发
 
@@ -17,7 +17,7 @@ pnpm test:e2e
 pnpm build
 ```
 
-`dev` 启动 Next.js 开发服务器。从首页进入「服务目录」中的演示分类，选择吸顶灯安装并开始查询。浏览器测试覆盖手机与桌面视口、条件问答、地区选择、价格明细和数据不足状态。构建依次执行数据校验、TypeScript 检查和 Next.js 生产构建。
+`dev` 启动 Next.js 开发服务器。从首页进入「服务目录」中的演示分类，选择吸顶灯安装或窗帘安装并开始查询。浏览器测试覆盖手机与桌面视口、条件问答、地区选择、价格明细和数据不足状态。构建依次执行数据校验、TypeScript 检查和 Next.js 生产构建。
 
 分类、服务和问答页面按已校验目录预渲染。演示页面在各栏目下使用独立的 `demo` 路径段，例如 `/estimate/demo/demo-lamp-install`。问答和报价在浏览器内使用当前服务配置和样本计算。
 
@@ -45,7 +45,8 @@ import { evaluateQuestions } from "./lib/question-engine/evaluate";
 import { calculatePrice } from "./lib/pricing/calculate";
 
 const catalog = await loadCatalog("data/fixtures", true);
-const service = catalog.services[0];
+const service = catalog.services.find(({ id }) => id === "demo.lamp-install");
+if (!service) throw new Error("缺少吸顶灯演示服务");
 const input = { "lamp-type": "ceiling", quantity: 2, "remove-old": false };
 const state = evaluateQuestions(service.questions, input);
 if (state.complete) {

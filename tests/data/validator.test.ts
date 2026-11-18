@@ -102,7 +102,9 @@ const invalid: [string, (data: Catalog) => void][] = [
   ],
 ];
 it.each(invalid)("拒绝无效引用或数据集：%s", async (_, mutate) => {
-  const { catalog } = await loadDemo();
+  const { catalog, service, data } = await loadDemo();
+  catalog.services = [service];
+  catalog["price-samples"] = data.samples;
   mutate(catalog);
   expect(validateCatalog(catalog, true).length).toBeGreaterThan(0);
 });

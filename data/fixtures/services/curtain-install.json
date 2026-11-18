@@ -1,0 +1,56 @@
+{
+  "id": "demo.curtain-install",
+  "categoryId": "home",
+  "name": "窗帘安装",
+  "slug": "demo-curtain-install",
+  "description": "按窗户数量和导轨安装需求，查看窗帘安装费用的演示区间。",
+  "demo": true,
+  "status": "active",
+  "questions": [
+    {
+      "id": "mount-type",
+      "type": "single",
+      "title": "需要安装新导轨吗？",
+      "required": true,
+      "options": [
+        { "id": "existing", "label": "使用现有导轨", "value": "existing" },
+        { "id": "new", "label": "安装新导轨", "value": "new" }
+      ]
+    },
+    {
+      "id": "window-count",
+      "type": "number",
+      "title": "需要安装几扇窗的窗帘？",
+      "required": true,
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "rail-length",
+      "type": "number",
+      "title": "新导轨总长（米）",
+      "required": true,
+      "validation": { "min": 0.5, "max": 30 },
+      "visibility": [{ "questionId": "mount-type", "operator": "equals", "value": "new" }]
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 20, "max": 30 },
+    "unitQuestionId": "window-count",
+    "modifiers": [
+      {
+        "type": "per_unit",
+        "label": "导轨安装人工",
+        "min": 10,
+        "max": 15,
+        "unitQuestionId": "rail-length",
+        "conditions": [{ "questionId": "mount-type", "operator": "equals", "value": "new" }]
+      }
+    ]
+  },
+  "scope": {
+    "included": ["普通窗帘悬挂", "选择新导轨时包含常规导轨安装人工"],
+    "excluded": ["窗帘和导轨材料", "电动窗帘布线及高空作业"]
+  },
+  "metadata": { "createdAt": "2026-11-18", "updatedAt": "2026-11-18" }
+}
