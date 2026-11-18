@@ -2,14 +2,14 @@
   "name": "PriceRight",
   "image": "mcr.microsoft.com/devcontainers/base:bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {
+    "ghcr.io/devcontainers/features/node:2": {
       "version": "22.18.0",
       "pnpmVersion": "10.32.1"
     }
   },
   "remoteUser": "vscode",
   "updateRemoteUserUID": true,
-  "postCreateCommand": "corepack enable && corepack prepare pnpm@10.32.1 --activate && pnpm install --frozen-lockfile",
+  "postCreateCommand": "pnpm install --frozen-lockfile",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
