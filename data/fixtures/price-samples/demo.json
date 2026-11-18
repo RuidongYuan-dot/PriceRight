@@ -1,0 +1,12 @@
+[
+  {
+    "id": "demo-bj", "serviceId": "demo.lamp-install", "regionId": "beijing", "price": 55,
+    "currency": "CNY", "sampleType": "manual_reference", "source": "合成测试样本（demo）",
+    "collectedAt": "2026-11-01", "verified": true, "demo": true
+  },
+  {
+    "id": "demo-sh", "serviceId": "demo.lamp-install", "regionId": "shanghai", "price": 65,
+    "currency": "CNY", "sampleType": "manual_reference", "source": "合成测试样本（demo）",
+    "collectedAt": "2026-11-01", "verified": true, "demo": true
+  }
+]

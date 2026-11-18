@@ -1,0 +1,63 @@
+import { z } from "zod";
+import { answer, conditionSchema, id, money, priceRangeSchema, text, unique } from "./common";
+
+const modifierFields = { label: text, conditions: z.array(conditionSchema).optional() };
+const amount = { min: money, max: money };
+
+export const priceModifierSchema = z
+  .discriminatedUnion("type", [
+    z.strictObject({ ...modifierFields, type: z.literal("fixed"), ...amount }),
+    z.strictObject({ ...modifierFields, type: z.literal("per_unit"), ...amount, unitQuestionId: id }),
+    z.strictObject({ ...modifierFields, type: z.literal("percentage"), value: z.number().nonnegative() }),
+  ])
+  .refine((m) => m.type === "percentage" || m.min <= m.max, "附加费区间上下限错误");
+
+export const regionRuleSchema = z
+  .strictObject({
+    regionId: id,
+    multiplier: z.number().positive().optional(),
+    priceOverride: priceRangeSchema.optional(),
+  })
+  .refine((r) => r.multiplier !== undefined || r.priceOverride !== undefined, "地区规则缺少调整项");
+
+export const pricingConfigSchema = z
+  .strictObject({
+    model: z.enum(["fixed", "range", "per_unit", "hourly", "area", "distance", "composite"]),
+    basePrice: priceRangeSchema,
+    unitQuestionId: id.optional(),
+    modifiers: z.array(priceModifierSchema).default([]),
+    regionRules: z.array(regionRuleSchema).default([]),
+    minimumPrice: money.optional(),
+    minimumSampleCount: z.int().positive().default(5),
+  })
+  .superRefine((p, ctx) => {
+    if (["per_unit", "hourly", "area", "distance"].includes(p.model) && !p.unitQuestionId) {
+      ctx.addIssue({ code: "custom", message: "按量计价必须指定 unitQuestionId" });
+    }
+    if (["fixed", "range"].includes(p.model) && p.unitQuestionId) {
+      ctx.addIssue({ code: "custom", message: "固定总价或区间总价不能绑定数量" });
+    }
+    if (p.model === "fixed" && p.basePrice.min !== p.basePrice.max) {
+      ctx.addIssue({ code: "custom", message: "固定基础价格上下限必须相同" });
+    }
+    if (!unique(p.regionRules.map((r) => r.regionId))) {
+      ctx.addIssue({ code: "custom", message: "地区规则重复" });
+    }
+  });
+
+export const priceSampleSchema = z.strictObject({
+  id,
+  serviceId: id,
+  regionId: id,
+  price: money,
+  currency: z.literal("CNY"),
+  sampleType: z.enum(["actual_transaction", "provider_quote", "public_price", "manual_reference"]),
+  source: text,
+  collectedAt: z.iso.date(),
+  conditions: z.record(id, answer).optional(),
+  verified: z.boolean(),
+  demo: z.boolean().default(false),
+});
+export type PriceSample = z.infer<typeof priceSampleSchema>;
+export type PriceModifier = z.infer<typeof priceModifierSchema>;
+export type PricingConfig = z.infer<typeof pricingConfigSchema>;

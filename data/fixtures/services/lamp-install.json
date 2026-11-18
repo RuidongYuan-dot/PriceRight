@@ -1,0 +1,44 @@
+{
+  "id": "demo.lamp-install",
+  "categoryId": "home",
+  "name": "吸顶灯安装",
+  "slug": "demo-lamp-install",
+  "description": "根据灯具类型、安装数量和是否拆旧灯，查看安装费用的演示区间。",
+  "demo": true,
+  "status": "active",
+  "questions": [
+    {
+      "id": "lamp-type", "type": "single", "title": "安装哪种灯？", "required": true,
+      "options": [
+        { "id": "ceiling", "label": "普通吸顶灯", "value": "ceiling" },
+        { "id": "pendant", "label": "吊灯", "value": "pendant" }
+      ]
+    },
+    {
+      "id": "heavy", "type": "boolean", "title": "吊灯需要额外加固吗？", "required": true,
+      "visibility": [{ "questionId": "lamp-type", "operator": "equals", "value": "pendant" }]
+    },
+    {
+      "id": "quantity", "type": "number", "title": "安装数量", "required": true,
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    { "id": "remove-old", "type": "boolean", "title": "需要拆除旧灯吗？", "required": true }
+  ],
+  "pricing": {
+    "model": "composite", "basePrice": { "min": 40, "max": 60 }, "unitQuestionId": "quantity",
+    "modifiers": [
+      {
+        "type": "per_unit", "label": "拆除旧灯", "min": 5, "max": 8, "unitQuestionId": "quantity",
+        "conditions": [{ "questionId": "remove-old", "operator": "equals", "value": true }]
+      },
+      {
+        "type": "fixed", "label": "加固", "min": 10, "max": 20,
+        "conditions": [{ "questionId": "heavy", "operator": "equals", "value": true }]
+      }
+    ],
+    "regionRules": [{ "regionId": "shanghai", "multiplier": 1.25 }],
+    "minimumPrice": 50
+  },
+  "scope": { "included": ["已有安装点的常规灯具安装"], "excluded": ["灯具、安装材料及线路改造"] },
+  "metadata": { "createdAt": "2026-11-01", "updatedAt": "2026-11-01" }
+}

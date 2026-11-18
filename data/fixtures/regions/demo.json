@@ -1,0 +1,8 @@
+[
+  { "id": "beijing", "name": "北京", "level": "city", "tier": "tier_1" },
+  { "id": "shanghai", "name": "上海", "level": "city", "tier": "tier_1" },
+  { "id": "guangzhou", "name": "广州", "level": "city", "parentId": "guangdong", "tier": "tier_1" },
+  { "id": "guangdong", "name": "广东", "level": "province" },
+  { "id": "first-tier", "name": "一线城市", "level": "city_tier", "tier": "tier_1" },
+  { "id": "cn", "name": "全国", "level": "national" }
+]

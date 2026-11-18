@@ -1,0 +1,48 @@
+{
+  "id": "demo.floor-care",
+  "categoryId": "home",
+  "name": "地面养护（架构测试）",
+  "slug": "demo-floor-care",
+  "description": "仅供引擎测试的合成配置与金额。",
+  "status": "active",
+  "demo": true,
+  "questions": [
+    {
+      "id": "floor-area",
+      "type": "area",
+      "title": "需要养护多少平方米？",
+      "required": true,
+      "validation": { "min": 1 }
+    },
+    {
+      "id": "extras",
+      "type": "multiple",
+      "title": "需要哪些附加服务？",
+      "required": false,
+      "options": [
+        { "id": "edge", "value": "edge", "label": "边缘处理" },
+        {
+          "id": "cover", "value": "cover", "label": "家具遮盖",
+          "priceModifier": [{ "type": "fixed", "label": "遮盖", "min": 3, "max": 5 }]
+        }
+      ]
+    },
+    {
+      "id": "edge-length",
+      "type": "distance",
+      "title": "需要处理的边缘有多长？",
+      "required": true,
+      "visibility": [{ "questionId": "extras", "operator": "contains", "value": "edge" }]
+    }
+  ],
+  "pricing": {
+    "model": "area",
+    "unitQuestionId": "floor-area",
+    "basePrice": { "min": 2, "max": 4 },
+    "modifiers": [
+      { "type": "per_unit", "unitQuestionId": "edge-length", "label": "边缘处理", "min": 1, "max": 2 }
+    ]
+  },
+  "scope": { "included": ["测试人工项"], "excluded": ["测试材料项"] },
+  "metadata": { "createdAt": "2026-11-01", "updatedAt": "2026-11-01" }
+}
