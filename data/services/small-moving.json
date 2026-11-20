@@ -1,0 +1,1772 @@
+{
+  "id": "small-moving",
+  "categoryId": "moving-delivery",
+  "name": "小型搬家与同城货运",
+  "slug": "small-moving",
+  "description": "按快狗打车和蓝犀牛搬家的官方分城页面，查询小型搬家和同城货运。北京、上海、广州、深圳、杭州只用自己的页面，不互相借用，也不做全国均价。起步价、超里程和等候费分开查，不会加在一起。",
+  "keywords": [
+    "搬家",
+    "小型搬家",
+    "同城搬家",
+    "同城货运",
+    "居民搬家",
+    "快狗打车",
+    "快狗搬家",
+    "58速运",
+    "蓝犀牛",
+    "日式搬家",
+    "面包车搬家",
+    "厢货搬家",
+    "拉货",
+    "小面搬家",
+    "搬家公司",
+    "同城小搬"
+  ],
+  "questions": [
+    {
+      "id": "channel",
+      "type": "single",
+      "title": "要查哪一种价目？",
+      "required": true,
+      "options": [
+        {
+          "id": "kuaigou-start",
+          "label": "快狗起步价",
+          "value": "kuaigou-start",
+          "description": "只看含起步里程的价格，不含超出后的里程费。"
+        },
+        {
+          "id": "kuaigou-km",
+          "label": "快狗超里程",
+          "value": "kuaigou-km",
+          "description": "只看超出起步里程之后的整数元单价。"
+        },
+        {
+          "id": "kuaigou-wait",
+          "label": "快狗等候超时",
+          "value": "kuaigou-wait",
+          "description": "只看超时后的加收单价，不含免费等候。"
+        },
+        {
+          "id": "lxn-start",
+          "label": "蓝犀牛放心搬家起步价",
+          "value": "lxn-start",
+          "description": "含 10 公里和全程搬运人数。工作日和周末分开。"
+        },
+        {
+          "id": "lxn-km",
+          "label": "蓝犀牛同城超公里",
+          "value": "lxn-km",
+          "description": "只看放心搬家超过 10 公里之后的单价。"
+        },
+        {
+          "id": "lxn-jp",
+          "label": "蓝犀牛日式搬家",
+          "value": "lxn-jp",
+          "description": "全日式或半日式的起步价，含 20 公里和 5 立方米。"
+        },
+        {
+          "id": "lxn-cube",
+          "label": "日式超立方米",
+          "value": "lxn-cube",
+          "description": "只看超出 5 立方米之后的单价，不加到起步价上。"
+        }
+      ],
+      "description": "每种价目分开显示。快狗的搬运费要和司机商议，这里没有标准价。"
+    },
+    {
+      "id": "kg-start-vehicle",
+      "type": "single",
+      "title": "快狗哪一种车？",
+      "required": true,
+      "options": [
+        {
+          "id": "errand",
+          "label": "跑腿",
+          "value": "errand",
+          "description": "北京 28 元含 5 公里，超出后 3 元/公里。上海、广州、深圳、杭州没有这一档。等候超时原文是 每分钟 0.5 元，未入库。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 28,
+              "max": 28,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "micro",
+          "label": "微面",
+          "value": "micro",
+          "description": "北京 28 元含 5 公里，超里程原文是 2.85 元/公里，不是整数元，未入库。深圳 29 元含 5 公里，超里程原文是 2.85 元/公里，不是整数元，未入库。杭州 28 元含 5 公里，超里程原文是 2.85 元/公里，不是整数元，未入库。上海、广州没有这一档。等候超时原文是 每分钟 0.5 元，未入库。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 28,
+              "max": 28,
+              "regionIds": [
+                "beijing",
+                "hangzhou"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 29,
+              "max": 29,
+              "regionIds": [
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-van",
+          "label": "小面",
+          "value": "small-van",
+          "description": "北京 30 元含 5 公里，超出后 3 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 30,
+              "max": 30,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-van",
+          "label": "中面",
+          "value": "mid-van",
+          "description": "北京 56 元含 5 公里，超出后 4 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 56,
+              "max": 56,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "iveco",
+          "label": "依维柯",
+          "value": "iveco",
+          "description": "北京 69 元含 5 公里，超出后 4 元/公里。上海 68 元含 5 公里，超里程原文是 4.5 元/公里，不是整数元，未入库。杭州 58 元含 5 公里，超出后 4 元/公里。广州、深圳没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 69,
+              "max": 69,
+              "regionIds": [
+                "beijing"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 68,
+              "max": 68,
+              "regionIds": [
+                "shanghai"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 58,
+              "max": 58,
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-box",
+          "label": "中型厢货",
+          "value": "mid-box",
+          "description": "北京 120 元含 5 公里，超出后 5 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 120,
+              "max": 120,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-flat",
+          "label": "小型平板",
+          "value": "small-flat",
+          "description": "北京 68 元含 5 公里，超出后 4 元/公里。深圳 50 元含 5 公里，超出后 4 元/公里。上海、广州、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 68,
+              "max": 68,
+              "regionIds": [
+                "beijing"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 50,
+              "max": 50,
+              "regionIds": [
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-flat",
+          "label": "中型平板",
+          "value": "mid-flat",
+          "description": "北京 120 元含 5 公里，超出后 5 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 120,
+              "max": 120,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-bread",
+          "label": "小型面包",
+          "value": "small-bread",
+          "description": "上海 30 元含 5 公里，超出后 3 元/公里。广州 36 元含 7 公里，超出后 3 元/公里。深圳 30 元含 5 公里，超出后 3 元/公里。杭州 29 元含 5 公里，超出后 3 元/公里。北京没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 30,
+              "max": 30,
+              "regionIds": [
+                "shanghai",
+                "shenzhen"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 7 公里）",
+              "min": 36,
+              "max": 36,
+              "regionIds": [
+                "guangzhou"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 29,
+              "max": 29,
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-bread",
+          "label": "中型面包",
+          "value": "mid-bread",
+          "description": "上海 45 元含 5 公里，超出后 4 元/公里。广州 58 元含 7 公里，超出后 4 元/公里。深圳 55 元含 5 公里，超出后 4 元/公里。杭州 50 元含 5 公里，超出后 4 元/公里。北京没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 45,
+              "max": 45,
+              "regionIds": [
+                "shanghai"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 7 公里）",
+              "min": 58,
+              "max": 58,
+              "regionIds": [
+                "guangzhou"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 55,
+              "max": 55,
+              "regionIds": [
+                "shenzhen"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 50,
+              "max": 50,
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-cargo",
+          "label": "小货",
+          "value": "small-cargo",
+          "description": "上海 48 元含 5 公里，超出后 4 元/公里。杭州 98 元含 5 公里，超出后 5 元/公里。北京、广州、深圳没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 48,
+              "max": 48,
+              "regionIds": [
+                "shanghai"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 98,
+              "max": 98,
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-cargo",
+          "label": "中货",
+          "value": "mid-cargo",
+          "description": "上海 120 元含 5 公里，超出后 5 元/公里。北京、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 120,
+              "max": 120,
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-truck",
+          "label": "小货车",
+          "value": "small-truck",
+          "description": "广州 68 元含 7 公里，超出后 4 元/公里。北京、上海、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 7 公里）",
+              "min": 68,
+              "max": 68,
+              "regionIds": [
+                "guangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-truck",
+          "label": "中货车",
+          "value": "mid-truck",
+          "description": "广州 110 元含 7 公里，超出后 5 元/公里。深圳 99 元含 5 公里，超出后 5 元/公里。北京、上海、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 7 公里）",
+              "min": 110,
+              "max": 110,
+              "regionIds": [
+                "guangzhou"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 99,
+              "max": 99,
+              "regionIds": [
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-box",
+          "label": "小型厢货",
+          "value": "small-box",
+          "description": "深圳 65 元含 5 公里，超出后 4 元/公里。北京、上海、广州、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 65,
+              "max": 65,
+              "regionIds": [
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "micro-cargo",
+          "label": "微货",
+          "value": "micro-cargo",
+          "description": "杭州 58 元含 5 公里，超出后 4 元/公里。北京、上海、广州、深圳没有这一档。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 5 公里）",
+              "min": 58,
+              "max": 58,
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m52",
+          "label": "5 米 2",
+          "value": "m52",
+          "description": "北京 220 元含 15 公里，超出后 5 元/公里。上海 220 元含 15 公里，超出后 5 元/公里。广州 220 元含 15 公里，超出后 5 元/公里。深圳 220 元含 15 公里，超出后 5 元/公里。杭州 220 元含 15 公里，超出后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 220,
+              "max": 220,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m68",
+          "label": "6 米 8",
+          "value": "m68",
+          "description": "北京 260 元含 15 公里，超出后 5 元/公里。上海 260 元含 15 公里，超出后 5 元/公里。广州 280 元含 15 公里，超出后 6 元/公里。深圳 280 元含 15 公里，超出后 6 元/公里。杭州 260 元含 15 公里，超出后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 260,
+              "max": 260,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "hangzhou"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 280,
+              "max": 280,
+              "regionIds": [
+                "guangzhou",
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m76",
+          "label": "7 米 6",
+          "value": "m76",
+          "description": "北京 280 元含 15 公里，超出后 6 元/公里。上海 290 元含 15 公里，超出后 5 元/公里。广州 330 元含 15 公里，超出后 6 元/公里。深圳 330 元含 15 公里，超出后 6 元/公里。杭州 290 元含 15 公里，超出后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 280,
+              "max": 280,
+              "regionIds": [
+                "beijing"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 290,
+              "max": 290,
+              "regionIds": [
+                "shanghai",
+                "hangzhou"
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 330,
+              "max": 330,
+              "regionIds": [
+                "guangzhou",
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m96",
+          "label": "9 米 6",
+          "value": "m96",
+          "description": "北京 380 元含 15 公里，超出后 7 元/公里。上海 380 元含 15 公里，超出后 7 元/公里。广州 380 元含 15 公里，超出后 8 元/公里。深圳 380 元含 15 公里，超出后 8 元/公里。杭州 380 元含 15 公里，超出后 7 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "起步价（含 15 公里）",
+              "min": 380,
+              "max": 380,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "车型名称和含多少公里，按各城页面原文。没有这一档的城市会显示数据不足。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "kuaigou-start"
+        }
+      ]
+    },
+    {
+      "id": "kg-km-vehicle",
+      "type": "single",
+      "title": "快狗哪一种车的超里程？",
+      "required": true,
+      "options": [
+        {
+          "id": "errand",
+          "label": "跑腿",
+          "value": "errand",
+          "description": "北京 28 元含 5 公里，超出后 3 元/公里。上海、广州、深圳、杭州没有这一档。等候超时原文是 每分钟 0.5 元，未入库。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 3,
+              "max": 3,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "micro",
+          "label": "微面",
+          "value": "micro",
+          "description": "北京 28 元含 5 公里，超里程原文是 2.85 元/公里，不是整数元，未入库。深圳 29 元含 5 公里，超里程原文是 2.85 元/公里，不是整数元，未入库。杭州 28 元含 5 公里，超里程原文是 2.85 元/公里，不是整数元，未入库。上海、广州没有这一档。等候超时原文是 每分钟 0.5 元，未入库。"
+        },
+        {
+          "id": "small-van",
+          "label": "小面",
+          "value": "small-van",
+          "description": "北京 30 元含 5 公里，超出后 3 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 3,
+              "max": 3,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-van",
+          "label": "中面",
+          "value": "mid-van",
+          "description": "北京 56 元含 5 公里，超出后 4 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "iveco",
+          "label": "依维柯",
+          "value": "iveco",
+          "description": "北京 69 元含 5 公里，超出后 4 元/公里。上海 68 元含 5 公里，超里程原文是 4.5 元/公里，不是整数元，未入库。杭州 58 元含 5 公里，超出后 4 元/公里。广州、深圳没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-box",
+          "label": "中型厢货",
+          "value": "mid-box",
+          "description": "北京 120 元含 5 公里，超出后 5 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-flat",
+          "label": "小型平板",
+          "value": "small-flat",
+          "description": "北京 68 元含 5 公里，超出后 4 元/公里。深圳 50 元含 5 公里，超出后 4 元/公里。上海、广州、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing",
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-flat",
+          "label": "中型平板",
+          "value": "mid-flat",
+          "description": "北京 120 元含 5 公里，超出后 5 元/公里。上海、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-bread",
+          "label": "小型面包",
+          "value": "small-bread",
+          "description": "上海 30 元含 5 公里，超出后 3 元/公里。广州 36 元含 7 公里，超出后 3 元/公里。深圳 30 元含 5 公里，超出后 3 元/公里。杭州 29 元含 5 公里，超出后 3 元/公里。北京没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 3,
+              "max": 3,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-bread",
+          "label": "中型面包",
+          "value": "mid-bread",
+          "description": "上海 45 元含 5 公里，超出后 4 元/公里。广州 58 元含 7 公里，超出后 4 元/公里。深圳 55 元含 5 公里，超出后 4 元/公里。杭州 50 元含 5 公里，超出后 4 元/公里。北京没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-cargo",
+          "label": "小货",
+          "value": "small-cargo",
+          "description": "上海 48 元含 5 公里，超出后 4 元/公里。杭州 98 元含 5 公里，超出后 5 元/公里。北京、广州、深圳没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "shanghai"
+              ]
+            },
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-cargo",
+          "label": "中货",
+          "value": "mid-cargo",
+          "description": "上海 120 元含 5 公里，超出后 5 元/公里。北京、广州、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-truck",
+          "label": "小货车",
+          "value": "small-truck",
+          "description": "广州 68 元含 7 公里，超出后 4 元/公里。北京、上海、深圳、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "guangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-truck",
+          "label": "中货车",
+          "value": "mid-truck",
+          "description": "广州 110 元含 7 公里，超出后 5 元/公里。深圳 99 元含 5 公里，超出后 5 元/公里。北京、上海、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "guangzhou",
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small-box",
+          "label": "小型厢货",
+          "value": "small-box",
+          "description": "深圳 65 元含 5 公里，超出后 4 元/公里。北京、上海、广州、杭州没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "micro-cargo",
+          "label": "微货",
+          "value": "micro-cargo",
+          "description": "杭州 58 元含 5 公里，超出后 4 元/公里。北京、上海、广州、深圳没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 4,
+              "max": 4,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m52",
+          "label": "5 米 2",
+          "value": "m52",
+          "description": "北京 220 元含 15 公里，超出后 5 元/公里。上海 220 元含 15 公里，超出后 5 元/公里。广州 220 元含 15 公里，超出后 5 元/公里。深圳 220 元含 15 公里，超出后 5 元/公里。杭州 220 元含 15 公里，超出后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m68",
+          "label": "6 米 8",
+          "value": "m68",
+          "description": "北京 260 元含 15 公里，超出后 5 元/公里。上海 260 元含 15 公里，超出后 5 元/公里。广州 280 元含 15 公里，超出后 6 元/公里。深圳 280 元含 15 公里，超出后 6 元/公里。杭州 260 元含 15 公里，超出后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "hangzhou"
+              ]
+            },
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 6,
+              "max": 6,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "guangzhou",
+                "shenzhen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m76",
+          "label": "7 米 6",
+          "value": "m76",
+          "description": "北京 280 元含 15 公里，超出后 6 元/公里。上海 290 元含 15 公里，超出后 5 元/公里。广州 330 元含 15 公里，超出后 6 元/公里。深圳 330 元含 15 公里，超出后 6 元/公里。杭州 290 元含 15 公里，超出后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 6,
+              "max": 6,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing",
+                "guangzhou",
+                "shenzhen"
+              ]
+            },
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "shanghai",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "m96",
+          "label": "9 米 6",
+          "value": "m96",
+          "description": "北京 380 元含 15 公里，超出后 7 元/公里。上海 380 元含 15 公里，超出后 7 元/公里。广州 380 元含 15 公里，超出后 8 元/公里。深圳 380 元含 15 公里，超出后 8 元/公里。杭州 380 元含 15 公里，超出后 7 元/公里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 7,
+              "max": 7,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "hangzhou"
+              ]
+            },
+            {
+              "type": "per_unit",
+              "label": "超出起步里程",
+              "min": 8,
+              "max": 8,
+              "unitQuestionId": "kg-km",
+              "regionIds": [
+                "guangzhou",
+                "shenzhen"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "微面的 2.85 元/公里、上海依维柯的 4.5 元/公里不是整数元，选中后不会给出金额。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "kuaigou-km"
+        }
+      ]
+    },
+    {
+      "id": "kg-km",
+      "type": "number",
+      "title": "超出起步里程的公里数",
+      "description": "只填超出含里程的部分。5 公里、7 公里或 15 公里以内的部分已经在起步价里。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "kuaigou-km"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 500
+      }
+    },
+    {
+      "id": "wait-tier",
+      "type": "single",
+      "title": "快狗哪一档等候超时？",
+      "required": true,
+      "options": [
+        {
+          "id": "block-15-10",
+          "label": "每 15 分钟 10 元",
+          "value": "block-15-10",
+          "description": "超时后的加收单价，不含免费等候。北京小面、中面、依维柯、小型平板免费 60 分钟，中型厢货和中型平板免费 120 分钟。上海小型面包、中型面包、依维柯、小货免费 60 分钟，中货免费 120 分钟。广州中货车免费 60 分钟。深圳小型面包、中型面包、小型平板免费 40 分钟，小型厢货和中货车免费 60 分钟。杭州小型面包、中型面包、依维柯、微货、小货免费 60 分钟。不足一段按一段计。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "每 15 分钟 10 元",
+              "min": 10,
+              "max": 10,
+              "unitQuestionId": "wait-blocks",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block-10-5",
+          "label": "每 10 分钟 5 元",
+          "value": "block-10-5",
+          "description": "只有广州的小型面包、中型面包、小货车：免费 40 分钟，超时后每 10 分钟 5 元。其他城市没有这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "每 10 分钟 5 元",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "wait-blocks",
+              "regionIds": [
+                "guangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "block-30-40",
+          "label": "每 30 分钟 40 元",
+          "value": "block-30-40",
+          "description": "五城 5 米 2、6 米 8、7 米 6、9 米 6：免费 180 分钟，超时后每 30 分钟 40 元。不足 30 分钟按 30 分钟计。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "每 30 分钟 40 元",
+              "min": 40,
+              "max": 40,
+              "unitQuestionId": "wait-blocks",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "跑腿和微面的每分钟 0.5 元不是整数元，没有这一档。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "kuaigou-wait"
+        }
+      ]
+    },
+    {
+      "id": "wait-blocks",
+      "type": "number",
+      "title": "超时段数",
+      "description": "一段就是上一题写的 10 分钟、15 分钟或 30 分钟。免费时长不在这里扣减。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "kuaigou-wait"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 20
+      }
+    },
+    {
+      "id": "lxn-vehicle",
+      "type": "single",
+      "title": "蓝犀牛放心搬家哪一种车？",
+      "required": true,
+      "options": [
+        {
+          "id": "xiaomian",
+          "label": "小面",
+          "value": "xiaomian",
+          "description": "北京 周一至周五 106 元，周六日 118 元。上海 周一至周五 106 元，周六日 118 元。广州 周一至周五 106 元，周六日 118 元。深圳 周一至周五 106 元，周六日 118 元。杭州 102 元，页面没有分成工作日和周末。都含 10 公里和 1 人全程搬运。同城超出 10 公里后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 106,
+              "max": 106,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 102,
+              "max": 102,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 118,
+              "max": 118,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 102,
+              "max": 102,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "zhongmian",
+          "label": "中面",
+          "value": "zhongmian",
+          "description": "北京 186 元，页面没有分成工作日和周末。上海 186 元，页面没有分成工作日和周末。广州 186 元，页面没有分成工作日和周末。深圳 186 元，页面没有分成工作日和周末。杭州 176 元，页面没有分成工作日和周末。都含 10 公里和 1 人全程搬运。同城超出 10 公里后 5 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 186,
+              "max": 186,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 176,
+              "max": 176,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 186,
+              "max": 186,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 176,
+              "max": 176,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "xiaoxiang",
+          "label": "小厢货",
+          "value": "xiaoxiang",
+          "description": "北京 周一至周五 298 元，周六日 338 元。上海 周一至周五 298 元，周六日 338 元。广州 周一至周五 298 元，周六日 338 元。深圳 周一至周五 298 元，周六日 338 元。杭州 298 元，页面没有分成工作日和周末。都含 10 公里和 2 人全程搬运。同城超出 10 公里后 6 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 298,
+              "max": 298,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 338,
+              "max": 338,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 298,
+              "max": 298,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "xianghuo",
+          "label": "厢货",
+          "value": "xianghuo",
+          "description": "北京 周一至周五 368 元，周六日 428 元。上海 周一至周五 368 元，周六日 428 元。广州 周一至周五 368 元，周六日 428 元。深圳 周一至周五 368 元，周六日 448 元。杭州 348 元，页面没有分成工作日和周末。都含 10 公里和 2 人全程搬运。同城超出 10 公里后 7 元/公里。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 368,
+              "max": 368,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "工作日起步价",
+              "min": 348,
+              "max": 348,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekday"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 428,
+              "max": 428,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 448,
+              "max": 448,
+              "regionIds": [
+                "shenzhen"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "周末起步价",
+              "min": 348,
+              "max": 348,
+              "regionIds": [
+                "hangzhou"
+              ],
+              "conditions": [
+                {
+                  "questionId": "lxn-day",
+                  "operator": "equals",
+                  "value": "weekend"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "杭州，以及北上广深的中面，页面没有把工作日和周末分成两个价。夜间费不加在起步价里；页面没写的夜间费也不能当成 0 元。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-start"
+        }
+      ]
+    },
+    {
+      "id": "lxn-day",
+      "type": "single",
+      "title": "哪一天搬家？",
+      "required": true,
+      "options": [
+        {
+          "id": "weekday",
+          "label": "周一至周五",
+          "value": "weekday",
+          "description": "有分档的车型用工作日价。"
+        },
+        {
+          "id": "weekend",
+          "label": "周六日",
+          "value": "weekend",
+          "description": "深圳厢货周六日是 448 元，不是北上广的 428 元。"
+        }
+      ],
+      "description": "页面若只写了一个价，周一至周五和周六日都会得到这一个数，并在来源里说明。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-start"
+        }
+      ]
+    },
+    {
+      "id": "lxn-km-vehicle",
+      "type": "single",
+      "title": "蓝犀牛哪一种车的超公里？",
+      "required": true,
+      "options": [
+        {
+          "id": "xiaomian",
+          "label": "小面",
+          "value": "xiaomian",
+          "description": "五城同城放心搬家超出 10 公里后都是 5 元/公里。各城仍用自己的资费页。跨城单价不同，不在这里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出 10 公里",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "lxn-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "zhongmian",
+          "label": "中面",
+          "value": "zhongmian",
+          "description": "五城同城放心搬家超出 10 公里后都是 5 元/公里。各城仍用自己的资费页。跨城单价不同，不在这里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出 10 公里",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "lxn-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "xiaoxiang",
+          "label": "小厢货",
+          "value": "xiaoxiang",
+          "description": "五城同城放心搬家超出 10 公里后都是 6 元/公里。各城仍用自己的资费页。跨城单价不同，不在这里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出 10 公里",
+              "min": 6,
+              "max": 6,
+              "unitQuestionId": "lxn-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "xianghuo",
+          "label": "厢货",
+          "value": "xianghuo",
+          "description": "五城同城放心搬家超出 10 公里后都是 7 元/公里。各城仍用自己的资费页。跨城单价不同，不在这里。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超出 10 公里",
+              "min": 7,
+              "max": 7,
+              "unitQuestionId": "lxn-km",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "这是同城放心搬家。跨城小面和中面原文是 4.5 元/公里，未入库。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-km"
+        }
+      ]
+    },
+    {
+      "id": "lxn-km",
+      "type": "number",
+      "title": "超出 10 公里的公里数",
+      "description": "10 公里以内已经含在起步价里。这里只乘超出的公里。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-km"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 500
+      }
+    },
+    {
+      "id": "jp-style",
+      "type": "single",
+      "title": "日式搬家哪一种？",
+      "required": true,
+      "options": [
+        {
+          "id": "full",
+          "label": "全日式",
+          "value": "full",
+          "description": "起步 1400 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "全日式起步价",
+              "min": 1400,
+              "max": 1400,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "half",
+          "label": "半日式",
+          "value": "half",
+          "description": "起步 1150 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "半日式起步价",
+              "min": 1150,
+              "max": 1150,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "含 20 公里和 5 立方米。超过 20 公里原文只写了 7 元，没有写是不是每公里，所以不加。五城金额相同，结果仍记在你选的城市。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-jp"
+        }
+      ]
+    },
+    {
+      "id": "cube-style",
+      "type": "single",
+      "title": "日式搬家哪一种超立方米？",
+      "required": true,
+      "options": [
+        {
+          "id": "full",
+          "label": "全日式超出部分",
+          "value": "full",
+          "description": "280 元/立方米。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "全日式超立方米",
+              "min": 280,
+              "max": 280,
+              "unitQuestionId": "cubes",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "half",
+          "label": "半日式超出部分",
+          "value": "half",
+          "description": "230 元/立方米。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "半日式超立方米",
+              "min": 230,
+              "max": 230,
+              "unitQuestionId": "cubes",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "guangzhou",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "只计算超出 5 立方米的部分。",
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-cube"
+        }
+      ]
+    },
+    {
+      "id": "cubes",
+      "type": "number",
+      "title": "超出的立方米",
+      "description": "5 立方米以内已经含在日式起步价里。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "channel",
+          "operator": "equals",
+          "value": "lxn-cube"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 30
+      }
+    }
+  ],
+  "scope": {
+    "included": [
+      "快狗打车五城官方起步价，含该城页面写明的 5 公里、7 公里或 15 公里",
+      "快狗整数超里程，按车型和城市分开，不和起步价相加",
+      "快狗整数等候超时：每 15 分钟 10 元、每 30 分钟 40 元，广州部分小车每 10 分钟 5 元",
+      "蓝犀牛放心搬家五城小面、中面、小厢货、厢货的起步价，含 10 公里和 1 或 2 人搬运",
+      "有工作日和周末两个价的车型按所选日期取价；页面只有一个价时，两个日期选项都用这一个数",
+      "深圳厢货周六日 448 元；杭州放心搬家起步低于北上广，小面 102 元、中面 176 元、小厢货 298 元、厢货 348 元",
+      "蓝犀牛同城超公里：小面和中面 5 元/公里，小厢货 6 元/公里，厢货 7 元/公里",
+      "日式搬家全日式 1400 元、半日式 1150 元，五城页面金额相同，仍按各城资费页分别记录，含 20 公里和 5 立方米",
+      "日式超出 5 立方米：全日式 280 元/立方米，半日式 230 元/立方米"
+    ],
+    "excluded": [
+      "快狗微面超里程原文 2.85 元/公里，北京、深圳、杭州都是这个数，未取整",
+      "快狗上海依维柯超里程原文 4.5 元/公里，未取整",
+      "快狗跑腿和微面的等候超时原文每分钟 0.5 元，未取整",
+      "快狗搬运费官方写明与司机商议；高速和停车按实际发生，不能预填",
+      "蓝犀牛跨城小面和中面超公里原文 4.5 元/公里；小厢货、厢货跨城分段价未并入同城单价",
+      "日式搬家超过 20 公里原文只写 7 元，没有写单位，未补成每公里",
+      "页面没有列出的夜间费不按 0 元。已列出的夜间费本次也不加进起步价，例如部分城市小面 20 元，广州中面 20 元、小厢货 40 元、厢货 80 元，深圳小厢货 40 元、厢货 80 元",
+      "楼层、拆装、平地搬运、加人、远郊、取消和等待已在同一页核验，本次不与起步价相加",
+      "日式钢琴搬运：高 125 厘米以下 350 元、及以上 450 元、三角钢琴 650 元；平地超出 2 元/米。本次不单列",
+      "货拉拉官网价格由页面动态加载，没有静态金额，不入库",
+      "不把一座城市的价格复制成另一座城市，也不做五城平均价"
+    ]
+  },
+  "status": "active",
+  "demo": false,
+  "pricing": {
+    "model": "composite",
+    "basePrice": {
+      "min": 0,
+      "max": 0
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
+  }
+}

@@ -1,0 +1,257 @@
+[
+  {
+    "id": "fa-formula-display",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 59,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《组装服务介绍》https://www.ikea.cn/cn/zh/customer-service/services/assembly-intro/ 59 元起等于基础费用 49 元加 5 分钟乘每分钟 2 元。部分产品除外，不含上墙。不是每件家具的一口价。少部分地区费用可能不同。另见 https://www.ikea.cn/cn/zh/customer-service/services/assembly/",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "formula",
+      "formula-item": "display"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-formula-base",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 49,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《组装服务介绍》https://www.ikea.cn/cn/zh/customer-service/services/assembly-intro/ 基础费用 49 元，只是 59 元起公式的组成部分，不是单独付 49 元就能完成组装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "formula",
+      "formula-item": "base"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-formula-minute",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 2,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《组装服务介绍》https://www.ikea.cn/cn/zh/customer-service/services/assembly-intro/ 每分钟 2 元。整单还要另加基础费 49 元，本条只记录分钟单价，不把两个分量收成一个中位数。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "formula",
+      "formula-item": "minute"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-wall",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《组装服务介绍》https://www.ikea.cn/cn/zh/customer-service/services/assembly-intro/ 上墙服务 30 元/件。已经购买组装服务的墙柜家具不加收。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-sofa",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 149,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 旧沙发拆运 149 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "sofa"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-mattress",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 149,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 旧床垫拆运 149 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "mattress"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-dining",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 149,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 餐桌椅拆运 149 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "dining"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-drawer",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 149,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 抽屉柜拆运 149 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "drawer"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-small",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 149,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 小家具拆运，包括床头柜、餐边柜、衣帽架、鞋柜、茶几角几、梳妆台和凳、办公或学习桌和椅 149 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "small"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-wardrobe",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 249,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 旧衣柜拆运 249 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "wardrobe"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-removal-bed",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 249,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国《旧家具拆运服务》https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/ 整个床框架加床板拆运 249 元/件。须在线下宜家商场购买新家具和送货；线上顾客要先与客服约定。拆除不可恢复，搬不出则退款，不提供窗口吊装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "removal",
+      "removal-item": "bed"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-kb-old-kitchen",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 499,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国厨房与浴室安装页 https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 旧厨房拆除 499 元/套。须购买宜家完整厨房产品，且只限有宜家商场的城市。完整厨房安装本体价没有公示。这不是普通家具组装一口价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bath-kitchen",
+      "kb-item": "old-kitchen"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-kb-old-bath",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 299,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国厨房与浴室安装页 https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 旧浴室拆除 299 元/套。须购买整套浴室产品。拆除只限柜体、镜子、龙头和台盆。这不是普通家具组装一口价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bath-kitchen",
+      "kb-item": "old-bath"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-kb-bath-set",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国厨房与浴室安装页 https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 完整浴室安装 200 元/套，含 1 个浴室柜、1 个台盆和 1 个水龙头，不含镜柜，含接通上下水。三角阀须用户预装。这不是普通家具组装一口价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bath-kitchen",
+      "kb-item": "bath-set"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-kb-annat",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 169,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国厨房与浴室安装页 https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 安纳特系列完整浴室安装 169 元/套，不含镜柜。这不是普通家具组装一口价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bath-kitchen",
+      "kb-item": "annat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "fa-kb-single",
+    "serviceId": "furniture-assembly",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国厨房与浴室安装页 https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 单个浴室柜或浴室配件安装 100 元/个，不含接水接电。这不是普通家具组装一口价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bath-kitchen",
+      "kb-item": "single"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

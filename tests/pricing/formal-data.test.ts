@@ -48,7 +48,9 @@ it("正式目录只加载已核验样本，地区选择器只列出五城和全�
   const { catalog, samples } = await formal();
   expect(catalog.categories.map((category) => category.id)).toEqual([
     "appliance-cleaning",
+    "home-cleaning",
     "home-installation",
+    "moving-delivery",
     "plumbing",
   ]);
   expect(catalog.services.map((service) => service.id).sort()).toEqual([
@@ -57,16 +59,27 @@ it("正式目录只加载已核验样本，地区选择器只列出五城和全�
     "ceiling-light-install",
     "curtain-install",
     "faucet-valve-install",
+    "furniture-assembly",
+    "home-appliance-cleaning",
+    "home-cleaning",
+    "small-moving",
     "smart-lock-install",
     "switch-outlet-install",
   ]);
   expect(catalog.services.every((service) => service.demo === false && service.status === "active")).toBe(true);
-  expect(samples).toHaveLength(168);
+  expect(samples).toHaveLength(417);
   expect(samples.filter((sample) => sample.serviceId === "ceiling-light-install" || sample.serviceId === "curtain-install")).toHaveLength(50);
   expect(samples.every((sample) => sample.demo === false && sample.verified && sample.currency === "CNY")).toBe(true);
   expect(samples.every((sample) => sample.collectedAt === "2026-11-20" && sample.source.includes("https://"))).toBe(true);
   expect(samples.some((sample) => /合成|demo|港币|HKD|1\.5/.test(sample.source))).toBe(false);
-  expect(new Set(samples.map((sample) => sample.price))).not.toContain(55);
+  const wave3 = new Set(["small-moving", "furniture-assembly", "home-cleaning", "home-appliance-cleaning"]);
+  const earlier = samples.filter((sample) => !wave3.has(sample.serviceId));
+  expect(earlier).toHaveLength(168);
+  expect(new Set(earlier.map((sample) => sample.price))).not.toContain(55);
+  expect(samples.filter((sample) => sample.price === 55).map((sample) => sample.id).sort()).toEqual([
+    "hc-hk-hour-high",
+    "sm-kg-start-shenzhen-mid-bread",
+  ]);
   expect(regionChoices(catalog.regions)).toEqual([
     { id: "beijing", label: "北京", fallback: false },
     { id: "shanghai", label: "上海", fallback: false },

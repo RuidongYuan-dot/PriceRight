@@ -88,6 +88,30 @@ demo
 
 后续贡献仍按下一节执行：新样本在审核通过前为 `verified: false`，服务在审核通过前不为 `active`。
 
+## 第三批已入库来源（2026-11-20）
+
+仓库所有者已批准把下列经 HTTP 200 原文核验的公开人民币价格写入正式目录。样本为 `verified: true`、`demo: false`、`currency: "CNY"`、`collectedAt: "2026-11-20"`，服务为 `active`。金额只使用调研原文里的整数元。小数元单价不四舍五入，原文没写单位的项目不补单位。`data/fixtures/` 未改。本批不部署、不切换线上 GitHub Pages。
+
+| 服务 | 地区 | 来源 |
+| --- | --- | --- |
+| 小型搬家与同城货运 `small-moving` | `beijing`、`shanghai`、`guangzhou`、`shenzhen`、`hangzhou` 各自独立 | 快狗打车（原 58 速运）分城价格表：[北京](https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC)、[上海](https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7)、[广州](https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E)、[深圳](https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3)、[杭州](https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E)。只收起步价、整数超里程，以及整数等候超时（每 15 分钟 10 元、每 30 分钟 40 元；广州部分小车每 10 分钟 5 元） |
+| 小型搬家与同城货运 | 同上五城，各用各城 URL | 蓝犀牛搬家资费页：[北京](https://www.lanxiniu.com/price/110100)、[上海](https://www.lanxiniu.com/price/310100)、[广州](https://www.lanxiniu.com/price/440100)、[深圳](https://www.lanxiniu.com/price/440300)、[杭州](https://www.lanxiniu.com/price/330100)。放心搬家小面、中面、小厢货、厢货的工作日和周末起步价；同城超公里 5、6、7 元/公里；日式搬家全日式 1400 元、半日式 1150 元（五城金额相同，仍按城建样）；超出 5 立方米全日式 280 元、半日式 230 元 |
+| 家具组装与旧家具拆运 `furniture-assembly` | `cn` | 宜家中国[《组装服务介绍》](https://www.ikea.cn/cn/zh/customer-service/services/assembly-intro/)：59 元展示价、基础费 49 元、每分钟 2 元、上墙 30 元/件。[《旧家具拆运服务》](https://www.ikea.cn/cn/zh/customer-service/services/removal-recycling/)：149 元/件与 249 元/件。[厨房与浴室安装](https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/)：旧厨房拆除 499 元/套、旧浴室拆除 299 元/套、完整浴室安装 200 元/套、安纳特系列 169 元/套、单个浴室柜或配件 100 元/个 |
+| 日常保洁与深度保洁 `home-cleaning` | 日常保洁为 `beijing`、`shanghai`、`shenzhen`、`hangzhou`；深度和消杀仅为 `beijing` | [自如日常保洁](https://sm.ziroom.com/clean/general/dailyIntro.shtml)：35 元/小时、2 小时起约，85 平方米以下 70 元。价表未写城市；同页脚本有京沪深杭服务 ID，没有广州。[深度保洁](https://sm.ziroom.com/clean/general/depthIntro.shtml)与[消杀保洁](https://sm.ziroom.com/clean/general/killIntro.shtml)写明北京五环内，以及天通苑、大兴、通州 |
+| 日常保洁与深度保洁 | `cn` | [好慷在家官网百科](https://www.homeking365.com/guide/home-cleaning/price/)（正文更新于 2026-10-20）。45 元/小时与 55 元/小时、4 小时约 180 元与 220 元分开记录，不取中点。3 次体验 599 元起，厨卫深度 359 元起/间。实际以下单页为准 |
+| 冰箱洗衣机与油烟机清洗 `home-appliance-cleaning` | `shanghai` | 同上 [962121 热线 2026 版](https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp) 的冰箱、洗衣机、油烟机。不是日常保洁，也不重复空调清洗 |
+
+口径边界：
+
+- 快狗微面超里程原文是 2.85 元/公里，上海依维柯超里程原文是 4.5 元/公里，跑腿和微面等候超时原文是每分钟 0.5 元。这三项都不是整数元，没有取整入库。
+- 蓝犀牛跨城小面和中面超公里原文是 4.5 元/公里，未入库。日式搬家「超过 20 公里 7 元」原文没有写单位，没有补成每公里。
+- 页面没写夜间费的车型不按 0 元。已经写明的夜间费（例如部分城市小面 20 元，广州、深圳部分车型 40 元或 80 元）本次不加进起步价。深圳厢货周六日是 448 元，不是北上广的 428 元。杭州放心搬家页面没有工作日和周末两个价。
+- 快狗搬运费官方写明与司机商议。货拉拉价格页是动态加载，没有静态金额，不入库。
+- 楼层、拆装、加人、远郊等价已在蓝犀牛页面核验，本次不与起步价相加。日式钢琴搬运 350 元、450 元、650 元也只记在服务范围里，不单列成查询项。
+- 宜家 59 元是 5 分钟展示价，不是每件一口价。基础费 49 元和每分钟 2 元分开查。万师傅通道是竞价，没有固定价。源氏木语只有免费上门安装，不记成 0 元。完整厨房安装本体价没有公示。协会的橱柜拆除和成品木门不是成品家具组装。
+- 自如 105 至 140 元、好慷 45 至 55 元和 180 至 220 元都按端点分开，不取中位数。四居以上的 9 元/平方米和 1200 元起也不自动取较高者。轻喜到家 37 元/小时只有新客促销、没有时长和城市，未入库。
+- 洗车：途虎等官网没有可核验的静态有偿价表，五城都不建正式服务。改裤脚：优衣库中国官方 FAQ（<https://www.uniqlo.cn/public/code/DH/DH3.html>）只说明天猫官方旗舰店购买的裤装可到实体店免费修改裤长（明线处理），运动裤等不适合，部分门店暂不能改，改后不可退换。这不是社会有偿改衣价，本批不建改衣服务。宜家成品窗帘改高拼宽 39 元/两片是纺织品改尺，不是服装裤脚，本批也不并入。
+
 ## 结果页上的样本明细
 
 报价结果列出本次实际参与计算的合格样本。展示字段限于 `id`、`price`、`currency`、`sampleType`、`regionId`、`source`、`collectedAt`、`verified`、`demo`。页面用地区名称、样本类型、采集日期、核验状态和是否演示样本说明这些记录。样本标价是观察金额，不是合理参考价格。

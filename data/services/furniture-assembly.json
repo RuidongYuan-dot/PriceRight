@@ -1,0 +1,495 @@
+{
+  "id": "furniture-assembly",
+  "categoryId": "home-installation",
+  "name": "家具组装与旧家具拆运",
+  "slug": "furniture-assembly",
+  "description": "查询宜家中国已公示的家具组装公式、上墙和旧家具拆运。组装按基础费加预估分钟计价，不是按商品售价比例，也不是每件都收 59 元。价格记在全国参考下，不复制成五城成交价。",
+  "keywords": [
+    "家具组装",
+    "组装家具",
+    "宜家组装",
+    "旧家具拆运",
+    "家具拆运",
+    "拆旧家具",
+    "衣柜拆运",
+    "床垫拆运",
+    "上墙固定",
+    "家具上墙",
+    "沙发拆运",
+    "宜家拆旧",
+    "组装床",
+    "组装衣柜"
+  ],
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要查哪一种？",
+      "required": true,
+      "options": [
+        {
+          "id": "formula",
+          "label": "宜家组装公式",
+          "value": "formula",
+          "description": "基础费、每分钟单价，以及 5 分钟时的 59 元展示价。"
+        },
+        {
+          "id": "wall",
+          "label": "上墙",
+          "value": "wall",
+          "description": "30 元/件。已经包含在组装里的墙柜不要再加。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "上墙",
+              "min": 30,
+              "max": 30,
+              "unitQuestionId": "wall-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "removal",
+          "label": "旧家具拆运",
+          "value": "removal",
+          "description": "149 元或 249 元一件，须同时购买新家具和送货。"
+        },
+        {
+          "id": "bath-kitchen",
+          "label": "厨房和浴室拆装",
+          "value": "bath-kitchen",
+          "description": "只含已公示的拆除和浴室安装，不是普通家具一口价。"
+        }
+      ],
+      "description": "组装、上墙、拆运和厨卫拆装分开查，不会加在一起。"
+    },
+    {
+      "id": "formula-item",
+      "type": "single",
+      "title": "组装公式看哪一行？",
+      "required": true,
+      "options": [
+        {
+          "id": "display",
+          "label": "5 分钟展示价",
+          "value": "display",
+          "description": "49 元加 5 分钟乘 2 元，等于 59 元。不是每件一口价。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "5 分钟展示价",
+              "min": 59,
+              "max": 59,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "base",
+          "label": "基础费",
+          "value": "base",
+          "description": "公式里的 49 元，不是付 49 元就能装完。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "组装基础费",
+              "min": 49,
+              "max": 49,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "minute",
+          "label": "每分钟单价",
+          "value": "minute",
+          "description": "只乘 2 元。另加的 49 元请回到上一档查看。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "每分钟组装费",
+              "min": 2,
+              "max": 2,
+              "unitQuestionId": "minutes",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "59 元只是 5 分钟示例。部分产品除外，少部分地区可能不同。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "formula"
+        }
+      ]
+    },
+    {
+      "id": "minutes",
+      "type": "number",
+      "title": "预估组装分钟",
+      "description": "按宜家系统给出的专业组装分钟填整数。这里只算分钟单价。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "formula-item",
+          "operator": "equals",
+          "value": "minute"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 180
+      }
+    },
+    {
+      "id": "wall-qty",
+      "type": "number",
+      "title": "上墙件数",
+      "description": "已购买组装服务的墙柜家具不加收。本查询只给出 30 元/件这一行。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "wall"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 20
+      }
+    },
+    {
+      "id": "removal-item",
+      "type": "single",
+      "title": "拆运哪一种旧家具？",
+      "required": true,
+      "options": [
+        {
+          "id": "sofa",
+          "label": "旧沙发",
+          "value": "sofa",
+          "description": "149 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "旧沙发拆运",
+              "min": 149,
+              "max": 149,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mattress",
+          "label": "旧床垫",
+          "value": "mattress",
+          "description": "149 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "旧床垫拆运",
+              "min": 149,
+              "max": 149,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dining",
+          "label": "餐桌椅",
+          "value": "dining",
+          "description": "149 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "餐桌椅拆运",
+              "min": 149,
+              "max": 149,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drawer",
+          "label": "抽屉柜",
+          "value": "drawer",
+          "description": "149 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "抽屉柜拆运",
+              "min": 149,
+              "max": 149,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "small",
+          "label": "小家具",
+          "value": "small",
+          "description": "149 元/件。含床头柜、餐边柜、衣帽架、鞋柜、茶几角几、梳妆台和凳、办公或学习桌和椅。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小家具拆运",
+              "min": 149,
+              "max": 149,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wardrobe",
+          "label": "旧衣柜",
+          "value": "wardrobe",
+          "description": "249 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "旧衣柜拆运",
+              "min": 249,
+              "max": 249,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bed",
+          "label": "床框架和床板",
+          "value": "bed",
+          "description": "249 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "床框架和床板拆运",
+              "min": 249,
+              "max": 249,
+              "unitQuestionId": "removal-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "须在线下宜家商场购买新家具和送货。线上购买要先和客服约定。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "removal"
+        }
+      ]
+    },
+    {
+      "id": "removal-qty",
+      "type": "number",
+      "title": "拆运件数",
+      "description": "按件计算。搬不出时宜家规则是退款，不是另加吊装费。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "removal"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 10
+      }
+    },
+    {
+      "id": "kb-item",
+      "type": "single",
+      "title": "厨房或浴室哪一项？",
+      "required": true,
+      "options": [
+        {
+          "id": "old-kitchen",
+          "label": "旧厨房拆除",
+          "value": "old-kitchen",
+          "description": "499 元/套。须购买完整厨房，且当地有宜家商场。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "旧厨房拆除",
+              "min": 499,
+              "max": 499,
+              "unitQuestionId": "kb-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "old-bath",
+          "label": "旧浴室拆除",
+          "value": "old-bath",
+          "description": "299 元/套。只拆柜体、镜子、龙头和台盆。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "旧浴室拆除",
+              "min": 299,
+              "max": 299,
+              "unitQuestionId": "kb-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bath-set",
+          "label": "完整浴室安装",
+          "value": "bath-set",
+          "description": "200 元/套。1 个柜、1 个盆、1 个龙头，不含镜柜。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "完整浴室安装",
+              "min": 200,
+              "max": 200,
+              "unitQuestionId": "kb-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "annat",
+          "label": "安纳特系列浴室安装",
+          "value": "annat",
+          "description": "169 元/套，不含镜柜。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安纳特系列浴室安装",
+              "min": 169,
+              "max": 169,
+              "unitQuestionId": "kb-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "single",
+          "label": "单个浴室柜或配件",
+          "value": "single",
+          "description": "100 元/个，不含接水接电。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "单个浴室柜或配件",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "kb-qty",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "完整厨房安装的本体价没有公示，不能估。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "bath-kitchen"
+        }
+      ]
+    },
+    {
+      "id": "kb-qty",
+      "type": "number",
+      "title": "套数或个数",
+      "description": "厨房和旧浴室按套，单个柜或配件按个。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "bath-kitchen"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 5
+      }
+    }
+  ],
+  "scope": {
+    "included": [
+      "宜家组装展示价 59 元，即基础费 49 元加 5 分钟乘每分钟 2 元",
+      "组装基础费 49 元和每分钟 2 元分开查询",
+      "上墙 30 元/件",
+      "旧沙发、床垫、餐桌椅、抽屉柜、小家具拆运各 149 元/件",
+      "旧衣柜、整个床框架加床板拆运各 249 元/件",
+      "旧厨房拆除 499 元/套，旧浴室拆除 299 元/套",
+      "完整浴室安装 200 元/套，安纳特系列 169 元/套，单个浴室柜或配件 100 元/个"
+    ],
+    "excluded": [
+      "不把 59 元当成每件家具的一口价，也不按商品售价比例估算",
+      "万师傅通道是竞价，没有固定公开价",
+      "完整厨房安装本体价未在安装页公示",
+      "源氏木语只写免费上门安装和床垫免费取旧，不记成 0 元成交价",
+      "上海协会的橱柜拆除、成品木门和浴室柜更换不是成品家具组装，未并入",
+      "部分产品除外和少部分地区不同费用，没有分项金额",
+      "全部样本属于全国参考，不复制成北京、上海、广州、深圳或杭州的本地成交价"
+    ]
+  },
+  "status": "active",
+  "demo": false,
+  "pricing": {
+    "model": "composite",
+    "basePrice": {
+      "min": 0,
+      "max": 0
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "id": "home-appliance-cleaning",
+  "categoryId": "appliance-cleaning",
+  "name": "冰箱洗衣机与油烟机清洗",
+  "slug": "home-appliance-cleaning",
+  "description": "查询上海 962121 热线 2026 版的冰箱、洗衣机和油烟机清洗。这是家电清洗，不是上门打扫，也不包含空调。只有上海有这组公示，北京、广州、深圳和杭州不会借用。",
+  "keywords": [
+    "冰箱清洗",
+    "洗衣机清洗",
+    "油烟机清洗",
+    "滚筒洗衣机清洗",
+    "波轮洗衣机清洗",
+    "对开门冰箱清洗",
+    "油烟机拆洗",
+    "单开门冰箱清洗",
+    "洗冰箱",
+    "洗油烟机",
+    "洗洗衣机",
+    "油烟机半拆",
+    "油烟机全拆"
+  ],
+  "questions": [
+    {
+      "id": "item",
+      "type": "single",
+      "title": "上海热线要洗哪一种？",
+      "required": true,
+      "options": [
+        {
+          "id": "fridge-side",
+          "label": "对开门冰箱",
+          "value": "fridge-side",
+          "description": "对开门冰箱清洗 158 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "对开门冰箱清洗",
+              "min": 158,
+              "max": 158,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fridge-single",
+          "label": "单开门冰箱",
+          "value": "fridge-single",
+          "description": "单开门冰箱清洗 115 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "单开门冰箱清洗",
+              "min": 115,
+              "max": 115,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "washer-drum",
+          "label": "滚筒洗衣机免拆",
+          "value": "washer-drum",
+          "description": "滚筒洗衣机免拆清洗 110 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "滚筒洗衣机免拆清洗",
+              "min": 110,
+              "max": 110,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "washer-semi",
+          "label": "波轮洗衣机半拆",
+          "value": "washer-semi",
+          "description": "波轮洗衣机半拆清洗 138 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "波轮洗衣机半拆清洗",
+              "min": 138,
+              "max": 138,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "washer-full",
+          "label": "波轮洗衣机全拆",
+          "value": "washer-full",
+          "description": "波轮洗衣机全拆清洗 198 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "波轮洗衣机全拆清洗",
+              "min": 198,
+              "max": 198,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hood-gas",
+          "label": "油烟机半拆加燃气灶",
+          "value": "hood-gas",
+          "description": "油烟机半拆加燃气灶 168 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "油烟机半拆加燃气灶清洗",
+              "min": 168,
+              "max": 168,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hood-full",
+          "label": "油烟机全拆洗",
+          "value": "hood-full",
+          "description": "油烟机全拆洗 158 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "油烟机全拆洗清洗",
+              "min": 158,
+              "max": 158,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hood-semi",
+          "label": "油烟机半拆洗",
+          "value": "hood-semi",
+          "description": "油烟机半拆洗 138 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "油烟机半拆洗清洗",
+              "min": 138,
+              "max": 138,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hood-plain",
+          "label": "油烟机免拆洗",
+          "value": "hood-plain",
+          "description": "油烟机免拆洗 128 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "油烟机免拆洗清洗",
+              "min": 128,
+              "max": 128,
+              "unitQuestionId": "qty",
+              "regionIds": [
+                "shanghai"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "单位都是台。深度清洁页面写的是面议，这里不估。"
+    },
+    {
+      "id": "qty",
+      "type": "number",
+      "title": "台数",
+      "description": "按台计算。油烟机加燃气灶仍是页面上的一台价。",
+      "required": true,
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 10
+      }
+    }
+  ],
+  "scope": {
+    "included": [
+      "上海 962121 热线 2026 版：对开门冰箱清洗 158 元/台",
+      "上海 962121 热线 2026 版：单开门冰箱清洗 115 元/台",
+      "上海 962121 热线 2026 版：滚筒洗衣机免拆清洗 110 元/台",
+      "上海 962121 热线 2026 版：波轮洗衣机半拆清洗 138 元/台",
+      "上海 962121 热线 2026 版：波轮洗衣机全拆清洗 198 元/台",
+      "上海 962121 热线 2026 版：油烟机半拆加燃气灶 168 元/台",
+      "上海 962121 热线 2026 版：油烟机全拆洗 158 元/台",
+      "上海 962121 热线 2026 版：油烟机半拆洗 138 元/台",
+      "上海 962121 热线 2026 版：油烟机免拆洗 128 元/台"
+    ],
+    "excluded": [
+      "不是日常保洁、开荒或擦玻璃",
+      "空调清洗已在空调清洗服务中，这里不重复挂机、立式、吊顶和中央空调",
+      "深度清洁原文为面议",
+      "超时上门原文为 50 元起，未入库",
+      "北京、广州、深圳、杭州没有这组本地公示"
+    ]
+  },
+  "status": "active",
+  "demo": false,
+  "pricing": {
+    "model": "composite",
+    "basePrice": {
+      "min": 0,
+      "max": 0
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
+  }
+}
