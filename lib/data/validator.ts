@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { unique, type Condition } from "../../schemas/common";
-import { priceSampleSchema } from "../../schemas/price.schema";
+import { isNumericRange, numericRangeSchema, priceSampleSchema } from "../../schemas/price.schema";
 import { regionSchema } from "../../schemas/region.schema";
 import { categorySchema, serviceSchema, type Question, type Service } from "../../schemas/service.schema";
 import { validateAnswer } from "../question-engine/evaluate";
@@ -96,7 +96,17 @@ export function validateCatalog(data: Catalog, demo: boolean): string[] {
     if (!service) errors.push(sample.id + " 未知样本服务");
     for (const [key, value] of Object.entries(sample.conditions ?? {})) {
       const q = service?.questions.find((q) => q.id === key);
-      if (!q || !validateAnswer(q, value).valid) errors.push(sample.id + " 无效样本条件 " + key);
+      if (!q) {
+        errors.push(sample.id + " 无效样本条件 " + key);
+        continue;
+      }
+      if (isNumericRange(value)) {
+        const numeric = q.type === "number" || q.type === "area" || q.type === "distance";
+        if (!numeric) errors.push(sample.id + " 数值区间只能用于数值问题 " + key);
+        else if (!numericRangeSchema.safeParse(value).success) errors.push(sample.id + " 无效数值区间 " + key);
+        continue;
+      }
+      if (!validateAnswer(q, value).valid) errors.push(sample.id + " 无效样本条件 " + key);
     }
   }
   return errors;

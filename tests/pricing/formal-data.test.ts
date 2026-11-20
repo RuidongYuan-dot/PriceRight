@@ -140,8 +140,8 @@ it("吸顶灯：上海命中本地公示价，北广深杭回退宜家全国价"
   });
   expect(quote(ceiling, { ...ceilingInstall, quantity: 6 }, "shanghai")).toMatchObject({
     range: { min: 240, max: 360 },
-    typical: 50,
-    sampleCount: 10,
+    typical: 40,
+    sampleCount: 6,
   });
   expect(quote(ceiling, { ...ceilingInstall, "standard-height": false }, "beijing").status).toBe("insufficient_data");
   expect(quote(ceiling, { ...ceilingInstall, "standard-height": false }, "shanghai")).toMatchObject({
@@ -150,6 +150,43 @@ it("吸顶灯：上海命中本地公示价，北广深杭回退宜家全国价"
   });
   expect(quote(ceiling, ceilingInstall, "shanghai", "2026-11-19").status).toBe("insufficient_data");
   expect(quote(ceiling, ceilingInstall, "shanghai")).toEqual(quote(ceiling, ceilingInstall, "shanghai"));
+});
+
+it("上海吸顶灯数量分档命中对应应急维修样本", async () => {
+  const { ceiling, quote } = await formal();
+  const within = [
+    "ceiling-sh-hp-luwan-50",
+    "ceiling-sh-hp-south-50",
+    "ceiling-sh-minhang-50",
+    "ceiling-sh-pudong-50",
+  ];
+  const above = [
+    "ceiling-sh-hp-luwan-40",
+    "ceiling-sh-hp-south-40",
+    "ceiling-sh-minhang-40",
+    "ceiling-sh-pudong-40",
+  ];
+  const shared = ["ceiling-sh962121-2026", "ceiling-shxh-ceiling"];
+  const cases = [
+    { quantity: 1, tier: within, other: above, typical: 50, range: { min: 50, max: 60 } },
+    { quantity: 5, tier: within, other: above, typical: 50, range: { min: 250, max: 300 } },
+    { quantity: 6, tier: above, other: within, typical: 40, range: { min: 240, max: 360 } },
+    { quantity: 8, tier: above, other: within, typical: 40, range: { min: 320, max: 480 } },
+    { quantity: 10, tier: above, other: within, typical: 40, range: { min: 400, max: 600 } },
+  ];
+  for (const item of cases) {
+    const result = quote(ceiling, { ...ceilingInstall, quantity: item.quantity }, "shanghai");
+    expect(result.status, String(item.quantity)).toBe("estimated");
+    if (result.status !== "estimated") throw new Error("未返回报价");
+    const ids = result.matchedSamples.map((sample) => sample.id);
+    expect(ids, String(item.quantity)).toEqual([...item.tier, ...shared]);
+    expect(ids.some((id) => item.other.includes(id)), String(item.quantity)).toBe(false);
+    expect(result.sampleCount, String(item.quantity)).toBe(6);
+    expect(result.typical, String(item.quantity)).toBe(item.typical);
+    expect(result.range, String(item.quantity)).toEqual(item.range);
+    const tierPrices = new Set(item.tier.map((id) => result.matchedSamples.find((sample) => sample.id === id)?.price));
+    expect(tierPrices, String(item.quantity)).toEqual(new Set([item.quantity <= 5 ? 50 : 40]));
+  }
 });
 
 it("吊灯、其他灯具和附加费只使用对应来源，不把互斥价目相加", async () => {

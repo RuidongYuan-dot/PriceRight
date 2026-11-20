@@ -115,6 +115,53 @@ it.each(invalid)("拒绝无效引用或数据集：%s", async (_, mutate) => {
   expect(validateCatalog(catalog, true).length).toBeGreaterThan(0);
 });
 
+it("样本条件接受精确值和合法闭区间", async () => {
+  const { catalog, service, data } = await loadDemo();
+  const sample = data.samples[0]!;
+  for (const conditions of [
+    { quantity: 1 },
+    { heavy: true },
+    { "lamp-type": "ceiling" },
+    { quantity: { min: 1, max: 5 } },
+    { quantity: { min: 6 } },
+    { quantity: { max: 5 } },
+    { quantity: { min: 2, max: 2 } },
+  ]) {
+    expect(priceSampleSchema.safeParse({ ...sample, conditions }).success, JSON.stringify(conditions)).toBe(true);
+  }
+  expect(priceSampleSchema.safeParse({ ...sample, conditions: { tags: ["a", "b"] } }).success).toBe(true);
+
+  for (const conditions of [
+    { quantity: {} },
+    { quantity: { min: 6, max: 1 } },
+    { quantity: { min: Number.POSITIVE_INFINITY } },
+    { quantity: { max: Number.NaN } },
+    { quantity: { min: 1, extra: 2 } },
+  ]) {
+    expect(priceSampleSchema.safeParse({ ...sample, conditions }).success, JSON.stringify(conditions)).toBe(false);
+  }
+
+  catalog.services = [service];
+  const check = (conditions: (typeof sample)["conditions"]) => {
+    catalog["price-samples"] = [{ ...sample, conditions }];
+    return validateCatalog(catalog, true);
+  };
+  expect(check({ quantity: { min: 1, max: 5 } })).toEqual([]);
+  expect(check({ quantity: { min: 6 } })).toEqual([]);
+  expect(check({ quantity: { max: 5 } })).toEqual([]);
+  expect(check({ "lamp-type": { max: 5 } }).join("\n")).toContain("数值区间只能用于数值问题");
+  expect(check({ heavy: { min: 1 } }).join("\n")).toContain("数值区间只能用于数值问题");
+  expect(check({ quantity: {} }).join("\n")).toContain("无效数值区间");
+  expect(check({ quantity: { min: 5, max: 1 } }).join("\n")).toContain("无效数值区间");
+  expect(check({ missing: { min: 1 } }).join("\n")).toContain("无效样本条件");
+  const quantity = service.questions.find((question) => question.id === "quantity");
+  if (!quantity) throw new Error("缺少数量题");
+  for (const type of ["area", "distance"] as const) {
+    quantity.type = type;
+    expect(check({ quantity: { min: 1, max: 5 } }), type).toEqual([]);
+  }
+});
+
 it("价格、日期、来源与样本类型严格校验", async () => {
   const { data, service } = await loadDemo();
   for (const extra of [

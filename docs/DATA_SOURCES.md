@@ -42,7 +42,7 @@ demo
 - `id` 在价格样本中唯一；服务、分类、地区 ID 也各自唯一
 - `price` 是非负整数元，`currency` 固定为 `CNY`
 - `collectedAt` 是采集日期，格式 `YYYY-MM-DD`
-- `conditions` 可选，键必须是该服务的问题 ID，值必须是合法答案
+- `conditions` 可选，键必须是该服务的问题 ID。值是合法答案，或数值题（`number`、`area`、`distance`）上的闭区间 `{ min?: number, max?: number }`。区间至少有一个边界，且下限不超过上限。匹配规则见 [PRICING_METHODOLOGY.md](PRICING_METHODOLOGY.md)
 - `source` 是可核对的来源名称；能公开的网址写在这里或 PR 说明中
 - 新提交的正式样本 `verified` 为 false，`demo` 为 false
 
@@ -87,6 +87,12 @@ demo
 - 智能门锁服务明确排除传统机械锁应急开锁和换锁芯。这两项在五城都没有可核验的公开官方价。
 
 后续贡献仍按下一节执行：新样本在审核通过前为 `verified: false`，服务在审核通过前不为 `active`。
+
+## 结果页上的样本明细
+
+报价结果列出本次实际参与计算的合格样本。展示字段限于 `id`、`price`、`currency`、`sampleType`、`regionId`、`source`、`collectedAt`、`verified`、`demo`。页面用地区名称、样本类型、采集日期、核验状态和是否演示样本说明这些记录。样本标价是观察金额，不是合理参考价格。
+
+来源文字里的 `http://` 与 `https://` 可以在新标签页打开，并带上 `rel="noopener noreferrer"`。`javascript:`、`data:` 和其他纯文本只按文本显示。没有合格样本时，页面说明暂无可展示样本，不编造来源。
 
 ## 机器校验与人工审核
 

@@ -280,6 +280,32 @@ button, select { cursor: pointer; }
 .evidence { display: grid; grid-template-columns: repeat(auto-fit, minmax(115px, 1fr)); gap: .6rem; margin-block: .85rem; }
 .evidence dt { font-size: .82rem; color: var(--muted); }
 .evidence dd { font-weight: 650; }
+.sample-provenance { margin-top: .9rem; }
+.sample-provenance h4 { font-size: 1rem; font-weight: 750; margin: 0 0 .35rem; }
+.sample-note { margin: 0 0 .75rem; }
+.result-details ul.sample-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  display: grid;
+  gap: .7rem;
+}
+.sample-list > li {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .75rem .85rem;
+  background: #fbfcf7;
+}
+.sample-price { display: flex; justify-content: space-between; gap: .75rem; margin: 0; font-weight: 750; }
+.sample-price strong { font-variant-numeric: tabular-nums; }
+.sample-list dl { display: grid; gap: .35rem; margin: .55rem 0 0; }
+.sample-list dl > div { display: grid; grid-template-columns: 5.25rem minmax(0, 1fr); gap: .25rem .6rem; }
+.sample-list dt { color: var(--muted); }
+.sample-list dd, .sample-list a { margin: 0; overflow-wrap: anywhere; }
+.sample-list a { color: var(--green); }
+.sample-provenance summary { margin-bottom: .7rem; }
 .result-details summary { color: var(--green); cursor: pointer; min-height: 35px; }
 .result-details .muted { font-size: .88rem; }
 .result .form-actions { margin-top: .1rem; }

@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { Answer, PriceRange } from "../../schemas/common";
 import type { Service } from "../../schemas/service.schema";
-import type { PriceSample } from "../../schemas/price.schema";
+import { isNumericRange, type NumericRange, type PriceSample, type SampleCondition } from "../../schemas/price.schema";
 import type { Region } from "../../schemas/region.schema";
 import { evaluateQuestions, matchesConditions } from "../question-engine/evaluate";
 import { regionCandidates } from "../region/resolve";
@@ -14,6 +14,11 @@ export type PriceBreakdownItem = {
   range: PriceRange;
 };
 
+export type MatchedSample = Pick<
+  PriceSample,
+  "id" | "price" | "currency" | "sampleType" | "regionId" | "source" | "collectedAt" | "verified" | "demo"
+>;
+
 type Evidence = ReturnType<typeof describeEvidence>;
 type Estimate = Evidence & {
   status: "estimated";
@@ -24,6 +29,7 @@ type Estimate = Evidence & {
   region: Region;
   breakdown: PriceBreakdownItem[];
   assumptions: string[];
+  matchedSamples: MatchedSample[];
 };
 type Unavailable = {
   status: "insufficient_data";
@@ -31,6 +37,7 @@ type Unavailable = {
   range: null;
   sampleCount: 0;
   sources: [];
+  matchedSamples: [];
   dataUpdatedAt: null;
   confidence: "low";
   warnings: string[];
@@ -79,9 +86,43 @@ function scaled(range: PriceRange, factor: number, percent = false): PriceRange 
   return { min: scale(range.min, factor, percent), max: scale(range.max, factor, percent) };
 }
 
+function summarizeMatchedSamples(samples: readonly PriceSample[]): MatchedSample[] {
+  return samples
+    .map((sample) => ({
+      id: sample.id,
+      price: sample.price,
+      currency: sample.currency,
+      sampleType: sample.sampleType,
+      regionId: sample.regionId,
+      source: sample.source,
+      collectedAt: sample.collectedAt,
+      verified: sample.verified,
+      demo: sample.demo,
+    }))
+    .sort((left, right) => {
+      if (left.collectedAt !== right.collectedAt) return left.collectedAt < right.collectedAt ? -1 : 1;
+      if (left.id !== right.id) return left.id < right.id ? -1 : 1;
+      return 0;
+    });
+}
+
 function sameAnswer(left: Answer | undefined, right: Answer): boolean {
   if (!Array.isArray(right)) return left === right;
   return Array.isArray(left) && left.length === right.length && right.every((value) => left.includes(value));
+}
+
+// 闭区间：min、max 都包含。缺的一侧不限制。空区间或颠倒的边界不命中任何答案。
+function matchesNumericRange(actual: Answer | undefined, range: NumericRange): boolean {
+  if (typeof actual !== "number" || !Number.isFinite(actual)) return false;
+  const { min, max } = range;
+  if ((min !== undefined && !Number.isFinite(min)) || (max !== undefined && !Number.isFinite(max))) return false;
+  if (min === undefined && max === undefined) return false;
+  if (min !== undefined && max !== undefined && min > max) return false;
+  return (min === undefined || actual >= min) && (max === undefined || actual <= max);
+}
+
+function matchesSampleCondition(actual: Answer | undefined, expected: SampleCondition): boolean {
+  return isNumericRange(expected) ? matchesNumericRange(actual, expected) : sameAnswer(actual, expected);
 }
 
 function calculateRange(service: Service, answers: Record<string, Answer>, matched: Region) {
@@ -169,7 +210,7 @@ export function calculatePrice(
       s.demo === service.demo &&
       s.serviceId === service.id &&
       (!data.asOf || s.collectedAt <= data.asOf) &&
-      Object.entries(s.conditions ?? {}).every(([key, value]) => sameAnswer(state.answers[key], value)),
+      Object.entries(s.conditions ?? {}).every(([key, value]) => matchesSampleCondition(state.answers[key], value)),
   );
   if (service.status === "active") {
     for (const region of candidates) {
@@ -188,6 +229,7 @@ export function calculatePrice(
           ...evidence,
           ...calculateRange(service, state.answers, region),
           assumptions: [basis],
+          matchedSamples: summarizeMatchedSamples(samples),
         };
       } catch (error) {
         if (!(error instanceof RangeError)) throw error;
@@ -200,6 +242,7 @@ export function calculatePrice(
     demo: service.demo,
     sampleCount: 0,
     sources: [],
+    matchedSamples: [],
     dataUpdatedAt: null,
     confidence: "low",
     range: null,
