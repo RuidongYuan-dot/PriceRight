@@ -14,6 +14,20 @@ function labels(service: Service, regions: Awaited<ReturnType<typeof loadDemo>>[
   };
 }
 
+it("不同地区的附加费按较高的一组比较，不把互斥地区加在一起", async () => {
+  const { service, data } = await loadDemo();
+  const copy = structuredClone(service);
+  const removal = copy.pricing.modifiers[0];
+  if (!removal || removal.type !== "per_unit") throw new Error("演示拆除附加费应为按量计费");
+  removal.regionIds = ["shanghai"];
+  copy.pricing.modifiers.push({ ...removal, label: "北京拆除", min: 1, max: 1, regionIds: ["beijing"] });
+  const factors = priceInfluenceFactors(copy, data.regions);
+  const up = factors.up.map((factor) => factor.label);
+  expect(up).toContain("拆除旧灯");
+  expect(up).not.toContain("北京拆除");
+  expect(factors.up.find((factor) => factor.label === "拆除旧灯")?.detail).not.toContain("北京拆除");
+});
+
 it("从不同服务配置推导升降因素，界面不写死具体服务", async () => {
   for (const file of ["components/estimate/flow.tsx", "components/estimate/result.tsx", "components/estimate/question-field.tsx"]) {
     expect(readFileSync(file, "utf8")).not.toMatch(/吸顶灯|窗帘|lamp-install|curtain-install/);

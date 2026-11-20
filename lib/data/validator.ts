@@ -62,6 +62,9 @@ function checkService(s: Service, data: Catalog): string[] {
   ]) {
     checkConditions(m.conditions);
     if (m.type === "per_unit") checkUnit(m.unitQuestionId, ["number", "area", "distance"], false);
+    for (const regionId of m.regionIds ?? []) {
+      if (!data.regions.some((region) => region.id === regionId)) errors.push("未知附加费地区 " + regionId);
+    }
   }
   for (const rule of regionRules) {
     if (!data.regions.some((r) => r.id === rule.regionId)) errors.push("未知定价地区 " + rule.regionId);

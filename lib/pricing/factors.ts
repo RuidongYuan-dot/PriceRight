@@ -8,7 +8,14 @@ export type PriceFactor = { direction: "up" | "down"; label: string; detail: str
 export type PriceFactors = { up: PriceFactor[]; down: PriceFactor[] };
 
 type Impact = { yuan: number; percent: number };
-type Choice = { label: string; value: unknown; implicit: boolean; modifiers: PriceModifier[]; impact: Impact };
+type Choice = {
+  label: string;
+  value: unknown;
+  implicit: boolean;
+  modifiers: PriceModifier[];
+  applied: PriceModifier[];
+  impact: Impact;
+};
 
 const zero: Impact = { yuan: 0, percent: 0 };
 
@@ -21,7 +28,7 @@ function changesPrice(modifier: PriceModifier) {
   return modifier.type === "percentage" ? modifier.value > 0 : modifier.max > 0;
 }
 
-function impactOf(modifiers: PriceModifier[]): Impact {
+function sumImpact(modifiers: PriceModifier[]): Impact {
   const impact = { yuan: 0, percent: 0 };
   for (const modifier of modifiers) {
     if (!changesPrice(modifier)) continue;
@@ -29,6 +36,31 @@ function impactOf(modifiers: PriceModifier[]): Impact {
     else impact.yuan += modifier.max;
   }
   return impact;
+}
+
+// 限定在不同地区的附加费不会同时生效，比较选项时取较高的一组，并叠上未限定地区的附加费。
+function pricedBundle(modifiers: PriceModifier[]) {
+  const shared: PriceModifier[] = [];
+  const groups = new Map<string, PriceModifier[]>();
+  for (const modifier of modifiers) {
+    if (!modifier.regionIds?.length) {
+      shared.push(modifier);
+      continue;
+    }
+    const key = [...modifier.regionIds].sort().join("\0");
+    groups.set(key, [...(groups.get(key) ?? []), modifier]);
+  }
+  const bundles = groups.size ? [...groups.values()].map((group) => [...shared, ...group]) : [shared];
+  let applied = bundles[0] ?? [];
+  let impact = sumImpact(applied);
+  for (const bundle of bundles.slice(1)) {
+    const next = sumImpact(bundle);
+    if (compare(next, impact) > 0) {
+      applied = bundle;
+      impact = next;
+    }
+  }
+  return { applied, impact };
 }
 
 function uniqueLabels(modifiers: PriceModifier[]) {
@@ -123,11 +155,12 @@ function choicesFor(service: Service, question: Question): Choice[] {
         }));
   const choices: Choice[] = raw.map((choice) => {
     const modifiers = modifiersForChoice(service, question, choice.value);
-    return { ...choice, implicit: false, modifiers, impact: impactOf(modifiers) };
+    const bundle = pricedBundle(modifiers);
+    return { ...choice, implicit: false, modifiers, applied: bundle.applied, impact: bundle.impact };
   });
   const raises = choices.length > 0 && choices.every((choice) => compare(choice.impact, zero) > 0);
   if (!question.required && raises) {
-    choices.push({ label: "先不选", value: undefined, implicit: true, modifiers: [], impact: { ...zero } });
+    choices.push({ label: "先不选", value: undefined, implicit: true, modifiers: [], applied: [], impact: { ...zero } });
   }
   return choices;
 }
@@ -159,10 +192,10 @@ export function priceInfluenceFactors(service: Service, regions: readonly Region
       if (compare(choice.impact, lowest) < 0) lowest = choice.impact;
     }
     if (compare(highest, lowest) === 0) continue;
-    const raised = uniqueLabels(choices.flatMap((choice) => (compare(choice.impact, lowest) > 0 ? choice.modifiers : [])));
+    const raised = uniqueLabels(choices.flatMap((choice) => (compare(choice.impact, lowest) > 0 ? choice.applied : [])));
     for (const choice of choices) {
       if (compare(choice.impact, lowest) <= 0) continue;
-      const names = uniqueLabels(choice.modifiers);
+      const names = uniqueLabels(choice.applied);
       up.push({
         direction: "up",
         label: names.join("、") || choice.label,

@@ -1,0 +1,281 @@
+{
+  "id": "curtain-install",
+  "categoryId": "home-installation",
+  "name": "窗帘安装",
+  "slug": "curtain-install",
+  "description": "按已核验的公开价查询窗帘杆、轨道、智能窗帘和测量。上海的杆轨安装用本地公示价。没有一口价的项目会显示数据不足，不把「起」价写成确定价格。",
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要查询哪一项？",
+      "required": true,
+      "options": [
+        { "id": "counted", "label": "安装或测量", "value": "counted" },
+        {
+          "id": "pack",
+          "label": "1 米轨道拓展包",
+          "value": "pack",
+          "description": "米家配件指导价 69 元，导轨超过 3 米时使用，最多 2 个。不是安装人工。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "轨道拓展包",
+              "min": 69,
+              "max": 69,
+              "unitQuestionId": "pack-count",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        { "id": "fixed", "label": "按一次收费", "value": "fixed" },
+        {
+          "id": "distance",
+          "label": "远程费",
+          "value": "distance",
+          "description": "Aqara：超出 20 公里的部分每公里 2 元。公牛 1.5 元/公里不是整数元，没有入库。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "远程费",
+              "min": 2,
+              "max": 2,
+              "unitQuestionId": "kilometers",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "cap",
+          "label": "远程费封顶",
+          "value": "cap",
+          "description": "Aqara 单程最多 300 元。这是封顶额，不是每公里价格。",
+          "priceModifier": [
+            { "type": "fixed", "label": "远程费封顶", "min": 300, "max": 300, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "high",
+          "label": "高空费",
+          "value": "high",
+          "description": "Aqara：窗帘超过 3 米后，每增加 1 米 50 元。安装调试价已含超高，不要再加到 130 元/根上。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "高空费",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "extra-meters",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item",
+      "type": "single",
+      "title": "具体是哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "counted" }],
+      "options": [
+        {
+          "id": "rail",
+          "label": "窗帘杆或轨道",
+          "value": "rail",
+          "description": "只有上海 962121 公布了 100 元/个的一口价。宜家是 100 元起/窗，没有收成确定价格。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "窗帘杆或轨道安装",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "quantity",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "smart-bull",
+          "label": "公牛智能窗帘",
+          "value": "smart-bull",
+          "description": "全国官方安装价 100 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能窗帘安装",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "smart-aqara",
+          "label": "Aqara 智能窗帘",
+          "value": "smart-aqara",
+          "description": "指导价 130 元/根，已包含超高和复杂墙体拆旧。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能窗帘安装调试",
+              "min": 130,
+              "max": 130,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "measure-window",
+          "label": "按窗测量",
+          "value": "measure-window",
+          "description": "宜家窗帘测量 50 元/窗，适用于有宜家商场的城市。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "窗帘测量",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "measure-rod",
+          "label": "按根测量",
+          "value": "measure-rod",
+          "description": "Aqara 智能窗帘测量指导价 80 元/根。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能窗帘测量",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "alter",
+          "label": "成品窗帘改高拼宽",
+          "value": "alter",
+          "description": "宜家 39 元/两片。数量填组数，一组是两片。这不是轨道安装。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "成品窗帘改高拼宽",
+              "min": 39,
+              "max": 39,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visit",
+      "type": "single",
+      "title": "按一次收费的是哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "fixed" }],
+      "options": [
+        {
+          "id": "measure-order",
+          "label": "十窗内上门测量",
+          "value": "measure-order",
+          "description": "公牛智能窗帘上门测量 80 元/单，限十窗以内。",
+          "priceModifier": [
+            { "type": "fixed", "label": "智能窗帘上门测量", "min": 80, "max": 80, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "mi-first",
+          "label": "米家智能窗帘首次安装",
+          "value": "mi-first",
+          "description": "须知写明首次安装免费。不支持毛坯房和非直线轨；单轨窗帘盒内径至少 10 厘米，双轨至少 20 厘米；电机侧 1.5 米内要有 10A 三孔插座。",
+          "priceModifier": [
+            { "type": "fixed", "label": "米家智能窗帘首次安装", "min": 0, "max": 0, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "dry-run",
+          "label": "Aqara 空跑费",
+          "value": "dry-run",
+          "description": "非师傅原因空跑，指导价 50 元/次。米家须知没有写出空跑金额。",
+          "priceModifier": [
+            { "type": "fixed", "label": "空跑费", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantity",
+      "type": "number",
+      "title": "数量",
+      "description": "窗、根、台，或改高拼宽的「两片」一组。参考价格按数量合计。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "counted" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "pack-count",
+      "type": "number",
+      "title": "拓展包数量",
+      "description": "公开说明最多 2 个。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "pack" }],
+      "validation": { "integer": true, "min": 1, "max": 2 }
+    },
+    {
+      "id": "kilometers",
+      "type": "distance",
+      "title": "超出 20 公里的里程",
+      "description": "只填超出的公里数。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "distance" }],
+      "validation": { "integer": true, "min": 1, "max": 200 }
+    },
+    {
+      "id": "extra-meters",
+      "type": "number",
+      "title": "超过 3 米后增加的高度",
+      "description": "单位是米，填整数。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "high" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 }
+  },
+  "scope": {
+    "included": [
+      "上海 962121 热线 2026 版：窗帘杆或轨道 100 元/个，主材自备",
+      "宜家中国：窗帘测量 50 元/窗（有宜家商场的城市）；成品窗帘改高拼宽 39 元/两片",
+      "公牛智能窗帘上门安装 100 元/台；十窗内上门测量 80 元/单",
+      "Aqara 指导价：测量 80 元/根，安装调试 130 元/根（已含超高和复杂墙体拆旧）",
+      "Aqara：窗帘超过 3 米后每增加 1 米 50 元/米；远程超出部分 2 元/公里，单程封顶 300 元；空跑 50 元/次",
+      "米家智能窗帘首次安装免费；1 米轨道拓展包指导价 69 元，最多 2 个"
+    ],
+    "excluded": [
+      "窗帘、杆、轨道等材料",
+      "宜家窗帘杆或轨道安装 100 元起/窗（4.5 米以下，不是一口价）",
+      "宜家布料定制 49 元起/幅（不是一口价）",
+      "宜家中国页未公布的拆旧、高空、特殊墙体和超过 4.5 米加价",
+      "把 Aqara 高空费再加到已含超高的 130 元安装调试价上",
+      "上海协会窗帘箱制作安装（暗箱 90 元/米、明箱 100 元/米，是木作不是挂帘）",
+      "公牛远程费 1.5 元/公里（不是整数元，未入库）",
+      "港币价目",
+      "米家非首次安装或移机（该页未给出金额）"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}

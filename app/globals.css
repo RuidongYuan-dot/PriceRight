@@ -132,6 +132,7 @@ button, select { cursor: pointer; }
 .scope-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 1.2rem; margin-block: 1.5rem; }
 .scope-grid h2, .result-details h3 { font-size: 1.1rem; font-weight: 750; margin-bottom: .4rem; }
 .scope-grid ul, .result-details ul { list-style: disc; margin-inline-start: 1.15rem; color: var(--muted); }
+.scope-grid li, .result-details li { overflow-wrap: anywhere; }
 
 .button {
   display: inline-flex;
