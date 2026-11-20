@@ -5,6 +5,7 @@ import type { PriceFactors, PriceFactor } from "../../lib/pricing/factors";
 import type { AnswerSummary } from "../../lib/share/query";
 import type { PriceRange } from "../../schemas/common";
 import type { PriceResult } from "../../lib/pricing/calculate";
+import { SampleProvenance } from "./sample-provenance";
 
 const integer = new Intl.NumberFormat("zh-CN");
 function price(range: PriceRange) {
@@ -158,16 +159,7 @@ export function EstimateResult({
                 <dd>{confidence[result.confidence]}</dd>
               </div>
             </dl>
-            <details>
-              <summary>查看数据来源</summary>
-              <ul>
-                {result.sources.map((source) => (
-                  <li key={source.sampleId}>
-                    {source.source} · {source.level} 类 · {source.collectedAt}
-                  </li>
-                ))}
-              </ul>
-            </details>
+            <SampleProvenance samples={result.matchedSamples} region={result.region} />
             {result.warnings.map((warning) => (
               <p className="muted" key={warning}>
                 {warning}
@@ -178,6 +170,12 @@ export function EstimateResult({
             <p className="muted">此结果为市场参考价格，实际收费可能随服务条件、材料及现场情况变化。</p>
           )}
         </>
+      )}
+      {result.status === "insufficient_data" && (
+        <section className="surface result-details" aria-labelledby="evidence-title">
+          <h3 id="evidence-title">数据依据</h3>
+          <SampleProvenance samples={result.matchedSamples} />
+        </section>
       )}
       <div className="form-actions">
         <button type="button" className="button secondary share-action" onClick={() => void copyLink()} aria-describedby="share-copy-status">

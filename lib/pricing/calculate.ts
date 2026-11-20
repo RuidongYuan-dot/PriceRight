@@ -14,6 +14,11 @@ export type PriceBreakdownItem = {
   range: PriceRange;
 };
 
+export type MatchedSample = Pick<
+  PriceSample,
+  "id" | "price" | "currency" | "sampleType" | "regionId" | "source" | "collectedAt" | "verified" | "demo"
+>;
+
 type Evidence = ReturnType<typeof describeEvidence>;
 type Estimate = Evidence & {
   status: "estimated";
@@ -24,6 +29,7 @@ type Estimate = Evidence & {
   region: Region;
   breakdown: PriceBreakdownItem[];
   assumptions: string[];
+  matchedSamples: MatchedSample[];
 };
 type Unavailable = {
   status: "insufficient_data";
@@ -31,6 +37,7 @@ type Unavailable = {
   range: null;
   sampleCount: 0;
   sources: [];
+  matchedSamples: [];
   dataUpdatedAt: null;
   confidence: "low";
   warnings: string[];
@@ -77,6 +84,26 @@ function medianYuan(prices: readonly number[]): number {
 
 function scaled(range: PriceRange, factor: number, percent = false): PriceRange {
   return { min: scale(range.min, factor, percent), max: scale(range.max, factor, percent) };
+}
+
+function summarizeMatchedSamples(samples: readonly PriceSample[]): MatchedSample[] {
+  return samples
+    .map((sample) => ({
+      id: sample.id,
+      price: sample.price,
+      currency: sample.currency,
+      sampleType: sample.sampleType,
+      regionId: sample.regionId,
+      source: sample.source,
+      collectedAt: sample.collectedAt,
+      verified: sample.verified,
+      demo: sample.demo,
+    }))
+    .sort((left, right) => {
+      if (left.collectedAt !== right.collectedAt) return left.collectedAt < right.collectedAt ? -1 : 1;
+      if (left.id !== right.id) return left.id < right.id ? -1 : 1;
+      return 0;
+    });
 }
 
 function sameAnswer(left: Answer | undefined, right: Answer): boolean {
@@ -188,6 +215,7 @@ export function calculatePrice(
           ...evidence,
           ...calculateRange(service, state.answers, region),
           assumptions: [basis],
+          matchedSamples: summarizeMatchedSamples(samples),
         };
       } catch (error) {
         if (!(error instanceof RangeError)) throw error;
@@ -200,6 +228,7 @@ export function calculatePrice(
     demo: service.demo,
     sampleCount: 0,
     sources: [],
+    matchedSamples: [],
     dataUpdatedAt: null,
     confidence: "low",
     range: null,
