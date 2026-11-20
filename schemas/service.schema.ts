@@ -62,6 +62,8 @@ export const serviceSchema = z
     name: text,
     slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     description: text,
+    // 搜索用的别名、标签和关键词。价格计算不读取这个字段。
+    keywords: z.array(text).max(32).optional(),
     status: z.enum(["active", "draft", "coming_soon"]),
     questions: z.array(questionSchema),
     pricing: pricingConfigSchema,
@@ -71,7 +73,8 @@ export const serviceSchema = z
       .refine((m) => m.createdAt <= m.updatedAt, "更新时间早于创建时间"),
     demo: z.boolean().default(false),
   })
-  .refine((s) => unique(s.questions.map((q) => q.id)), "问题 ID 重复");
+  .refine((s) => unique(s.questions.map((q) => q.id)), "问题 ID 重复")
+  .refine((s) => !s.keywords || unique(s.keywords), "关键词重复");
 
 export type Category = z.infer<typeof categorySchema>;
 export type Service = z.infer<typeof serviceSchema>;

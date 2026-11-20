@@ -3,6 +3,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { ServiceScope } from "../../components/service-scope";
+import { loadCatalog } from "../../lib/data/loader";
 import { calculatePrice } from "../../lib/pricing/calculate";
 import {
   CHECKLIST_COPY,
@@ -341,6 +342,75 @@ describe("询价确认清单", () => {
     expect(text).toContain(`参考：${CHECKLIST_COPY.insufficient}（${CHECKLIST_COPY.demoNote}）`);
     expect(text).not.toContain("¥");
     expect(text).not.toContain("合理参考价格");
+  });
+
+  it("正式服务只列出当前计价地区和未限定地区的附加项", async () => {
+    const catalog = await loadCatalog("data");
+    const ceiling = catalog.services.find((item) => item.id === "ceiling-light-install");
+    if (!ceiling) throw new Error("缺少正式吸顶灯服务");
+    const input = {
+      job: "install",
+      "lamp-type": "ceiling",
+      quantity: 1,
+      "standard-height": true,
+      "remove-old": false,
+    };
+    const data = { regions: catalog.regions, samples: catalog["price-samples"], asOf: "2026-11-20" };
+    const shanghai = calculatePrice(ceiling, input, "shanghai", data);
+    const beijing = calculatePrice(ceiling, input, "beijing", data);
+    if (shanghai.status !== "estimated" || beijing.status !== "estimated") throw new Error("正式报价失败");
+
+    const charged = (result: typeof shanghai) => {
+      if (result.status !== "estimated") throw new Error("未估价");
+      return result.breakdown.filter((item) => item.source === "modifier").map((item) => item.label);
+    };
+    const applicable = (region: string) =>
+      listConfiguredSurcharges(ceiling, input, region)
+        .filter((item) => item.applicable)
+        .map((item) => item.label);
+    expect(applicable(shanghai.region.id)).toEqual(charged(shanghai));
+    expect(applicable(beijing.region.id)).toEqual(charged(beijing));
+
+    const shanghaiLabels = listConfiguredSurcharges(ceiling, undefined, "shanghai").map((item) => item.label);
+    const nationalLabels = listConfiguredSurcharges(ceiling, undefined, "cn").map((item) => item.label);
+    expect(shanghaiLabels).toContain("超高费");
+    expect(shanghaiLabels).toContain("拆除顶灯、吊灯");
+    expect(shanghaiLabels).not.toContain("非保护性拆除");
+    expect(nationalLabels).toContain("非保护性拆除");
+    expect(nationalLabels).not.toContain("超高费");
+    expect(nationalLabels).not.toContain("拆除顶灯、吊灯");
+    const beforeCity = listConfiguredSurcharges(ceiling).map((item) => item.label);
+    expect(beforeCity).not.toContain("超高费");
+    expect(beforeCity).not.toContain("非保护性拆除");
+
+    const text = buildInquiryChecklist({
+      service: ceiling,
+      regionName: "北京",
+      summaries: describeShareAnswers(ceiling.questions, input),
+      result: beijing,
+      answers: input,
+      regionId: "beijing",
+    });
+    expect(text).toContain("地区：北京");
+    expect(text).toContain("参考：合理参考价格 ¥79");
+    expect(text).not.toContain(CHECKLIST_COPY.demoNote);
+    const surchargeText = section(text, "请确认这些附加项是否已包含在对方总价中：");
+    expect(surchargeText).toContain("基础服务费");
+    expect(surchargeText).toContain("非保护性拆除");
+    expect(surchargeText).not.toContain("超高费");
+    expect(surchargeText).not.toContain("拆除顶灯、吊灯");
+
+    const shanghaiHtml = renderToStaticMarkup(
+      createElement(ServiceScope, { service: ceiling, layout: "result", regionId: "shanghai" }),
+    );
+    const shanghaiExtras = shanghaiHtml.split("预约前建议确认的常见加价项")[1] ?? "";
+    expect(shanghaiExtras).toContain("超高费");
+    expect(shanghaiExtras).not.toContain("非保护性拆除");
+    const detailHtml = renderToStaticMarkup(createElement(ServiceScope, { service: ceiling }));
+    const detailExtras = detailHtml.split("预约前建议确认的常见加价项")[1] ?? "";
+    expect(detailExtras).toContain("部分加价项只在特定地区收取");
+    expect(detailExtras).not.toContain("超高费");
+    expect(detailExtras).not.toContain("非保护性拆除");
   });
 
   it("范围和清单组件不写死单一服务", () => {

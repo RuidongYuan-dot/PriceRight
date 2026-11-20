@@ -1,0 +1,419 @@
+{
+  "id": "ceiling-light-install",
+  "categoryId": "home-installation",
+  "name": "吸顶灯安装",
+  "slug": "ceiling-light-install",
+  "description": "按已核验的公开价查询吸顶灯、吊灯和若干灯具附加费。上海优先用本地公示价；北京、广州、深圳、杭州没有本地价目时，会说明并改用全国品牌公开价。",
+  "keywords": ["装灯", "吊灯", "吸顶灯", "灯具安装", "拆灯", "风扇灯", "装饰灯"],
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要查询哪一项？",
+      "required": true,
+      "options": [
+        { "id": "install", "label": "安装或拆除灯具", "value": "install" },
+        { "id": "detail", "label": "宜家单价和基础服务费", "value": "detail" },
+        { "id": "extra", "label": "附加费", "value": "extra" }
+      ]
+    },
+    {
+      "id": "lamp-type",
+      "type": "single",
+      "title": "安装哪种灯？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "install" }],
+      "options": [
+        {
+          "id": "ceiling",
+          "label": "普通吸顶灯",
+          "value": "ceiling",
+          "description": "上海 5 只以内每只 50–60 元，超过 5 只为 40–60 元。其他城市只在层高不超过 3.5 米、且数量为 1 至 5 时，按宜家整单价计算。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "吸顶灯安装",
+              "min": 50,
+              "max": 60,
+              "unitQuestionId": "quantity",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "quantity", "operator": "less_than", "value": 6 }]
+            },
+            {
+              "type": "per_unit",
+              "label": "吸顶灯安装",
+              "min": 40,
+              "max": 60,
+              "unitQuestionId": "quantity",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "quantity", "operator": "greater_than", "value": 5 }]
+            },
+            {
+              "type": "per_unit",
+              "label": "吸顶灯安装",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "standard-height", "operator": "equals", "value": true }]
+            },
+            {
+              "type": "fixed",
+              "label": "基础服务费",
+              "min": 29,
+              "max": 29,
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "standard-height", "operator": "equals", "value": true }]
+            }
+          ]
+        },
+        {
+          "id": "pendant",
+          "label": "吊灯",
+          "value": "pendant",
+          "description": "上海只给出售价不超过 1800 元的协会参考价，每只 180 元。其他城市按宜家灯具安装计价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "吊灯安装",
+              "min": 180,
+              "max": 180,
+              "unitQuestionId": "quantity",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "premium", "operator": "equals", "value": false }]
+            },
+            {
+              "type": "per_unit",
+              "label": "吊灯安装",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"],
+              "conditions": [
+                { "questionId": "premium", "operator": "equals", "value": false },
+                { "questionId": "standard-height", "operator": "equals", "value": true }
+              ]
+            },
+            {
+              "type": "fixed",
+              "label": "基础服务费",
+              "min": 29,
+              "max": 29,
+              "regionIds": ["cn"],
+              "conditions": [
+                { "questionId": "premium", "operator": "equals", "value": false },
+                { "questionId": "standard-height", "operator": "equals", "value": true }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "decorative",
+          "label": "装饰灯",
+          "value": "decorative",
+          "description": "公牛官网写的是装饰灯，不是吸顶灯。全国上门安装 80 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "装饰灯上门安装",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "fan",
+          "label": "风扇灯",
+          "value": "fan",
+          "description": "公牛与浴霸等写在同一行，风扇灯上门安装 80 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "风扇灯上门安装",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "smart",
+          "label": "智能灯具（欧普灯）",
+          "value": "smart",
+          "description": "Aqara 指导价 80 元/个，已包含超高和复杂墙体拆旧，不是强制成交价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能灯具安装调试",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "removal",
+          "label": "只拆除旧灯",
+          "value": "removal",
+          "description": "上海协会 20 元/只。其他城市按欧普非保护性拆除 15 元/盏。保护性拆除没有公开一口价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆除顶灯、吊灯",
+              "min": 20,
+              "max": 20,
+              "unitQuestionId": "quantity",
+              "regionIds": ["shanghai"]
+            },
+            {
+              "type": "per_unit",
+              "label": "非保护性拆除",
+              "min": 15,
+              "max": 15,
+              "unitQuestionId": "quantity",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "detail-item",
+      "type": "single",
+      "title": "要看宜家价目里的哪一行？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "detail" }],
+      "options": [
+        {
+          "id": "unit",
+          "label": "每件安装费",
+          "value": "unit",
+          "description": "不含每单基础服务费。整单总价请回到「安装或拆除灯具」。",
+          "priceModifier": [
+            { "type": "fixed", "label": "每件安装费", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "fee",
+          "label": "每单基础服务费",
+          "value": "fee",
+          "description": "每单收一次，与件数叠加后就是 1 件 79 元、之后每件加 50 元。",
+          "priceModifier": [
+            { "type": "fixed", "label": "基础服务费", "min": 29, "max": 29, "regionIds": ["cn"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "extra-item",
+      "type": "single",
+      "title": "要看哪一项附加费？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "extra" }],
+      "options": [
+        {
+          "id": "high",
+          "label": "高空费（超过 3.2 米）",
+          "value": "high",
+          "description": "欧普全国联保：超出部分每米 50 元，不足 1 米按 1 米。不叠加到别的安装价上。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "高空费",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "extra-meters",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "remote",
+          "label": "远程费（超出 20 公里的部分）",
+          "value": "remote",
+          "description": "欧普与 Aqara 都是超出部分每公里 2 元。公牛 1.5 元/公里不是整数元，没有入库。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "远程费",
+              "min": 2,
+              "max": 2,
+              "unitQuestionId": "kilometers",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "cap",
+          "label": "远程费单程封顶",
+          "value": "cap",
+          "description": "Aqara 指导价单程最多 300 元。这是封顶额，不是每公里价格。",
+          "priceModifier": [
+            { "type": "fixed", "label": "远程费封顶", "min": 300, "max": 300, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "drill",
+          "label": "特殊材质打孔",
+          "value": "drill",
+          "description": "欧普：大理石、玻化砖、地砖等，每个 5 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "特殊材质打孔",
+              "min": 5,
+              "max": 5,
+              "unitQuestionId": "holes",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "minimum",
+          "label": "最低上门费",
+          "value": "minimum",
+          "description": "欧普单笔上门服务费不足 50 元时按 50 元。这里只查询这一条，不与安装价相加。",
+          "priceModifier": [
+            { "type": "fixed", "label": "最低上门费", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "dry-opple",
+          "label": "欧普空跑费",
+          "value": "dry-opple",
+          "description": "用户原因取消或改约，30 元/次。",
+          "priceModifier": [
+            { "type": "fixed", "label": "空跑费", "min": 30, "max": 30, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "dry-aqara",
+          "label": "Aqara 空跑费",
+          "value": "dry-aqara",
+          "description": "非师傅原因空跑，指导价 50 元/次。",
+          "priceModifier": [
+            { "type": "fixed", "label": "空跑费", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "over-height",
+          "label": "上海超高费（按面积）",
+          "value": "over-height",
+          "description": "协会规则：层高 3000 毫米以上，按超高部分投影面积 72 元/平方米。不是每盏灯加 72 元。只有上海有这条公示。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "超高费",
+              "min": 72,
+              "max": 72,
+              "unitQuestionId": "projection-area",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quantity",
+      "type": "number",
+      "title": "数量",
+      "description": "按只、台或个填写。参考价格按数量合计；常见价格是已匹配公开单价或整单价的中位数。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "install" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "extra-meters",
+      "type": "number",
+      "title": "超出 3.2 米的高度",
+      "description": "单位是米。不足 1 米按 1 米，填整数。",
+      "required": true,
+      "visibility": [{ "questionId": "extra-item", "operator": "equals", "value": "high" }],
+      "validation": { "integer": true, "min": 1, "max": 30 }
+    },
+    {
+      "id": "kilometers",
+      "type": "distance",
+      "title": "超出 20 公里的里程",
+      "description": "只填超出的公里数。20 公里以内不收。",
+      "required": true,
+      "visibility": [{ "questionId": "extra-item", "operator": "equals", "value": "remote" }],
+      "validation": { "integer": true, "min": 1, "max": 200 }
+    },
+    {
+      "id": "holes",
+      "type": "number",
+      "title": "打孔个数",
+      "required": true,
+      "visibility": [{ "questionId": "extra-item", "operator": "equals", "value": "drill" }],
+      "validation": { "integer": true, "min": 1, "max": 50 }
+    },
+    {
+      "id": "projection-area",
+      "type": "area",
+      "title": "超高部分的投影面积",
+      "required": true,
+      "visibility": [{ "questionId": "extra-item", "operator": "equals", "value": "over-height" }],
+      "validation": { "min": 1, "max": 500 }
+    },
+    {
+      "id": "standard-height",
+      "type": "boolean",
+      "title": "安装位置的层高是否在 3.5 米及以下？",
+      "description": "选「否」后，宜家灯具安装没有公布加价，没有本地价目的城市通常不能估价。上海的吸顶灯公示价不按这一条取消。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "install" }]
+    },
+    {
+      "id": "premium",
+      "type": "boolean",
+      "title": "这盏吊灯的售价是否高于 1800 元？",
+      "description": "协会规则是按售价的 10% 计取。没有具体售价，不能估算。",
+      "required": true,
+      "visibility": [{ "questionId": "lamp-type", "operator": "equals", "value": "pendant" }]
+    },
+    {
+      "id": "remove-old",
+      "type": "boolean",
+      "title": "需要拆除旧灯吗？",
+      "description": "宜家完整安装已包含非保护性拆旧，选「是」或「否」都不另加。只拆除、不安装时，请回到上一题选择「只拆除旧灯」。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "install" }]
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 }
+  },
+  "scope": {
+    "included": [
+      "宜家中国灯具安装：每件 50 元，每单基础服务费 29 元；已公布 1 至 5 件整单价。适用于有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧",
+      "上海市室内装饰行业协会 2025 参考价：安装吸顶灯 50 元/只；安装吊灯 180 元/只（产品单价不超过 1800 元）；拆除顶灯、吊灯 20 元/只",
+      "上海 962121 热线 2026 版：安装、更换吸顶灯 60 元/个，主材自备",
+      "上海黄浦（南部、卢湾）、闵行、浦东应急维修公示：5 只以内 50 元/只，超过 5 只 40 元/只",
+      "公牛装饰灯、风扇灯上门安装各 80 元/台",
+      "欧普非保护性拆除 15 元/盏，高空费 50 元/米，远程超出部分 2 元/公里，特殊材质打孔 5 元/个，最低上门 50 元，空跑 30 元/次",
+      "Aqara 智能灯具安装调试指导价 80 元/个；远程超出部分 2 元/公里，单程封顶 300 元；空跑 50 元/次",
+      "上海协会超高费：层高 3000 毫米以上，按超高部分投影面积 72 元/平方米"
+    ],
+    "excluded": [
+      "灯具、配件和主材",
+      "保护性拆旧（欧普未公布一口价）",
+      "电路改造、旧灯清运，以及水晶吊灯等复杂吊灯的拆旧",
+      "层高超过 3.5 米时的宜家加价（来源未标价）",
+      "吊灯售价超过 1800 元时按售价 10% 计取（没有具体售价，不算价）",
+      "把上海超高费当成每盏灯加价",
+      "公牛远程费 1.5 元/公里（不是整数元，未入库）",
+      "超时上门 50 元起、郊区远程施工 80 元/平方米起等带「起」的费用",
+      "港币价目，以及欧普保外维修价",
+      "日光灯、壁灯、筒灯、浴霸等不属于吸顶灯安装的协会项目"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}

@@ -16,6 +16,7 @@ test("通过公开引擎入口走完服务选择、答题、选城和报价", as
     status: "estimated",
     demo: true,
     range: { min: 80, max: 120 },
+    typical: 55,
     sampleCount: 1,
   });
 });

@@ -1,7 +1,31 @@
 import { z } from "zod";
 import { answer, conditionSchema, id, money, priceRangeSchema, text, unique } from "./common";
 
-const modifierFields = { label: text, conditions: z.array(conditionSchema).optional() };
+// 样本条件里的闭区间。至少一侧有边界，且下限不大于上限。两端都包含在内。
+export const numericRangeSchema = z
+  .strictObject({
+    min: z.number().finite().optional(),
+    max: z.number().finite().optional(),
+  })
+  .refine((range) => range.min !== undefined || range.max !== undefined, "数值区间至少需要一个边界")
+  .refine(
+    (range) => range.min === undefined || range.max === undefined || range.min <= range.max,
+    "区间下限不能大于上限",
+  );
+export type NumericRange = z.infer<typeof numericRangeSchema>;
+export const sampleConditionSchema = z.union([answer, numericRangeSchema]);
+export type SampleCondition = z.infer<typeof sampleConditionSchema>;
+
+export function isNumericRange(value: unknown): value is NumericRange {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+const modifierFields = {
+  label: text,
+  conditions: z.array(conditionSchema).optional(),
+  // 只在命中这些地区时收取。省略则任何命中地区都收取。互斥价目不要叠在同一个地区上。
+  regionIds: z.array(id).min(1).optional(),
+};
 const amount = { min: money, max: money };
 
 export const priceModifierSchema = z
@@ -54,7 +78,7 @@ export const priceSampleSchema = z.strictObject({
   sampleType: z.enum(["actual_transaction", "provider_quote", "public_price", "manual_reference"]),
   source: text,
   collectedAt: z.iso.date(),
-  conditions: z.record(id, answer).optional(),
+  conditions: z.record(id, sampleConditionSchema).optional(),
   verified: z.boolean(),
   demo: z.boolean().default(false),
 });

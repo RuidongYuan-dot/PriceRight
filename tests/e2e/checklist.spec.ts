@@ -76,6 +76,51 @@ test("结果页复制询价清单，剪贴板成功与数据不足都不编造�
   await expectNoHorizontalOverflow(page);
 });
 
+test("正式结果只列出当前计价地区的加价项，不混入其他地区", async ({ page }) => {
+  failOnCrash(page);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/services/ceiling-light-install/");
+  const detailExtras = page.getByRole("region", { name: "预约前建议确认的常见加价项" });
+  await expect(detailExtras).toContainText("部分加价项只在特定地区收取");
+  await expect(detailExtras).not.toContainText("超高费");
+  await expect(detailExtras).not.toContainText("非保护性拆除");
+  await expectNoHorizontalOverflow(page);
+
+  await page.goto(
+    "/estimate/ceiling-light-install/?region=shanghai&job=install&lamp-type=ceiling&quantity=1&standard-height=true&remove-old=false",
+  );
+  await expect(page.getByRole("heading", { name: "合理参考价格" })).toBeVisible();
+  const shanghaiExtras = page.getByRole("region", { name: "预约前建议确认的常见加价项" });
+  await expect(shanghaiExtras).toContainText("超高费");
+  await expect(shanghaiExtras).not.toContainText("非保护性拆除");
+  await page.getByRole("button", { name: "复制询价清单" }).click();
+  await expect(page.getByRole("status").filter({ hasText: "询价清单已复制。" })).toBeVisible();
+  const shanghaiCopied = await page.evaluate(() => navigator.clipboard.readText());
+  expect(shanghaiCopied).toContain("合理参考价格 ¥50–60");
+  expect(shanghaiCopied).not.toContain("合成演示数据");
+  const shanghaiSurcharges = shanghaiCopied.split("请确认这些附加项是否已包含在对方总价中：")[1] ?? "";
+  expect(shanghaiSurcharges).toContain("超高费");
+  expect(shanghaiSurcharges).not.toContain("非保护性拆除");
+  await expectNoHorizontalOverflow(page);
+
+  await page.goto(
+    "/estimate/ceiling-light-install/?region=beijing&job=install&lamp-type=ceiling&quantity=1&standard-height=true&remove-old=false",
+  );
+  await expect(page.locator(".price")).toHaveText("¥79");
+  const beijingExtras = page.getByRole("region", { name: "预约前建议确认的常见加价项" });
+  await expect(beijingExtras).toContainText("非保护性拆除");
+  await expect(beijingExtras).not.toContainText("超高费");
+  await expect(beijingExtras).not.toContainText("拆除顶灯、吊灯");
+  await page.getByRole("button", { name: "复制询价清单" }).click();
+  const beijingCopied = await page.evaluate(() => navigator.clipboard.readText());
+  const beijingSurcharges = beijingCopied.split("请确认这些附加项是否已包含在对方总价中：")[1] ?? "";
+  expect(beijingSurcharges).toContain("基础服务费");
+  expect(beijingSurcharges).toContain("非保护性拆除");
+  expect(beijingSurcharges).not.toContain("超高费");
+  expect(beijingSurcharges).not.toContain("拆除顶灯、吊灯");
+  await expectNoHorizontalOverflow(page);
+});
+
 test("剪贴板不可用时可以手动复制询价清单，且手机宽度不横向溢出", async ({ page }) => {
   failOnCrash(page);
   await page.setViewportSize({ width: 390, height: 844 });

@@ -1,0 +1,628 @@
+[
+  {
+    "id": "ceiling-ikea-q1",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 79,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 1 件为 79 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": 1,
+      "standard-height": true
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-pendant-q1",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 79,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 1 件为 79 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。宜家按灯具计件，未把普通吊灯单列，故同一价目也用于吊灯选项。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "pendant",
+      "quantity": 1,
+      "standard-height": true,
+      "premium": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-q2",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 129,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 2 件为 129 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": 2,
+      "standard-height": true
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-pendant-q2",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 129,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 2 件为 129 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。宜家按灯具计件，未把普通吊灯单列，故同一价目也用于吊灯选项。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "pendant",
+      "quantity": 2,
+      "standard-height": true,
+      "premium": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-q3",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 179,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 3 件为 179 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": 3,
+      "standard-height": true
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-pendant-q3",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 179,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 3 件为 179 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。宜家按灯具计件，未把普通吊灯单列，故同一价目也用于吊灯选项。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "pendant",
+      "quantity": 3,
+      "standard-height": true,
+      "premium": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-q4",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 229,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 4 件为 229 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": 4,
+      "standard-height": true
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-pendant-q4",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 229,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 4 件为 229 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。宜家按灯具计件，未把普通吊灯单列，故同一价目也用于吊灯选项。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "pendant",
+      "quantity": 4,
+      "standard-height": true,
+      "premium": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-q5",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 279,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 5 件为 279 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": 5,
+      "standard-height": true
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-pendant-q5",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 279,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布完整灯具安装 5 件为 279 元（每件 50 元，另加每单基础服务费 29 元）。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市，层高 3.5 米及以下，含非保护性拆旧，不含复杂吊灯拆旧、旧物处理和电路改造。宜家按灯具计件，未把普通吊灯单列，故同一价目也用于吊灯选项。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "pendant",
+      "quantity": 5,
+      "standard-height": true,
+      "premium": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-unit",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布灯具安装每件 50 元，不含每单基础服务费。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 仅适用于当地有宜家商场的城市。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "detail",
+      "detail-item": "unit"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-ikea-fee",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 29,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「灯具安装服务」公布每单基础服务费 29 元，每单收取 1 次。https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 与每件 50 元叠加后，1 件合计 79 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "detail",
+      "detail-item": "fee"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-shxh-ceiling",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025 版）》安装吸顶灯 50 元/只。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13，属住宅装饰装修参考价，不是强制政府定价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-shxh-pendant",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 180,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025 版）》安装吊灯 180 元/只；产品单价 1800 元以上按价格 10% 计取，本条只记录 180 元这一口价。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "pendant",
+      "premium": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-shxh-removal",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 20,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025 版）》拆除顶灯、吊灯 20 元/只，未区分保护性与非保护性。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "removal"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-shxh-overheight",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 72,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025 版）》层高 3000 毫米以上超高费 72 元/平方米，按超高部分投影面积计取，不是每盏灯加价。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "over-height"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh962121-2026",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 60,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」安装、更换吸顶灯 60 元/个，主材用户自备。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，页面提示价格可能调整。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-hp-south-50",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "黄浦区（南部）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，5 只以内 50 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/nanfangqu.jsp 与 2026 版热线 60 元/个并存，未合并成单一上海价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-hp-south-40",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "黄浦区（南部）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/nanfangqu.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 6 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-hp-luwan-50",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "黄浦区（卢湾）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，5 只以内 50 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/luwanqu.jsp 与 2026 版热线 60 元/个并存，未合并成单一上海价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-hp-luwan-40",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "黄浦区（卢湾）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/luwanqu.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 6 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-minhang-50",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "闵行区房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，5 只以内 50 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/minhang.jsp 与 2026 版热线 60 元/个并存，未合并成单一上海价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-minhang-40",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "闵行区房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/minhang.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 6 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-pudong-50",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "浦东新区物业管理（房屋应急维修）96916 服务中心在上海住宅物业网公示：安装、更换吸顶灯，5 只以内 50 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/pudongxinqu.jsp 与 2026 版热线 60 元/个并存，未合并成单一上海价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-sh-pudong-40",
+    "serviceId": "ceiling-light-install",
+    "regionId": "shanghai",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "浦东新区物业管理（房屋应急维修）96916 服务中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/pudongxinqu.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "ceiling",
+      "quantity": { "min": 6 }
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-bull-decorative",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策：装饰灯上门安装 80 元/台。https://www.gongniu.cn/server/policy.html 原文没有「吸顶灯」三字，因此只对应装饰灯，不作为普通吸顶灯基础价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "decorative"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-bull-fan",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策：浴霸/凉霸/换气扇/风扇灯上门安装 80 元/台。https://www.gongniu.cn/server/policy.html 本条只对应风扇灯。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "fan"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-opple-removal",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 15,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "欧普照明官网全国联保其他服务类：非保护性拆除 15 元/盏。https://www.opple.com.cn/service/afterservice 保护性拆除未公布数字，安装本体价本次未取得。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "removal"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-opple-high",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "欧普照明官网全国联保其他服务类：安装高度超过 3.2 米，高空费 50 元/米，不足 1 米按 1 米。https://www.opple.com.cn/service/afterservice",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-opple-remote",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 2,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "欧普照明官网全国联保其他服务类：超出市区或城区政府所在地 20 公里后，远程费 2 元/公里；20 公里及以内不收。https://www.opple.com.cn/service/afterservice",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "remote"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-opple-drill",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "欧普照明官网全国联保其他服务类：大理石、玻化砖、地砖等特殊材质打孔 5 元/个。https://www.opple.com.cn/service/afterservice",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "drill"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-opple-minimum",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "欧普照明官网全国联保其他服务类：单笔上门服务费最低 50 元。https://www.opple.com.cn/service/afterservice",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "minimum"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-opple-dry",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "欧普照明官网全国联保其他服务类：用户原因取消或改约，空跑费 30 元/次。https://www.opple.com.cn/service/afterservice",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "dry-opple"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-aqara-smart",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》安装调试智能灯具（欧普灯）80 元/个，价格包含超高和复杂墙体拆旧，非强制，以当地授权服务商合同为准。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。2026-07-01 起生效。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install",
+      "lamp-type": "smart"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-aqara-remote",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 2,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》远程费为超出门店 20 公里的部分每公里 2 元。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "remote"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-aqara-cap",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》远程费单程封顶 300 元/次。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。这是封顶额，不是每公里价格。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "cap"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ceiling-aqara-dry",
+    "serviceId": "ceiling-light-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》非师傅原因空跑 50 元/次。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "extra",
+      "extra-item": "dry-aqara"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

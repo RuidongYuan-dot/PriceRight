@@ -1,0 +1,14 @@
+[
+  { "id": "cn", "name": "全国", "level": "national" },
+  { "id": "tier-1", "name": "一线城市", "level": "city_tier", "tier": "tier_1" },
+  { "id": "new-tier-1", "name": "新一线城市", "level": "city_tier", "tier": "new_tier_1" },
+  { "id": "beijing-municipality", "name": "北京市", "level": "province" },
+  { "id": "shanghai-municipality", "name": "上海市", "level": "province" },
+  { "id": "guangdong", "name": "广东省", "level": "province" },
+  { "id": "zhejiang", "name": "浙江省", "level": "province" },
+  { "id": "beijing", "name": "北京", "level": "city", "tier": "tier_1", "parentId": "beijing-municipality" },
+  { "id": "shanghai", "name": "上海", "level": "city", "tier": "tier_1", "parentId": "shanghai-municipality" },
+  { "id": "guangzhou", "name": "广州", "level": "city", "tier": "tier_1", "parentId": "guangdong" },
+  { "id": "shenzhen", "name": "深圳", "level": "city", "tier": "tier_1", "parentId": "guangdong" },
+  { "id": "hangzhou", "name": "杭州", "level": "city", "tier": "new_tier_1", "parentId": "zhejiang" }
+]

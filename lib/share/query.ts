@@ -10,15 +10,21 @@ import { evaluateQuestions, isQuestionVisible, validateAnswer } from "../questio
  * 布尔值写成 `true` / `false`，数字写成普通十进制，单选和多选写成选项的 `value`。
  * 多选重复同一个参数名。选项值若会编成相同文本，该题改用 `b:`、`n:`、`s:` 前缀区分类型。
  * 问题 id 恰好是 `region` 时，答案使用 `~region`，避免和地区参数冲突。
+ * 可选的 `asOf` 是 `YYYY-MM-DD` 评估日。问题 id 恰好是 `asOf` 时，答案使用 `~asOf`。
+ * 地区列表带 `level` 时，只接受城市和全国回退；省份、城市等级和其他 id 会被忽略。
  *
  * 例：`?region=beijing&lamp-type=ceiling&quantity=2&remove-old=false`
+ * 带评估日：`?region=beijing&asOf=2026-11-20&lamp-type=ceiling&quantity=2&remove-old=false`
  */
 export const SHARE_SEARCH_MAX = 8_000;
 export const SHARE_VALUE_MAX = 500;
 export const SHARE_PARAM_MAX = 200;
 export const REGION_PARAM = "region";
+export const AS_OF_PARAM = "asOf";
 
 const REGION_QUESTION_PARAM = "~region";
+const AS_OF_QUESTION_PARAM = "~asOf";
+type ShareRegion = { id: string; level?: string };
 const DECIMAL = /^-?(?:0|[1-9]\d*)(?:\.\d+)?$/;
 type Scalar = string | number | boolean;
 
@@ -35,8 +41,10 @@ export type ShareFeedback = { tone: "info" | "warning"; message: string };
 export type DecodedShareQuery = {
   answers: Record<string, Answer>;
   regionId?: string;
+  /** 通过 ISO 日期校验的评估日。缺省或非法时不返回。 */
+  asOf?: string;
   feedback: ShareFeedback[];
-  /** 可见必填项都已通过校验，且地区 id 属于给定地区列表。 */
+  /** 可见必填项都已通过校验，且地区 id 是可选项（城市、全国回退，或未标注 level 的 id）。 */
   ready: boolean;
 };
 
@@ -110,7 +118,17 @@ function optionCodec(question: Question): OptionCodec | undefined {
 }
 
 function answerParamName(questionId: string) {
-  return questionId === REGION_PARAM ? REGION_QUESTION_PARAM : questionId;
+  if (questionId === REGION_PARAM) return REGION_QUESTION_PARAM;
+  if (questionId === AS_OF_PARAM) return AS_OF_QUESTION_PARAM;
+  return questionId;
+}
+
+function isSelectableRegion(regions: readonly ShareRegion[], regionId: string) {
+  return regions.some(
+    (region) =>
+      region.id === regionId &&
+      (region.level === undefined || region.level === "city" || region.level === "national"),
+  );
 }
 
 function encodeAnswer(question: Question, value: Answer): string[] | undefined {
@@ -213,13 +231,15 @@ export function encodeShareQuery(
   questions: readonly Question[],
   input: Readonly<Record<string, unknown>>,
   regionId: string | undefined,
-  regions: readonly { id: string }[],
+  regions: readonly ShareRegion[],
+  asOf?: string,
 ): string {
   const state = evaluateQuestions([...questions], input);
   const params = new URLSearchParams();
-  if (regionId && id.safeParse(regionId).success && regions.some((region) => region.id === regionId)) {
+  if (regionId && id.safeParse(regionId).success && isSelectableRegion(regions, regionId)) {
     params.set(REGION_PARAM, regionId);
   }
+  if (asOf && z.iso.date().safeParse(asOf).success) params.set(AS_OF_PARAM, asOf);
   for (const question of state.visible) {
     const value = state.answers[question.id];
     if (value === undefined) continue;
@@ -234,7 +254,7 @@ export function encodeShareQuery(
 export function decodeShareQuery(
   questions: readonly Question[],
   search: string,
-  regions: readonly { id: string }[],
+  regions: readonly ShareRegion[],
 ): DecodedShareQuery {
   const parsed = readEntries(search);
   if (parsed.blocked) {
@@ -265,8 +285,22 @@ export function decodeShareQuery(
       regionGroup.values.length === 1 &&
       only !== undefined &&
       id.safeParse(only).success &&
-      regions.some((region) => region.id === only);
+      isSelectableRegion(regions, only);
     if (valid) regionId = only;
+    else issues += 1;
+  }
+
+  let asOf: string | undefined;
+  const asOfGroup = groups.get(AS_OF_PARAM);
+  if (asOfGroup) {
+    groups.delete(AS_OF_PARAM);
+    const [onlyAsOf] = asOfGroup.values;
+    const validAsOf =
+      !asOfGroup.damaged &&
+      asOfGroup.values.length === 1 &&
+      onlyAsOf !== undefined &&
+      z.iso.date().safeParse(onlyAsOf).success;
+    if (validAsOf) asOf = onlyAsOf;
     else issues += 1;
   }
 
@@ -301,6 +335,7 @@ export function decodeShareQuery(
   return {
     answers,
     ...(regionId !== undefined ? { regionId } : {}),
+    ...(asOf !== undefined ? { asOf } : {}),
     feedback: feedbackFor(false, issues, restored, ready),
     ready,
   };

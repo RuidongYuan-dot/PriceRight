@@ -13,6 +13,7 @@ it("窗帘演示按窗户数和可见的导轨长度计费，只使用本服务�
     status: "estimated",
     demo: true,
     range: { min: 75, max: 113 },
+    typical: 90,
     sampleCount: 1,
     sources: [{ sampleId: "demo-curtain-bj" }],
   });

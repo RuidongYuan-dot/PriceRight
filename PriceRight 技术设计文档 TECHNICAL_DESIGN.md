@@ -217,6 +217,8 @@ type Service = {
   slug: string
   description: string
 
+  keywords?: string[]
+
   status: "active" | "draft" | "coming_soon"
 
   questions: Question[]
@@ -234,6 +236,8 @@ type Service = {
   }
 }
 ```
+
+`keywords` 可选，用来记录搜索别名、标签和关键词。目录检索会读取它。价格计算不读取它。
 
 ---
 
@@ -413,6 +417,8 @@ type PriceSample = {
   verified: boolean
 }
 ```
+
+样本 `conditions` 的值可以是精确答案（字符串、数字、布尔值，或多选数组），也可以是数值题上的闭区间 `{ min?: number; max?: number }`。区间至少有一个边界，下限不大于上限，两端都包含在内。
 
 ---
 

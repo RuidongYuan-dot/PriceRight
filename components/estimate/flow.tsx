@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { calculatePrice, type PriceData, type PriceResult } from "../../lib/pricing/calculate";
+import { priceInfluenceFactors } from "../../lib/pricing/factors";
 import { evaluateQuestions } from "../../lib/question-engine/evaluate";
+import { regionChoices } from "../../lib/region/choices";
 import {
   decodeShareQuery,
   describeShareAnswers,
@@ -10,6 +12,7 @@ import {
   shareHref,
   type ShareFeedback,
 } from "../../lib/share/query";
+import { shanghaiCalendarDate } from "../../lib/time/shanghai-date";
 import type { Answer } from "../../schemas/common";
 import type { Service } from "../../schemas/service.schema";
 import { QuestionField } from "./question-field";
@@ -47,6 +50,8 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
   const [answers, setAnswers] = useState<Record<string, Answer | undefined>>({});
   const [step, setStep] = useState<number | null>(null);
   const [regionId, setRegionId] = useState("");
+  const [asOf, setAsOf] = useState("");
+  const [shareAsOf, setShareAsOf] = useState<string>();
   const [submitted, setSubmitted] = useState(false);
   const [result, setResult] = useState<PriceResult>();
   const [feedback, setFeedback] = useState<ShareFeedback[]>([]);
@@ -54,12 +59,17 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
   const panel = useRef<HTMLDivElement>(null);
   const moved = useRef(false);
   const initial = useRef({ service, data });
+  const choices = regionChoices(data.regions);
+  const selected = choices.find((choice) => choice.id === regionId);
 
   useEffect(() => {
     const { service: source, data: priceData } = initial.current;
     const decoded = decodeShareQuery(source.questions, window.location.search, priceData.regions);
+    const evaluationDate = decoded.asOf ?? shanghaiCalendarDate();
     const untouched =
       decoded.feedback.length === 0 && decoded.regionId === undefined && Object.keys(decoded.answers).length === 0;
+    setAsOf(evaluationDate);
+    setShareAsOf(decoded.asOf);
     if (untouched) {
       setStep(source.questions.length > 0 ? 0 : null);
       setReady(true);
@@ -69,7 +79,7 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
     setAnswers(decoded.answers);
     setRegionId(decoded.regionId ?? "");
     if (decoded.ready && decoded.regionId) {
-      const next = calculatePrice(source, decoded.answers, decoded.regionId, priceData);
+      const next = calculatePrice(source, decoded.answers, decoded.regionId, { ...priceData, asOf: evaluationDate });
       if (next.status !== "invalid_input") {
         setFeedback(decoded.feedback);
         setResult(next);
@@ -98,14 +108,14 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
 
   useEffect(() => {
     if (!ready || !result || result.status === "invalid_input") return;
-    replaceQuery(encodeShareQuery(service.questions, answers, regionId || undefined, data.regions));
-  }, [ready, result, answers, regionId, service, data]);
+    replaceQuery(encodeShareQuery(service.questions, answers, regionId || undefined, data.regions, shareAsOf));
+  }, [ready, result, answers, regionId, service, data, shareAsOf]);
 
   const state = evaluateQuestions(service.questions, answers);
   const question = step === null ? undefined : state.visible[step];
   const error =
     question && submitted ? state.errors.find((issue) => issue.questionId === question.id)?.message : undefined;
-  const region = data.regions.find((option) => option.id === regionId);
+  const factors = priceInfluenceFactors(service, data.regions);
   const showingResult = result !== undefined && result.status !== "invalid_input";
 
   function showStep(next: number | null) {
@@ -117,6 +127,10 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
     replaceQuery("");
   }
 
+  function shareQuery() {
+    return encodeShareQuery(service.questions, answers, regionId || undefined, data.regions, shareAsOf);
+  }
+
   function advance(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitted(true);
@@ -125,10 +139,10 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
       showStep(step + 1 < state.visible.length ? step + 1 : null);
       return;
     }
-    if (!region) return;
+    if (!selected || !asOf) return;
     moved.current = true;
     setFeedback([]);
-    setResult(calculatePrice(service, answers, region.id, data));
+    setResult(calculatePrice(service, answers, selected.id, { ...data, asOf }));
   }
 
   if (!ready) {
@@ -152,18 +166,19 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
         <EstimateResult
           service={service}
           result={result}
-          regionName={region?.name ?? ""}
+          regionName={selected?.label ?? ""}
+          regionId={selected?.id}
           answers={answers}
           summaries={describeShareAnswers(service.questions, answers)}
+          factors={factors}
           onBack={() => showStep(null)}
           onRestart={() => {
             setAnswers({});
             setRegionId("");
+            setShareAsOf(undefined);
             showStep(service.questions.length > 0 ? 0 : null);
           }}
-          onCopyLink={() =>
-            replaceQuery(encodeShareQuery(service.questions, answers, regionId || undefined, data.regions))
-          }
+          onCopyLink={() => replaceQuery(shareQuery())}
         />
       ) : (
         <form className="surface form-panel" noValidate onSubmit={advance}>
@@ -181,24 +196,29 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
             />
           ) : (
             <div className="question-fields">
+              <p id="region-hint" className="muted">
+                请选择城市。
+                {choices.some((choice) => choice.fallback) &&
+                  "没有列出你的城市时，选择「我的城市不在列表中（全国参考）」。"}
+              </p>
               <select
                 aria-labelledby="step-title"
-                aria-invalid={submitted && !region}
-                aria-describedby={submitted && !region ? "region-error" : undefined}
+                aria-invalid={submitted && !selected}
+                aria-describedby={submitted && !selected ? "region-hint region-error" : "region-hint"}
                 value={regionId}
                 onChange={(event) => {
                   setRegionId(event.target.value);
                   setResult(undefined);
                 }}
               >
-                <option value="">请选择地区</option>
-                {data.regions.map((option) => (
+                <option value="">请选择城市</option>
+                {choices.map((option) => (
                   <option key={option.id} value={option.id}>
-                    {option.name}
+                    {option.label}
                   </option>
                 ))}
               </select>
-              {submitted && !region && (
+              {submitted && !selected && (
                 <p id="region-error" className="field-error" role="alert">
                   请选择服务地区。
                 </p>
@@ -212,7 +232,11 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
           )}
           <div className="form-actions">
             {(step ?? state.visible.length) > 0 && (
-              <button className="button secondary" type="button" onClick={() => showStep((step ?? state.visible.length) - 1)}>
+              <button
+                className="button secondary"
+                type="button"
+                onClick={() => showStep((step ?? state.visible.length) - 1)}
+              >
                 上一步
               </button>
             )}

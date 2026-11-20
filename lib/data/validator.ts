@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { unique, type Condition } from "../../schemas/common";
-import { priceSampleSchema } from "../../schemas/price.schema";
+import { isNumericRange, numericRangeSchema, priceSampleSchema } from "../../schemas/price.schema";
 import { regionSchema } from "../../schemas/region.schema";
 import { categorySchema, serviceSchema, type Question, type Service } from "../../schemas/service.schema";
 import { validateAnswer } from "../question-engine/evaluate";
@@ -62,6 +62,9 @@ function checkService(s: Service, data: Catalog): string[] {
   ]) {
     checkConditions(m.conditions);
     if (m.type === "per_unit") checkUnit(m.unitQuestionId, ["number", "area", "distance"], false);
+    for (const regionId of m.regionIds ?? []) {
+      if (!data.regions.some((region) => region.id === regionId)) errors.push("未知附加费地区 " + regionId);
+    }
   }
   for (const rule of regionRules) {
     if (!data.regions.some((r) => r.id === rule.regionId)) errors.push("未知定价地区 " + rule.regionId);
@@ -93,7 +96,17 @@ export function validateCatalog(data: Catalog, demo: boolean): string[] {
     if (!service) errors.push(sample.id + " 未知样本服务");
     for (const [key, value] of Object.entries(sample.conditions ?? {})) {
       const q = service?.questions.find((q) => q.id === key);
-      if (!q || !validateAnswer(q, value).valid) errors.push(sample.id + " 无效样本条件 " + key);
+      if (!q) {
+        errors.push(sample.id + " 无效样本条件 " + key);
+        continue;
+      }
+      if (isNumericRange(value)) {
+        const numeric = q.type === "number" || q.type === "area" || q.type === "distance";
+        if (!numeric) errors.push(sample.id + " 数值区间只能用于数值问题 " + key);
+        else if (!numericRangeSchema.safeParse(value).success) errors.push(sample.id + " 无效数值区间 " + key);
+        continue;
+      }
+      if (!validateAnswer(q, value).valid) errors.push(sample.id + " 无效样本条件 " + key);
     }
   }
   return errors;

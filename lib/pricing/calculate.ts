@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { Answer, PriceRange } from "../../schemas/common";
 import type { Service } from "../../schemas/service.schema";
-import type { PriceSample } from "../../schemas/price.schema";
+import { isNumericRange, type NumericRange, type PriceSample, type SampleCondition } from "../../schemas/price.schema";
 import type { Region } from "../../schemas/region.schema";
 import { evaluateQuestions, matchesConditions } from "../question-engine/evaluate";
 import { regionCandidates } from "../region/resolve";
@@ -14,15 +14,22 @@ export type PriceBreakdownItem = {
   range: PriceRange;
 };
 
+export type MatchedSample = Pick<
+  PriceSample,
+  "id" | "price" | "currency" | "sampleType" | "regionId" | "source" | "collectedAt" | "verified" | "demo"
+>;
+
 type Evidence = ReturnType<typeof describeEvidence>;
 type Estimate = Evidence & {
   status: "estimated";
   demo: boolean;
   currency: "CNY";
   range: PriceRange;
+  typical: number;
   region: Region;
   breakdown: PriceBreakdownItem[];
   assumptions: string[];
+  matchedSamples: MatchedSample[];
 };
 type Unavailable = {
   status: "insufficient_data";
@@ -30,6 +37,7 @@ type Unavailable = {
   range: null;
   sampleCount: 0;
   sources: [];
+  matchedSamples: [];
   dataUpdatedAt: null;
   confidence: "low";
   warnings: string[];
@@ -41,7 +49,12 @@ export type PriceResult =
       status: "invalid_input";
       errors: { questionId?: string; message: string }[];
     };
-export type PriceData = { regions: Region[]; samples: PriceSample[]; asOf?: string };
+export type PriceData = {
+  regions: Region[];
+  samples: PriceSample[];
+  /** 调用方传入的评估日（YYYY-MM-DD）。省略则不做时效判断；引擎自身不读取当前时间。 */
+  asOf?: string;
+};
 
 // 用十进制整数比计算元 × 数量/系数，每一行四舍五入到元。
 function scale(amount: number, factor: number, percent = false): number {
@@ -58,13 +71,58 @@ function safeAmount(value: bigint): number {
   return Number(value);
 }
 
+// 奇数个样本取中位；偶数个取中间两数的算术平均，非负整数按四舍五入（.5 向上）到元。
+function medianYuan(prices: readonly number[]): number {
+  if (!prices.length) throw new RangeError("没有可用于常见价格的样本");
+  const sorted = [...prices].sort((left, right) => left - right);
+  const mid = Math.floor(sorted.length / 2);
+  const right = sorted[mid]!;
+  if (sorted.length % 2 === 1) return right;
+  const total = BigInt(sorted[mid - 1]!) + BigInt(right);
+  return safeAmount((total + (total % 2n)) / 2n);
+}
+
 function scaled(range: PriceRange, factor: number, percent = false): PriceRange {
   return { min: scale(range.min, factor, percent), max: scale(range.max, factor, percent) };
+}
+
+function summarizeMatchedSamples(samples: readonly PriceSample[]): MatchedSample[] {
+  return samples
+    .map((sample) => ({
+      id: sample.id,
+      price: sample.price,
+      currency: sample.currency,
+      sampleType: sample.sampleType,
+      regionId: sample.regionId,
+      source: sample.source,
+      collectedAt: sample.collectedAt,
+      verified: sample.verified,
+      demo: sample.demo,
+    }))
+    .sort((left, right) => {
+      if (left.collectedAt !== right.collectedAt) return left.collectedAt < right.collectedAt ? -1 : 1;
+      if (left.id !== right.id) return left.id < right.id ? -1 : 1;
+      return 0;
+    });
 }
 
 function sameAnswer(left: Answer | undefined, right: Answer): boolean {
   if (!Array.isArray(right)) return left === right;
   return Array.isArray(left) && left.length === right.length && right.every((value) => left.includes(value));
+}
+
+// 闭区间：min、max 都包含。缺的一侧不限制。空区间或颠倒的边界不命中任何答案。
+function matchesNumericRange(actual: Answer | undefined, range: NumericRange): boolean {
+  if (typeof actual !== "number" || !Number.isFinite(actual)) return false;
+  const { min, max } = range;
+  if ((min !== undefined && !Number.isFinite(min)) || (max !== undefined && !Number.isFinite(max))) return false;
+  if (min === undefined && max === undefined) return false;
+  if (min !== undefined && max !== undefined && min > max) return false;
+  return (min === undefined || actual >= min) && (max === undefined || actual <= max);
+}
+
+function matchesSampleCondition(actual: Answer | undefined, expected: SampleCondition): boolean {
+  return isNumericRange(expected) ? matchesNumericRange(actual, expected) : sameAnswer(actual, expected);
 }
 
 function calculateRange(service: Service, answers: Record<string, Answer>, matched: Region) {
@@ -93,12 +151,15 @@ function calculateRange(service: Service, answers: Record<string, Answer>, match
     return n;
   }
   const base = rule?.priceOverride ?? p.basePrice;
-  line("base", rule?.priceOverride ? matched.name + "基础价格" : "基础价格", base);
-  if (p.unitQuestionId) {
-    const question = service.questions.find((q) => q.id === p.unitQuestionId)!;
-    const n = units(question.id);
-    const source = question.type === "area" || question.type === "distance" ? question.type : "quantity";
-    line(source, question.title + " × " + n, scaled(base, n), "replace");
+  // 基础价为 0 且不按它乘数量时，金额来自附加项，不另画一条 0 元基础价格。
+  if (p.unitQuestionId !== undefined || base.min !== 0 || base.max !== 0) {
+    line("base", rule?.priceOverride ? matched.name + "基础价格" : "基础价格", base);
+    if (p.unitQuestionId) {
+      const question = service.questions.find((q) => q.id === p.unitQuestionId)!;
+      const n = units(question.id);
+      const source = question.type === "area" || question.type === "distance" ? question.type : "quantity";
+      line(source, question.title + " × " + n, scaled(base, n), "replace");
+    }
   }
   const modifiers = [...p.modifiers];
   for (const q of service.questions) {
@@ -109,7 +170,10 @@ function calculateRange(service: Service, answers: Record<string, Answer>, match
       }
     }
   }
-  const active = modifiers.filter((m) => matchesConditions(m.conditions, answers));
+  const active = modifiers.filter(
+    (m) =>
+      (m.regionIds === undefined || m.regionIds.includes(matched.id)) && matchesConditions(m.conditions, answers),
+  );
   for (const m of active) {
     if (m.type === "fixed") line("modifier", m.label, m);
     if (m.type === "per_unit" && Object.hasOwn(answers, m.unitQuestionId)) {
@@ -146,7 +210,7 @@ export function calculatePrice(
       s.demo === service.demo &&
       s.serviceId === service.id &&
       (!data.asOf || s.collectedAt <= data.asOf) &&
-      Object.entries(s.conditions ?? {}).every(([key, value]) => sameAnswer(state.answers[key], value)),
+      Object.entries(s.conditions ?? {}).every(([key, value]) => matchesSampleCondition(state.answers[key], value)),
   );
   if (service.status === "active") {
     for (const region of candidates) {
@@ -161,9 +225,11 @@ export function calculatePrice(
           currency: "CNY",
           demo: service.demo,
           region,
+          typical: medianYuan(samples.map((sample) => sample.price)),
           ...evidence,
           ...calculateRange(service, state.answers, region),
           assumptions: [basis],
+          matchedSamples: summarizeMatchedSamples(samples),
         };
       } catch (error) {
         if (!(error instanceof RangeError)) throw error;
@@ -176,6 +242,7 @@ export function calculatePrice(
     demo: service.demo,
     sampleCount: 0,
     sources: [],
+    matchedSamples: [],
     dataUpdatedAt: null,
     confidence: "low",
     range: null,

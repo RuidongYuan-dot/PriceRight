@@ -16,6 +16,7 @@ describe("确定性定价", () => {
       confidence: "low",
       dataUpdatedAt: "2026-11-01",
       sources: [{ sampleId: "demo-bj", level: "D" }],
+      typical: 55,
       warnings: expect.arrayContaining(["数据样本有限，结果仅供粗略参考"]),
       breakdown: [
         { source: "base", range: { min: 40, max: 60 } },
@@ -23,7 +24,7 @@ describe("确定性定价", () => {
       ],
     });
     expect(quote()).toEqual(result);
-    expect(quote({}, "shanghai")).toMatchObject({ range: { min: 100, max: 150 } });
+    expect(quote({}, "shanghai")).toMatchObject({ range: { min: 100, max: 150 }, typical: 65 });
     expect({ service, answers, data }).toEqual(before);
   });
   it.each([
@@ -165,5 +166,39 @@ describe("确定性定价", () => {
     const { service, quote } = await loadDemo();
     service.pricing.basePrice = { min: 1, max: Number.MAX_SAFE_INTEGER };
     expect(quote().status).toBe("invalid_input");
+  });
+  it("样本数值区间按闭区间匹配，精确条件保持全等", async () => {
+    const { data, quote } = await loadDemo();
+    const base = data.samples[0]!;
+    data.samples = [
+      { ...base, id: "low", price: 50, conditions: { quantity: { min: 1, max: 5 } } },
+      { ...base, id: "high", price: 40, conditions: { quantity: { min: 6 } } },
+      { ...base, id: "exact", price: 70, conditions: { quantity: 2 } },
+      { ...base, id: "point", price: 61, conditions: { quantity: { min: 2, max: 2 } } },
+      { ...base, id: "open", price: 80 },
+    ];
+    const matched = (quantity: number) => {
+      const result = quote({ quantity });
+      expect(result.status).toBe("estimated");
+      if (result.status !== "estimated") throw new Error("未返回报价");
+      return {
+        ids: result.matchedSamples.map((sample) => sample.id),
+        sampleCount: result.sampleCount,
+        typical: result.typical,
+      };
+    };
+    expect(matched(1)).toEqual({ ids: ["low", "open"], sampleCount: 2, typical: 65 });
+    expect(matched(2)).toEqual({ ids: ["exact", "low", "open", "point"], sampleCount: 4, typical: 66 });
+    expect(matched(5)).toEqual({ ids: ["low", "open"], sampleCount: 2, typical: 65 });
+    expect(matched(6)).toEqual({ ids: ["high", "open"], sampleCount: 2, typical: 60 });
+    expect(matched(10)).toEqual({ ids: ["high", "open"], sampleCount: 2, typical: 60 });
+
+    data.samples = [
+      { ...base, id: "empty", conditions: { quantity: {} } },
+      { ...base, id: "reversed", conditions: { quantity: { min: 8, max: 1 } } },
+      { ...base, id: "text", conditions: { "lamp-type": { min: 1, max: 5 } } },
+    ];
+    expect(quote({ quantity: 2 }).status).toBe("insufficient_data");
+    expect(quote({ quantity: 8 }).status).toBe("insufficient_data");
   });
 });

@@ -292,4 +292,53 @@ describe("分享查询参数", () => {
       "http://127.0.0.1:3178/estimate/demo/demo-lamp-install/",
     );
   });
+
+  it("合法 asOf 往返保留，非法日期和不可选地区被忽略且不抛错", async () => {
+    const { service, data, answers } = await loadDemo();
+    const query = encodeShareQuery(service.questions, answers, "beijing", data.regions, "2026-11-20");
+    expect(query).toBe("region=beijing&asOf=2026-11-20&lamp-type=ceiling&quantity=2&remove-old=false");
+    const decoded = decodeShareQuery(service.questions, `?${query}`, data.regions);
+    expect(decoded.asOf).toBe("2026-11-20");
+    expect(decoded.ready).toBe(true);
+    expect(decoded.answers).toEqual(answers);
+    expect(encodeShareQuery(service.questions, decoded.answers, decoded.regionId, data.regions, decoded.asOf)).toBe(query);
+    expect(encodeShareQuery(service.questions, answers, "beijing", data.regions)).not.toContain("asOf");
+
+    for (const search of ["?asOf=yesterday", "?asOf=2026-02-31", "?asOf=2026-11-20&asOf=2026-11-21", "?asOf="]) {
+      const rejected = decodeShareQuery(service.questions, search, data.regions);
+      expect(rejected.asOf).toBeUndefined();
+      expect(rejected.ready).toBe(false);
+    }
+    const kept = decodeShareQuery(
+      service.questions,
+      "region=beijing&lamp-type=ceiling&quantity=2&remove-old=false&asOf=not-a-date",
+      data.regions,
+    );
+    expect(kept.ready).toBe(true);
+    expect(kept.asOf).toBeUndefined();
+    expect(kept.feedback[0]?.message).toBe(SHARE_FEEDBACK.partialInvalid);
+
+    for (const regionId of ["guangdong", "first-tier", "<script>"]) {
+      const dropped = decodeShareQuery(service.questions, `?region=${encodeURIComponent(regionId)}`, data.regions);
+      expect(dropped.regionId).toBeUndefined();
+      expect(dropped.ready).toBe(false);
+    }
+    const national = decodeShareQuery(service.questions, "?region=cn&asOf=2026-11-20", data.regions);
+    expect(national.regionId).toBe("cn");
+    expect(national.asOf).toBe("2026-11-20");
+    expect(encodeShareQuery(service.questions, {}, "guangdong", data.regions)).toBe("");
+    expect(encodeShareQuery(service.questions, {}, "cn", data.regions, "2026-11-20")).toBe("region=cn&asOf=2026-11-20");
+  });
+
+  it("问题 id 为 asOf 时答案使用 ~asOf", () => {
+    const questions: Question[] = [{ id: "asOf", type: "boolean", title: "是否按日期计", required: true }];
+    const query = encodeShareQuery(questions, { asOf: true }, "beijing", regions, "2026-11-20");
+    const params = new URLSearchParams(query);
+    expect(params.get("asOf")).toBe("2026-11-20");
+    expect(params.get("~asOf")).toBe("true");
+    expect(params.get("region")).toBe("beijing");
+    const decoded = decodeShareQuery(questions, query, regions);
+    expect(decoded.answers).toEqual({ asOf: true });
+    expect(decoded.asOf).toBe("2026-11-20");
+  });
 });

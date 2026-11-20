@@ -9,6 +9,8 @@ import { evaluateQuestions, matchesConditions } from "../question-engine/evaluat
  * 某项是否「适用」与计价引擎使用同一套配置规则：只看已通过校验的可见答案；
  * 先取服务级 `modifiers`，再按问题与选项顺序加入被选中选项的 `priceModifier`。
  * 附加项自身的 `conditions` 必须全部成立；`per_unit` 还要求绑定题目出现在有效答案里。
+ * `regionIds` 省略时，任何地区都列出。写了地区时，只保留包含当前计价地区的项目，
+ * 不把其他地区的价目混进同一份清单。未给出地区时，不列出限定地区的附加项。
  * 本模块不计算金额，也不读取时钟或网络。
  */
 export const CHECKLIST_COPY = {
@@ -28,7 +30,7 @@ export const CHECKLIST_COPY = {
 } as const;
 
 export type ChecklistQuote =
-  | { status: "estimated"; demo: boolean; range: PriceRange }
+  | { status: "estimated"; demo: boolean; range: PriceRange; region?: { id: string } }
   | { status: "insufficient_data"; demo: boolean };
 
 export type ConfiguredSurcharge = {
@@ -46,6 +48,11 @@ export type InquiryChecklistInput = {
   summaries: readonly { title: string; value: string }[];
   result: ChecklistQuote;
   answers: Readonly<Record<string, unknown>>;
+  /**
+   * 用户选择的地区 id。已估价时以结果里的计价地区为准；
+   * 数据不足时用这个 id，避免把其他城市的附加项列进来。
+   */
+  regionId?: string;
 };
 
 const yuan = new Intl.NumberFormat("zh-CN");
@@ -120,29 +127,45 @@ function isSelected(answer: Answer | undefined, value: string | number | boolean
   return Array.isArray(answer) ? answer.includes(value) : answer === value;
 }
 
-function isCharged(modifier: PriceModifier, answers: Record<string, Answer>): boolean {
+function appliesToRegion(modifier: PriceModifier, regionId: string | undefined): boolean {
+  if (modifier.regionIds === undefined) return true;
+  return regionId !== undefined && modifier.regionIds.includes(regionId);
+}
+
+function isCharged(modifier: PriceModifier, answers: Record<string, Answer>, regionId: string | undefined): boolean {
+  if (!appliesToRegion(modifier, regionId)) return false;
   if (!matchesConditions(modifier.conditions, answers)) return false;
   if (modifier.type === "per_unit" && !Object.hasOwn(answers, modifier.unitQuestionId)) return false;
   return true;
 }
 
+export function hasRegionScopedSurcharges(service: Service): boolean {
+  const optionModifiers = service.questions.flatMap((question) =>
+    (question.options ?? []).flatMap((option) => option.priceModifier ?? []),
+  );
+  return [...service.pricing.modifiers, ...optionModifiers].some((modifier) => modifier.regionIds !== undefined);
+}
+
 export function listConfiguredSurcharges(
   service: Service,
   input?: Readonly<Record<string, unknown>>,
+  regionId?: string,
 ): ConfiguredSurcharge[] {
   const answers = input === undefined ? undefined : evaluateQuestions(service.questions, input).answers;
   const items: ConfiguredSurcharge[] = [];
   service.pricing.modifiers.forEach((modifier, index) => {
+    if (!appliesToRegion(modifier, regionId)) return;
     items.push({
       key: `pricing:${index}`,
       label: modifier.label,
       detail: surchargeDetail(service, modifier),
-      applicable: answers !== undefined && isCharged(modifier, answers),
+      applicable: answers !== undefined && isCharged(modifier, answers, regionId),
     });
   });
   for (const question of service.questions) {
     for (const option of question.options ?? []) {
       option.priceModifier?.forEach((modifier, index) => {
+        if (!appliesToRegion(modifier, regionId)) return;
         items.push({
           key: `option:${question.id}:${option.id}:${index}`,
           label: modifier.label,
@@ -150,12 +173,17 @@ export function listConfiguredSurcharges(
           applicable:
             answers !== undefined &&
             isSelected(answers[question.id], option.value) &&
-            isCharged(modifier, answers),
+            isCharged(modifier, answers, regionId),
         });
       });
     }
   }
   return items;
+}
+
+function pricingRegionId(result: ChecklistQuote, regionId: string | undefined): string | undefined {
+  if (result.status === "estimated" && result.region?.id) return result.region.id;
+  return regionId;
 }
 
 function bullets(items: readonly string[], empty: string): string[] {
@@ -187,8 +215,9 @@ export function buildInquiryChecklist({
   summaries,
   result,
   answers,
+  regionId,
 }: InquiryChecklistInput): string {
-  const surcharges = listConfiguredSurcharges(service, answers);
+  const surcharges = listConfiguredSurcharges(service, answers, pricingRegionId(result, regionId));
   const applicable = surcharges.filter((item) => item.applicable).map((item) => item.detail);
   const remaining = surcharges.filter((item) => !item.applicable).map((item) => item.detail);
   const conditions = summaries.flatMap((item) => {
