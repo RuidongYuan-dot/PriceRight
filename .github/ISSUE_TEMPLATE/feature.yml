@@ -1,0 +1,43 @@
+name: 功能建议
+description: 提议一项帮助消费者判断线下服务价格是否合理的改动。
+title: "feat: "
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先阅读 `AGENTS.md`、`PRD.md` 和仓库根目录的 `PriceRight 技术设计文档 TECHNICAL_DESIGN.md`。
+        新服务应通过配置和数据接入，而不是新写一套页面。价格必须由确定性计价引擎计算。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 从普通消费者在购买前判断价格是否合理的角度描述。
+      placeholder: 我想在选择某项线下服务前知道合理参考价格，目前做不到是因为……
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议的行为
+      description: 说明期望看到的问答、合理参考价格、价格构成或数据说明。不要要求模型直接报出一个成交价。
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: 配置与数据
+      description: 如果涉及新服务，请说明服务配置、问题、价格规则和样本分别放在哪里。没有可靠价格数据时，应显示数据不足，而不是补一个数字。
+    validations:
+      required: true
+  - type: checkboxes
+    id: agents
+    attributes:
+      label: AGENTS.md 遵守要求
+      options:
+        - label: 价格计算必须保持确定性、纯函数、可解释，LLM 不得直接决定价格
+          required: true
+        - label: 不得编造价格数据或来源；演示数据（data/fixtures/）与正式数据（data/）严格隔离
+          required: true
+        - label: 实现必须配置驱动，不能在 UI 中写死单一服务的业务逻辑
+          required: true

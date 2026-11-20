@@ -4,7 +4,9 @@
 
 > 本文件是 PriceRight 项目对 Codex、Claude Code 及其他 AI Coding Agent 的最高优先级项目级开发规范。
 >
-> 在修改代码之前，必须先阅读本文件以及 `PRD.md`、`TECHNICAL_DESIGN.md`。
+> 在修改代码之前，必须先阅读本文件以及 `PRD.md`、`PriceRight 技术设计文档 TECHNICAL_DESIGN.md`。
+>
+> 技术设计文档在仓库根目录，文件名是 `PriceRight 技术设计文档 TECHNICAL_DESIGN.md`。早期文稿里的 `TECHNICAL_DESIGN.md` 就是这一份，不在 `docs/` 下。
 
 ---
 
@@ -404,7 +406,7 @@ Payment Service
 ```text
 AGENTS.md
 PRD.md
-TECHNICAL_DESIGN.md
+PriceRight 技术设计文档 TECHNICAL_DESIGN.md
 ```
 
 ### 第二步
@@ -1963,7 +1965,7 @@ PriceRight 的核心品牌是：
 ```text
 PRD
 >
-TECHNICAL_DESIGN
+TECHNICAL_DESIGN（仓库根目录：PriceRight 技术设计文档 TECHNICAL_DESIGN.md）
 >
 AGENTS
 >

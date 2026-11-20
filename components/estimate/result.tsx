@@ -1,6 +1,10 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import type { PriceFactors, PriceFactor } from "../../lib/pricing/factors";
+import type { AnswerSummary } from "../../lib/share/query";
 import type { PriceRange } from "../../schemas/common";
 import type { PriceResult } from "../../lib/pricing/calculate";
-import type { PriceFactors } from "../../lib/pricing/factors";
 
 const integer = new Intl.NumberFormat("zh-CN");
 function price(range: PriceRange) {
@@ -11,22 +15,72 @@ function yuan(amount: number) {
 }
 const confidence = { high: "高", medium_high: "较高", medium: "一般", low: "低" };
 
+type CopyState = { status: "idle" } | { status: "copied" } | { status: "manual"; href: string };
+
+function FactorList({ factors }: { factors: PriceFactor[] }) {
+  return (
+    <>
+      {factors.map((factor, index) => (
+        <li key={`${factor.direction}-${index}`}>
+          <span className={factor.direction === "up" ? "factor-mark factor-up" : "factor-mark factor-down"} aria-hidden="true">
+            {factor.direction === "up" ? "↑" : "↓"}
+          </span>
+          <span className="sr-only">{factor.direction === "up" ? "会提高价格：" : "会降低价格："}</span>
+          <span>
+            <strong>{factor.label}</strong>
+            <small>{factor.detail}</small>
+          </span>
+        </li>
+      ))}
+    </>
+  );
+}
+
 export function EstimateResult({
   result,
   regionName,
+  summaries,
   factors,
-  shareHref,
   onBack,
   onRestart,
+  onCopyLink,
 }: {
   result: Exclude<PriceResult, { status: "invalid_input" }>;
   regionName: string;
+  summaries: AnswerSummary[];
   factors: PriceFactors;
-  shareHref: string;
   onBack: () => void;
   onRestart: () => void;
+  onCopyLink: () => string;
 }) {
+  const [copyState, setCopyState] = useState<CopyState>({ status: "idle" });
+  const manualInput = useRef<HTMLInputElement>(null);
+  const copyMessage =
+    copyState.status === "copied"
+      ? "链接已复制。"
+      : copyState.status === "manual"
+        ? "无法写入剪贴板，请手动复制下面的链接。"
+        : "";
   const hasFactors = factors.up.length > 0 || factors.down.length > 0;
+
+  useEffect(() => {
+    if (copyState.status !== "manual") return;
+    manualInput.current?.focus();
+    manualInput.current?.select();
+  }, [copyState]);
+
+  async function copyLink() {
+    let href = "";
+    try {
+      href = onCopyLink();
+      if (!navigator.clipboard?.writeText) throw new Error("clipboard unavailable");
+      await navigator.clipboard.writeText(href);
+      setCopyState({ status: "copied" });
+    } catch {
+      setCopyState({ status: "manual", href: href || window.location.href });
+    }
+  }
+
   return (
     <div className="result">
       <div className="result-summary">
@@ -46,9 +100,22 @@ export function EstimateResult({
         {result.status === "estimated" && result.demo && <p>合成数据 · 请勿作为实际询价依据</p>}
         {result.status === "insufficient_data" && <p>{result.warnings[0]}</p>}
       </div>
+      {summaries.length > 0 && (
+        <section className="surface result-details" aria-labelledby="condition-title">
+          <h3 id="condition-title">查询条件</h3>
+          <dl className="breakdown">
+            {summaries.map((item) => (
+              <div key={item.questionId}>
+                <dt>{item.title}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
       {result.status === "estimated" && (
-        <section className="surface result-details">
-          <h3>价格构成</h3>
+        <section className="surface result-details" aria-labelledby="breakdown-title">
+          <h3 id="breakdown-title">价格构成</h3>
           <dl className="breakdown">
             {result.breakdown.map((item, index) => (
               <div key={index}>
@@ -67,37 +134,15 @@ export function EstimateResult({
           <h3 id="price-factors">哪些因素会影响价格</h3>
           <p className="muted">下面这些选择来自该服务的计价配置，会让参考价格升高或降低。</p>
           <ul className="factors">
-            {factors.up.map((factor, index) => (
-              <li key={`up-${index}`}>
-                <span className="factor-mark factor-up" aria-hidden="true">
-                  ↑
-                </span>
-                <span className="sr-only">会提高价格：</span>
-                <span>
-                  <strong>{factor.label}</strong>
-                  <small>{factor.detail}</small>
-                </span>
-              </li>
-            ))}
-            {factors.down.map((factor, index) => (
-              <li key={`down-${index}`}>
-                <span className="factor-mark factor-down" aria-hidden="true">
-                  ↓
-                </span>
-                <span className="sr-only">会降低价格：</span>
-                <span>
-                  <strong>{factor.label}</strong>
-                  <small>{factor.detail}</small>
-                </span>
-              </li>
-            ))}
+            <FactorList factors={factors.up} />
+            <FactorList factors={factors.down} />
           </ul>
         </section>
       )}
       {result.status === "estimated" && (
         <>
-          <section className="surface result-details">
-            <h3>数据依据</h3>
+          <section className="surface result-details" aria-labelledby="evidence-title">
+            <h3 id="evidence-title">数据依据</h3>
             <p>{result.assumptions.join("。")}</p>
             <dl className="evidence">
               <div>
@@ -135,18 +180,40 @@ export function EstimateResult({
         </>
       )}
       <div className="form-actions">
-        {shareHref && (
-          <a className="button secondary" href={shareHref}>
-            分享这份价格
-          </a>
-        )}
-        <button className="button secondary" onClick={onBack}>
+        <button type="button" className="button secondary share-action" onClick={() => void copyLink()} aria-describedby="share-copy-status">
+          复制分享链接
+        </button>
+        <button type="button" className="button secondary" onClick={onBack}>
           更换地区
         </button>
-        <button className="button" onClick={onRestart}>
+        <button type="button" className="button" onClick={onRestart}>
           重新查询
         </button>
       </div>
+      <p
+        id="share-copy-status"
+        className={
+          copyState.status === "manual" ? "share-status error" : copyState.status === "copied" ? "share-status" : "sr-only"
+        }
+        role="status"
+        aria-live="polite"
+      >
+        {copyMessage}
+      </p>
+      {copyState.status === "manual" && (
+        <div className="share-fallback">
+          <label htmlFor="share-link">分享链接</label>
+          <input
+            id="share-link"
+            ref={manualInput}
+            readOnly
+            spellCheck={false}
+            autoCapitalize="off"
+            value={copyState.href}
+            onFocus={(event) => event.currentTarget.select()}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -120,30 +120,33 @@ test("从目录查询窗帘安装，显示导轨费用及当地样本状态", as
   await expect(page.locator(".typical")).toHaveCount(0);
 });
 
-test("分享链接恢复报价，非法地区和过时评估日都有确定表现", async ({ page }) => {
+test("分享链接恢复报价，非法地区和过时评估日都有确定表现", async ({ page, context }) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
   await page.setViewportSize({ width: 1280, height: 800 });
-  const answers = "a.lamp-type=ceiling&a.quantity=2&a.remove-old=false";
-  await page.goto(`/estimate/demo/demo-lamp-install?city=beijing&asOf=2026-11-20&${answers}`);
+  const answers = "lamp-type=ceiling&quantity=2&remove-old=false";
+  await page.goto(`/estimate/demo/demo-lamp-install/?region=beijing&asOf=2026-11-20&${answers}`);
   await expect(page.getByRole("heading", { name: "演示价格区间" })).toBeVisible();
   await expect(page.locator(".price")).toHaveText("¥80–120");
   await expect(page.locator(".typical strong")).toHaveText("¥55");
   await expect(page.getByText("价格数据可能已经过时")).toHaveCount(0);
-  const href = await page.getByRole("link", { name: "分享这份价格" }).getAttribute("href");
-  expect(href).toContain("city=beijing");
-  expect(href).toContain("asOf=2026-11-20");
-  expect(href).toContain("a.quantity=2");
-  expect(href).toContain("a.remove-old=false");
-  await page.goto(href ?? "");
+  await page.getByRole("button", { name: "复制分享链接" }).click();
+  const copied = await page.evaluate(() => navigator.clipboard.readText());
+  expect(copied).toContain("region=beijing");
+  expect(copied).toContain("asOf=2026-11-20");
+  expect(copied).toContain("quantity=2");
+  expect(copied).toContain("remove-old=false");
+  expect(copied).not.toContain("a.quantity");
+  await page.goto(copied);
   await expect(page.locator(".price")).toHaveText("¥80–120");
   await expect(page.locator(".typical strong")).toHaveText("¥55");
 
-  await page.goto(`/estimate/demo/demo-lamp-install?city=beijing&asOf=2028-01-01&${answers}`);
+  await page.goto(`/estimate/demo/demo-lamp-install/?region=beijing&asOf=2028-01-01&${answers}`);
   await expect(page.locator(".price")).toHaveText("¥80–120");
   await expect(page.getByText("价格数据可能已经过时")).toBeVisible();
   await expect(page.locator(".evidence").getByText("低", { exact: true })).toBeVisible();
 
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto(`/estimate/demo/demo-lamp-install?city=guangdong&asOf=not-a-date&${answers}`);
+  await page.goto(`/estimate/demo/demo-lamp-install/?region=guangdong&asOf=not-a-date&${answers}`);
   await expect(page.getByRole("heading", { name: "选择服务地区" })).toBeVisible();
   await expect(page.locator(".price")).toHaveCount(0);
   await expect(page.getByRole("combobox").locator("option")).toHaveText([
@@ -154,10 +157,10 @@ test("分享链接恢复报价，非法地区和过时评估日都有确定表�
     "我的城市不在列表中（全国参考）",
   ]);
 
-  await page.goto("/estimate/demo/demo-lamp-install?city=%3Cscript%3Ealert(1)%3C/script%3E&a.quantity=-999");
+  await page.goto("/estimate/demo/demo-lamp-install/?region=%3Cscript%3Ealert(1)%3C/script%3E&quantity=-999");
   await expect(page.getByRole("heading", { name: "安装哪种灯？" })).toBeVisible();
 
-  await page.goto(`/estimate/demo/demo-lamp-install?city=cn&asOf=2026-11-20&${answers}`);
+  await page.goto(`/estimate/demo/demo-lamp-install/?region=cn&asOf=2026-11-20&${answers}`);
   await expect(page.getByRole("heading", { name: "数据不足" })).toBeVisible();
   await expect(page.locator(".price")).toHaveCount(0);
   await expect(page.locator(".typical")).toHaveCount(0);
