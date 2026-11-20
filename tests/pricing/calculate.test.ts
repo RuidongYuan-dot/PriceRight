@@ -16,6 +16,7 @@ describe("确定性定价", () => {
       confidence: "low",
       dataUpdatedAt: "2026-11-01",
       sources: [{ sampleId: "demo-bj", level: "D" }],
+      typical: 55,
       warnings: expect.arrayContaining(["数据样本有限，结果仅供粗略参考"]),
       breakdown: [
         { source: "base", range: { min: 40, max: 60 } },
@@ -23,7 +24,7 @@ describe("确定性定价", () => {
       ],
     });
     expect(quote()).toEqual(result);
-    expect(quote({}, "shanghai")).toMatchObject({ range: { min: 100, max: 150 } });
+    expect(quote({}, "shanghai")).toMatchObject({ range: { min: 100, max: 150 }, typical: 65 });
     expect({ service, answers, data }).toEqual(before);
   });
   it.each([

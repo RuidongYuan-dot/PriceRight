@@ -20,6 +20,7 @@ type Estimate = Evidence & {
   demo: boolean;
   currency: "CNY";
   range: PriceRange;
+  typical: number;
   region: Region;
   breakdown: PriceBreakdownItem[];
   assumptions: string[];
@@ -41,7 +42,12 @@ export type PriceResult =
       status: "invalid_input";
       errors: { questionId?: string; message: string }[];
     };
-export type PriceData = { regions: Region[]; samples: PriceSample[]; asOf?: string };
+export type PriceData = {
+  regions: Region[];
+  samples: PriceSample[];
+  /** 调用方传入的评估日（YYYY-MM-DD）。省略则不做时效判断；引擎自身不读取当前时间。 */
+  asOf?: string;
+};
 
 // 用十进制整数比计算元 × 数量/系数，每一行四舍五入到元。
 function scale(amount: number, factor: number, percent = false): number {
@@ -56,6 +62,17 @@ function scale(amount: number, factor: number, percent = false): number {
 function safeAmount(value: bigint): number {
   if (value > BigInt(Number.MAX_SAFE_INTEGER)) throw new RangeError("计算金额超出支持范围");
   return Number(value);
+}
+
+// 奇数个样本取中位；偶数个取中间两数的算术平均，非负整数按四舍五入（.5 向上）到元。
+function medianYuan(prices: readonly number[]): number {
+  if (!prices.length) throw new RangeError("没有可用于常见价格的样本");
+  const sorted = [...prices].sort((left, right) => left - right);
+  const mid = Math.floor(sorted.length / 2);
+  const right = sorted[mid]!;
+  if (sorted.length % 2 === 1) return right;
+  const total = BigInt(sorted[mid - 1]!) + BigInt(right);
+  return safeAmount((total + (total % 2n)) / 2n);
 }
 
 function scaled(range: PriceRange, factor: number, percent = false): PriceRange {
@@ -161,6 +178,7 @@ export function calculatePrice(
           currency: "CNY",
           demo: service.demo,
           region,
+          typical: medianYuan(samples.map((sample) => sample.price)),
           ...evidence,
           ...calculateRange(service, state.answers, region),
           assumptions: [basis],

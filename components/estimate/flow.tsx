@@ -1,28 +1,89 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore, type FormEvent } from "react";
 import { calculatePrice, type PriceData, type PriceResult } from "../../lib/pricing/calculate";
+import { priceInfluenceFactors, type PriceFactors } from "../../lib/pricing/factors";
 import { evaluateQuestions } from "../../lib/question-engine/evaluate";
+import { regionChoices } from "../../lib/region/choices";
+import { decodeShareQuery, encodeShareQuery, type DecodedShare } from "../../lib/share/query";
+import { shanghaiCalendarDate } from "../../lib/time/shanghai-date";
 import type { Answer } from "../../schemas/common";
 import type { Service } from "../../schemas/service.schema";
 import { QuestionField } from "./question-field";
 import { EstimateResult } from "./result";
 
+const locationEvent = "priceright-location";
+
+function subscribeToLocation(onStoreChange: () => void) {
+  window.addEventListener(locationEvent, onStoreChange);
+  return () => window.removeEventListener(locationEvent, onStoreChange);
+}
+
+function locationSearch() {
+  return window.location.search;
+}
+
+function emptySearch() {
+  return "";
+}
+
+function replaceLocation(next: string) {
+  const href = `${window.location.pathname}${next}`;
+  if (`${window.location.pathname}${window.location.search}` === href) return false;
+  window.history.replaceState(null, "", href);
+  window.dispatchEvent(new Event(locationEvent));
+  return true;
+}
+
+function initialStep(service: Service, decoded: DecodedShare) {
+  const restored = evaluateQuestions(service.questions, decoded.answers);
+  const shared = Boolean(decoded.regionId || Object.keys(decoded.answers).length);
+  if (!shared) return service.questions.length > 0 ? 0 : null;
+  if (restored.complete) return null;
+  const index = restored.visible.findIndex((item) => restored.errors.some((issue) => issue.questionId === item.id));
+  return index >= 0 ? index : 0;
+}
+
 export function EstimateFlow({ service, data }: { service: Service; data: PriceData }) {
-  const [answers, setAnswers] = useState<Record<string, Answer | undefined>>({});
-  const [step, setStep] = useState<number | null>(service.questions.length > 0 ? 0 : null);
-  const [regionId, setRegionId] = useState("");
+  // 静态页面没有请求时刻。查询串在浏览器里读取；服务端快照保持空串，避免把构建日期写进 HTML。
+  const search = useSyncExternalStore(subscribeToLocation, locationSearch, emptySearch);
+  return <EstimateSession key={search} search={search} service={service} data={data} />;
+}
+
+function EstimateSession({
+  service,
+  data,
+  search,
+}: {
+  service: Service;
+  data: PriceData;
+  search: string;
+}) {
+  const decoded = decodeShareQuery(service, data.regions, search);
+  const restored = evaluateQuestions(service.questions, decoded.answers);
+  const [answers, setAnswers] = useState<Record<string, Answer | undefined>>(decoded.answers);
+  const [step, setStep] = useState<number | null>(() => initialStep(service, decoded));
+  const [regionId, setRegionId] = useState(decoded.regionId ?? "");
+  const [asOf] = useState(() => decoded.asOf ?? shanghaiCalendarDate());
   const [submitted, setSubmitted] = useState(false);
-  const [result, setResult] = useState<PriceResult>();
+  const [result, setResult] = useState<PriceResult | undefined>(() =>
+    decoded.regionId && restored.complete
+      ? calculatePrice(service, decoded.answers, decoded.regionId, { ...data, asOf })
+      : undefined,
+  );
   const panel = useRef<HTMLDivElement>(null);
-  const moved = useRef(false);
+  const moved = useRef(Boolean(decoded.regionId || Object.keys(decoded.answers).length));
+  const choices = regionChoices(data.regions);
+  const selected = choices.find((choice) => choice.id === regionId);
   const state = evaluateQuestions(service.questions, answers);
   const question = step === null ? undefined : state.visible[step];
   const error =
-    question && submitted
-      ? state.errors.find((issue) => issue.questionId === question.id)?.message
-      : undefined;
-  const region = data.regions.find((option) => option.id === regionId);
+    question && submitted ? state.errors.find((issue) => issue.questionId === question.id)?.message : undefined;
+  const factors: PriceFactors = priceInfluenceFactors(service, data.regions);
+  const shareHref =
+    result && result.status !== "invalid_input" && selected
+      ? `${window.location.pathname}${encodeShareQuery(service, state.answers, selected.id, asOf)}`
+      : "";
 
   useEffect(() => {
     if (moved.current) panel.current?.focus();
@@ -43,9 +104,14 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
       showStep(step + 1 < state.visible.length ? step + 1 : null);
       return;
     }
-    if (!region) return;
-    moved.current = true;
-    setResult(calculatePrice(service, answers, region.id, data));
+    if (!selected) return;
+    const outcome = calculatePrice(service, answers, selected.id, { ...data, asOf });
+    if (outcome.status === "invalid_input") {
+      setResult(outcome);
+      return;
+    }
+    const query = encodeShareQuery(service, state.answers, selected.id, asOf);
+    if (!replaceLocation(query)) setResult(outcome);
   }
 
   if (result && result.status !== "invalid_input") {
@@ -53,12 +119,16 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
       <div ref={panel} tabIndex={-1} className="flow-panel" aria-label="查询结果">
         <EstimateResult
           result={result}
-          regionName={region?.name ?? ""}
+          regionName={selected?.label ?? ""}
+          factors={factors}
+          shareHref={shareHref}
           onBack={() => showStep(null)}
           onRestart={() => {
-            setAnswers({});
-            setRegionId("");
-            showStep(service.questions.length > 0 ? 0 : null);
+            if (!replaceLocation("")) {
+              setAnswers({});
+              setRegionId("");
+              showStep(service.questions.length > 0 ? 0 : null);
+            }
           }}
         />
       </div>
@@ -82,24 +152,29 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
           />
         ) : (
           <div className="question-fields">
+            <p id="region-hint" className="muted">
+              请选择城市。
+              {choices.some((choice) => choice.fallback) &&
+                "没有列出你的城市时，选择「我的城市不在列表中（全国参考）」。"}
+            </p>
             <select
               aria-labelledby="step-title"
-              aria-invalid={submitted && !region}
-              aria-describedby={submitted && !region ? "region-error" : undefined}
+              aria-invalid={submitted && !selected}
+              aria-describedby={submitted && !selected ? "region-hint region-error" : "region-hint"}
               value={regionId}
               onChange={(event) => {
                 setRegionId(event.target.value);
                 setResult(undefined);
               }}
             >
-              <option value="">请选择地区</option>
-              {data.regions.map((option) => (
+              <option value="">请选择城市</option>
+              {choices.map((option) => (
                 <option key={option.id} value={option.id}>
-                  {option.name}
+                  {option.label}
                 </option>
               ))}
             </select>
-            {submitted && !region && (
+            {submitted && !selected && (
               <p id="region-error" className="field-error" role="alert">
                 请选择服务地区。
               </p>
