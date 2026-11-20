@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ServiceScope } from "../../../components/service-scope";
 import { catalogHref, catalogParams, resolveCatalogPath } from "../../../lib/data/site-catalog";
 
 export function generateStaticParams() {
@@ -21,25 +22,7 @@ export default async function ServicePage({ params }: { params: Promise<{ path: 
       <h1>{service.name}</h1>
       <p className="muted">{service.description}</p>
       {service.demo && <p className="notice">演示金额为合成数据，请勿用作实际询价依据。</p>}
-      <div className="surface scope-grid">
-        {[
-          { title: "服务包含", items: service.scope.included },
-          { title: "服务不包含", items: service.scope.excluded },
-        ].map(({ title, items }) => (
-          <section key={title}>
-            <h2>{title}</h2>
-            {items.length > 0 ? (
-              <ul>
-                {items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="muted">暂无说明</p>
-            )}
-          </section>
-        ))}
-      </div>
+      <ServiceScope service={service} />
       {service.status === "active" ? (
         <Link href={catalogHref("estimate", service.slug, context.demo)} className="button">
           {service.demo ? "开始演示查询" : "开始查询"} <span aria-hidden="true">→</span>

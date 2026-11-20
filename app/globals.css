@@ -131,7 +131,12 @@ button, select { cursor: pointer; }
 .surface { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: clamp(1.15rem, 3.8vw, 2rem); }
 .scope-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 1.2rem; margin-block: 1.5rem; }
 .scope-grid h2, .result-details h3 { font-size: 1.1rem; font-weight: 750; margin-bottom: .4rem; }
-.scope-grid ul, .result-details ul { list-style: disc; margin-inline-start: 1.15rem; color: var(--muted); }
+.scope-extra { margin-bottom: 1.5rem; }
+.scope-extra h2 { font-size: 1.1rem; font-weight: 750; margin-bottom: .4rem; }
+.scope-extra > section > p { margin-top: 0; }
+.scope-grid ul, .scope-extra ul, .result-details ul { list-style: disc; margin-inline-start: 1.15rem; color: var(--muted); }
+.scope-grid li, .scope-extra li, .result-details li { overflow-wrap: anywhere; }
+.scope-grid li + li, .scope-extra li + li, .result-details li + li { margin-top: .28rem; }
 
 .button {
   display: inline-flex;
@@ -186,6 +191,7 @@ button, select { cursor: pointer; }
 .quantity-control input { max-width: 14rem; }
 .field-error { color: #962e26; font-size: .9rem; margin-top: .65rem; }
 .form-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.2rem; }
+.form-actions .button { min-width: 0; }
 .form-actions .button:last-child { flex: 1; }
 
 .result { display: grid; gap: 1rem; }
@@ -210,13 +216,15 @@ button, select { cursor: pointer; }
 .result-details summary { color: var(--green); cursor: pointer; min-height: 35px; }
 .result-details .muted { font-size: .88rem; }
 .result .form-actions { margin-top: .1rem; }
-.share-action { flex: 1 1 100%; }
+.copy-action { flex: 1 1 100%; min-width: 0; }
 .share-status { margin: .15rem 0 0; }
 .share-status.error { color: #962e26; }
-.share-fallback { display: grid; gap: .35rem; }
+.share-fallback { display: grid; gap: .35rem; min-width: 0; }
 .share-fallback label { font-weight: 650; }
-.share-fallback input {
+.share-fallback input,
+.share-fallback textarea {
   width: 100%;
+  max-width: 100%;
   min-height: 48px;
   padding: .58rem .75rem;
   border: 1px solid #899787;
@@ -225,6 +233,14 @@ button, select { cursor: pointer; }
   color: var(--ink);
   font: inherit;
   cursor: text;
+}
+.share-fallback textarea {
+  min-height: 12rem;
+  max-height: 24rem;
+  line-height: 1.55;
+  resize: vertical;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 720px) {
