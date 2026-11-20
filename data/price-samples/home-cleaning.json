@@ -1,0 +1,622 @@
+[
+  {
+    "id": "hc-hour-beijing",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 北京：35 元/小时，2 小时起约。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-hour"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-beijing-under-85",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 北京：85 平方米以下 70 元，参考耗时 2 小时。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "under-85"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-beijing-mid-low",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 105,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 北京：85 至 130 平方米页面写 105 元至 140 元。本条只记录低端 105 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-low"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-beijing-mid-high",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 140,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 北京：85 至 130 平方米页面写 105 元至 140 元。本条只记录高端 140 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-beijing-over-135",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 175,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 北京：135 平方米以上 175 元起，参考 5 小时起，不是封顶。130 与 135 平方米之间页面没有档。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "over-135"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hour-shanghai",
+    "serviceId": "home-cleaning",
+    "regionId": "shanghai",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 上海：35 元/小时，2 小时起约。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-hour"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shanghai-under-85",
+    "serviceId": "home-cleaning",
+    "regionId": "shanghai",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 上海：85 平方米以下 70 元，参考耗时 2 小时。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "under-85"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shanghai-mid-low",
+    "serviceId": "home-cleaning",
+    "regionId": "shanghai",
+    "price": 105,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 上海：85 至 130 平方米页面写 105 元至 140 元。本条只记录低端 105 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-low"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shanghai-mid-high",
+    "serviceId": "home-cleaning",
+    "regionId": "shanghai",
+    "price": 140,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 上海：85 至 130 平方米页面写 105 元至 140 元。本条只记录高端 140 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shanghai-over-135",
+    "serviceId": "home-cleaning",
+    "regionId": "shanghai",
+    "price": 175,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 上海：135 平方米以上 175 元起，参考 5 小时起，不是封顶。130 与 135 平方米之间页面没有档。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "over-135"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hour-shenzhen",
+    "serviceId": "home-cleaning",
+    "regionId": "shenzhen",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 深圳：35 元/小时，2 小时起约。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-hour"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shenzhen-under-85",
+    "serviceId": "home-cleaning",
+    "regionId": "shenzhen",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 深圳：85 平方米以下 70 元，参考耗时 2 小时。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "under-85"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shenzhen-mid-low",
+    "serviceId": "home-cleaning",
+    "regionId": "shenzhen",
+    "price": 105,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 深圳：85 至 130 平方米页面写 105 元至 140 元。本条只记录低端 105 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-low"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shenzhen-mid-high",
+    "serviceId": "home-cleaning",
+    "regionId": "shenzhen",
+    "price": 140,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 深圳：85 至 130 平方米页面写 105 元至 140 元。本条只记录高端 140 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-shenzhen-over-135",
+    "serviceId": "home-cleaning",
+    "regionId": "shenzhen",
+    "price": 175,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 深圳：135 平方米以上 175 元起，参考 5 小时起，不是封顶。130 与 135 平方米之间页面没有档。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "over-135"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hour-hangzhou",
+    "serviceId": "home-cleaning",
+    "regionId": "hangzhou",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 杭州：35 元/小时，2 小时起约。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-hour"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-hangzhou-under-85",
+    "serviceId": "home-cleaning",
+    "regionId": "hangzhou",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 杭州：85 平方米以下 70 元，参考耗时 2 小时。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "under-85"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-hangzhou-mid-low",
+    "serviceId": "home-cleaning",
+    "regionId": "hangzhou",
+    "price": 105,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 杭州：85 至 130 平方米页面写 105 元至 140 元。本条只记录低端 105 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-low"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-hangzhou-mid-high",
+    "serviceId": "home-cleaning",
+    "regionId": "hangzhou",
+    "price": 140,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 杭州：85 至 130 平方米页面写 105 元至 140 元。本条只记录高端 140 元，不是中间价。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "mid-high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-area-hangzhou-over-135",
+    "serviceId": "home-cleaning",
+    "regionId": "hangzhou",
+    "price": 175,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网日常保洁介绍 https://sm.ziroom.com/clean/general/dailyIntro.shtml 杭州：135 平方米以上 175 元起，参考 5 小时起，不是封顶。130 与 135 平方米之间页面没有档。价表本身没有写城市。同页脚本有北京、上海、深圳、杭州的服务 ID，没有广州。四城金额相同，不是分别测出的本地成交价，也不能当作广州价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-area",
+      "area-band": "over-135"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-one",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 550,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。一居室 550 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "one"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-two-one",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 800,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。二居室一卫 800 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "two-one"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-two-two",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 900,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。二居室二卫 900 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "two-two"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-three-one",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 1000,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。三居室一卫 1000 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "three-one"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-three-two",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 1100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。三居室二卫 1100 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "three-two"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-four-rate",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 9,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。四居室以上 9 元/平方米。页面另写 1200 元起，本条只记录单价。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "four-rate"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-four-min",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 1200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。四居室以上 1200 元起。页面另写 9 元/平方米，本条只记录起步，不与单价取高。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "four-min"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-kitchen",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。单独厨房 300 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "kitchen"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-deep-bath",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网深度保洁 https://sm.ziroom.com/clean/general/depthIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。单独卫生间 200 元。不得用于上海、广州、深圳或杭州。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-deep",
+      "deep-item": "bath"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-kill-one",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网消杀保洁 https://sm.ziroom.com/clean/general/killIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。一居 300 元。一次上门半年有效是页面承诺，不是其他城市的价格。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-kill",
+      "kill-item": "one"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-kill-two",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 360,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网消杀保洁 https://sm.ziroom.com/clean/general/killIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。二居 360 元。一次上门半年有效是页面承诺，不是其他城市的价格。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-kill",
+      "kill-item": "two"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-kill-three",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 420,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网消杀保洁 https://sm.ziroom.com/clean/general/killIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。三居 420 元。一次上门半年有效是页面承诺，不是其他城市的价格。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-kill",
+      "kill-item": "three"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-kill-four",
+    "serviceId": "home-cleaning",
+    "regionId": "beijing",
+    "price": 480,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "自如网消杀保洁 https://sm.ziroom.com/clean/general/killIntro.shtml 原文范围是北京五环内，以及天通苑、大兴、通州。四居 480 元。一次上门半年有效是页面承诺，不是其他城市的价格。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ziroom-kill",
+      "kill-item": "four"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hk-hour-low",
+    "serviceId": "home-cleaning",
+    "regionId": "cn",
+    "price": 45,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "好慷在家官网百科 https://www.homeking365.com/guide/home-cleaning/price/ 正文写更新于 2026-10-20。公开参考价，实际以下单页实时展示为准，不是分城成交价。单次日常保洁小时区间的低端 45 元/小时。页面同时写到 55 元/小时，这里不取 50 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "homeking",
+      "hk-item": "hour-low"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hk-hour-high",
+    "serviceId": "home-cleaning",
+    "regionId": "cn",
+    "price": 55,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "好慷在家官网百科 https://www.homeking365.com/guide/home-cleaning/price/ 正文写更新于 2026-10-20。公开参考价，实际以下单页实时展示为准，不是分城成交价。单次日常保洁小时区间的高端 55 元/小时。不是区间中点。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "homeking",
+      "hk-item": "hour-high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hk-four-low",
+    "serviceId": "home-cleaning",
+    "regionId": "cn",
+    "price": 180,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "好慷在家官网百科 https://www.homeking365.com/guide/home-cleaning/price/ 正文写更新于 2026-10-20。公开参考价，实际以下单页实时展示为准，不是分城成交价。4 小时约 180 元至 220 元的低端。不是 200 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "homeking",
+      "hk-item": "four-low"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hk-four-high",
+    "serviceId": "home-cleaning",
+    "regionId": "cn",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "好慷在家官网百科 https://www.homeking365.com/guide/home-cleaning/price/ 正文写更新于 2026-10-20。公开参考价，实际以下单页实时展示为准，不是分城成交价。4 小时约 180 元至 220 元的高端。不是 200 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "homeking",
+      "hk-item": "four-high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hk-trial",
+    "serviceId": "home-cleaning",
+    "regionId": "cn",
+    "price": 599,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "好慷在家官网百科 https://www.homeking365.com/guide/home-cleaning/price/ 正文写更新于 2026-10-20。公开参考价，实际以下单页实时展示为准，不是分城成交价。3 次体验 599 元起，不是一口价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "homeking",
+      "hk-item": "trial"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "hc-hk-kitchen",
+    "serviceId": "home-cleaning",
+    "regionId": "cn",
+    "price": 359,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "好慷在家官网百科 https://www.homeking365.com/guide/home-cleaning/price/ 正文写更新于 2026-10-20。公开参考价，实际以下单页实时展示为准，不是分城成交价。厨卫深度处理 359 元起/间，须单独下单。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "homeking",
+      "hk-item": "kitchen"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

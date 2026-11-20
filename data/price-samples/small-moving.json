@@ -1,0 +1,3002 @@
+[
+  {
+    "id": "sm-kg-start-beijing-errand",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 28,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。跑腿起步 28 元，含 5 公里。超出起步里程后 3 元/公里，在超里程查询里单独记录。等候超时原文是 每分钟 0.5 元，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "errand"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-errand",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 3,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。跑腿超出含里程的部分 3 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "errand"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-micro",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 28,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。微面起步 28 元，含 5 公里。超里程原文是 2.85 元/公里，不是整数元，未入库。等候超时原文是 每分钟 0.5 元，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "micro"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-micro",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 29,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。微面起步 29 元，含 5 公里。超里程原文是 2.85 元/公里，不是整数元，未入库。等候超时原文是 每分钟 0.5 元，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "micro"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-micro",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 28,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。微面起步 28 元，含 5 公里。超里程原文是 2.85 元/公里，不是整数元，未入库。等候超时原文是 每分钟 0.5 元，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "micro"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-small-van",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小面起步 30 元，含 5 公里。超出起步里程后 3 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-van"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-small-van",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 3,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小面超出含里程的部分 3 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-van"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-mid-van",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 56,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中面起步 56 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-van"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-mid-van",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中面超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-van"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-iveco",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 69,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。依维柯起步 69 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "iveco"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-iveco",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。依维柯超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "iveco"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-iveco",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 68,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。依维柯起步 68 元，含 5 公里。超里程原文是 4.5 元/公里，不是整数元，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "iveco"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-iveco",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 58,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。依维柯起步 58 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "iveco"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-iveco",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。依维柯超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "iveco"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-mid-box",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型厢货起步 120 元，含 5 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-box"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-mid-box",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型厢货超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-box"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-small-flat",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 68,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型平板起步 68 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-flat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-small-flat",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型平板超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-flat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-small-flat",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型平板起步 50 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-flat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-small-flat",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型平板超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-flat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-mid-flat",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型平板起步 120 元，含 5 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-flat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-mid-flat",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型平板超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-flat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包起步 30 元，含 5 公里。超出起步里程后 3 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 3,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包超出含里程的部分 3 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 36,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包起步 36 元，含 7 公里。超出起步里程后 3 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 3,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包超出含里程的部分 3 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包起步 30 元，含 5 公里。超出起步里程后 3 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 3,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包超出含里程的部分 3 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 29,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包起步 29 元，含 5 公里。超出起步里程后 3 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-small-bread",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 3,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型面包超出含里程的部分 3 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 45,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包起步 45 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 58,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包起步 58 元，含 7 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 55,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包起步 55 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包起步 50 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-mid-bread",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中型面包超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-bread"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-small-cargo",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 48,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小货起步 48 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-small-cargo",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小货超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-small-cargo",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 98,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小货起步 98 元，含 5 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-small-cargo",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小货超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-mid-cargo",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中货起步 120 元，含 5 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-mid-cargo",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中货超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-small-truck",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 68,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小货车起步 68 元，含 7 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-truck"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-small-truck",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小货车超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-truck"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-mid-truck",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 110,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中货车起步 110 元，含 7 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-truck"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-mid-truck",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中货车超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-truck"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-mid-truck",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 99,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中货车起步 99 元，含 5 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "mid-truck"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-mid-truck",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。中货车超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "mid-truck"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-small-box",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 65,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型厢货起步 65 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "small-box"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-small-box",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。小型厢货超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "small-box"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-micro-cargo",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 58,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。微货起步 58 元，含 5 公里。超出起步里程后 4 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "micro-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-micro-cargo",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 4,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。微货超出含里程的部分 4 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "micro-cargo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-m52",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2起步 220 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-m52",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-m52",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2起步 220 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-m52",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-m52",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2起步 220 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-m52",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-m52",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2起步 220 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-m52",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-m52",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2起步 220 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-m52",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。5 米 2超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m52"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-m68",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 260,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8起步 260 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-m68",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-m68",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 260,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8起步 260 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-m68",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-m68",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8起步 280 元，含 15 公里。超出起步里程后 6 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-m68",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8超出含里程的部分 6 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-m68",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8起步 280 元，含 15 公里。超出起步里程后 6 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-m68",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8超出含里程的部分 6 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-m68",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 260,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8起步 260 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-m68",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。6 米 8超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m68"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-m76",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6起步 280 元，含 15 公里。超出起步里程后 6 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-m76",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6超出含里程的部分 6 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-m76",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 290,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6起步 290 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-m76",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-m76",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 330,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6起步 330 元，含 15 公里。超出起步里程后 6 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-m76",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6超出含里程的部分 6 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-m76",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 330,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6起步 330 元，含 15 公里。超出起步里程后 6 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-m76",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6超出含里程的部分 6 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-m76",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 290,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6起步 290 元，含 15 公里。超出起步里程后 5 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-m76",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。7 米 6超出含里程的部分 5 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m76"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-beijing-m96",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 380,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6起步 380 元，含 15 公里。超出起步里程后 7 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-beijing-m96",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6超出含里程的部分 7 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shanghai-m96",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 380,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6起步 380 元，含 15 公里。超出起步里程后 7 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shanghai-m96",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6超出含里程的部分 7 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-guangzhou-m96",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 380,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6起步 380 元，含 15 公里。超出起步里程后 8 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-guangzhou-m96",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 8,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6超出含里程的部分 8 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-shenzhen-m96",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 380,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6起步 380 元，含 15 公里。超出起步里程后 8 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-shenzhen-m96",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 8,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6超出含里程的部分 8 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-start-hangzhou-m96",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 380,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6起步 380 元，含 15 公里。超出起步里程后 7 元/公里，在超里程查询里单独记录。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-start",
+      "kg-start-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-km-hangzhou-m96",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。9 米 6超出含里程的部分 7 元/公里。起步价另查，这里不加总。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-km",
+      "kg-km-vehicle": "m96"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-beijing-block-15-10",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 10,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 15 分钟 10 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-15-10"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-shanghai-block-15-10",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 10,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 15 分钟 10 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-15-10"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-guangzhou-block-15-10",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 10,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 15 分钟 10 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-15-10"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-shenzhen-block-15-10",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 10,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 15 分钟 10 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-15-10"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-hangzhou-block-15-10",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 10,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 15 分钟 10 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-15-10"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-guangzhou-block-10-5",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 10 分钟 5 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-10-5"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-beijing-block-30-40",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）北京价格表 https://suyun.daojia.com/m/changecity?cityId=1&cityName=%E5%8C%97%E4%BA%AC 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 30 分钟 40 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-30-40"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-shanghai-block-30-40",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）上海价格表 https://suyun.daojia.com/m/changecity?cityId=2&cityName=%E4%B8%8A%E6%B5%B7 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 30 分钟 40 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-30-40"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-guangzhou-block-30-40",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）广州价格表 https://suyun.daojia.com/m/changecity?cityId=3&cityName=%E5%B9%BF%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 30 分钟 40 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-30-40"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-shenzhen-block-30-40",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）深圳价格表 https://suyun.daojia.com/m/changecity?cityId=4&cityName=%E6%B7%B1%E5%9C%B3 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 30 分钟 40 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-30-40"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-kg-wait-hangzhou-block-30-40",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "快狗打车（原 58 速运）杭州价格表 https://suyun.daojia.com/m/changecity?cityId=79&cityName=%E6%9D%AD%E5%B7%9E 2026-11-20 核验的静态页面。页脚为天津五八到家货运服务有限公司。费用已含油费和运输服务费。搬运与司机商议，高速和停车按实际发生，这两项未入库。装卸货等候超时：每 30 分钟 40 元。免费时长见服务说明，不折进这一个单价。跑腿和微面的每分钟 0.5 元未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "kuaigou-wait",
+      "wait-tier": "block-30-40"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-xiaomian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 106,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 106 元，含 10 公里和 1 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-xiaomian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 118,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 118 元，含 10 公里和 1 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-beijing-xiaomian",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaomian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-xiaomian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 106,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 106 元，含 10 公里和 1 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-xiaomian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 118,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 118 元，含 10 公里和 1 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shanghai-xiaomian",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaomian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-xiaomian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 106,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 106 元，含 10 公里和 1 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-xiaomian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 118,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 118 元，含 10 公里和 1 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-guangzhou-xiaomian",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaomian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-xiaomian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 106,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 106 元，含 10 公里和 1 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-xiaomian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 118,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 118 元，含 10 公里和 1 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shenzhen-xiaomian",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaomian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-xiaomian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 102,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 102 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-xiaomian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 102,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面起步 102 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaomian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-hangzhou-xiaomian",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaomian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-zhongmian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-zhongmian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-beijing-zhongmian",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "zhongmian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-zhongmian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-zhongmian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shanghai-zhongmian",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "zhongmian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-zhongmian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-zhongmian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-guangzhou-zhongmian",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "zhongmian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-zhongmian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-zhongmian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 186,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 186 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shenzhen-zhongmian",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "zhongmian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-zhongmian-weekday",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 176,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 176 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-zhongmian-weekend",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 176,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面起步 176 元，含 10 公里和 1 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "zhongmian",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-hangzhou-zhongmian",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 5,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家中面同城超出 10 公里后 5 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "zhongmian"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-xiaoxiang-weekday",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 298,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 298 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-xiaoxiang-weekend",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 338,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 338 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-beijing-xiaoxiang",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货同城超出 10 公里后 6 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaoxiang"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-xiaoxiang-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 298,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 298 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-xiaoxiang-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 338,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 338 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shanghai-xiaoxiang",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货同城超出 10 公里后 6 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaoxiang"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-xiaoxiang-weekday",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 298,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 298 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-xiaoxiang-weekend",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 338,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 338 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-guangzhou-xiaoxiang",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货同城超出 10 公里后 6 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaoxiang"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-xiaoxiang-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 298,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 298 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-xiaoxiang-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 338,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 338 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shenzhen-xiaoxiang",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货同城超出 10 公里后 6 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaoxiang"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-xiaoxiang-weekday",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 298,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 298 元，含 10 公里和 2 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-xiaoxiang-weekend",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 298,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货起步 298 元，含 10 公里和 2 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xiaoxiang",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-hangzhou-xiaoxiang",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 6,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家小厢货同城超出 10 公里后 6 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xiaoxiang"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-xianghuo-weekday",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 368,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 368 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-beijing-xianghuo-weekend",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 428,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 428 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-beijing-xianghuo",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货同城超出 10 公里后 7 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xianghuo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-xianghuo-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 368,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 368 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shanghai-xianghuo-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 428,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 428 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shanghai-xianghuo",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货同城超出 10 公里后 7 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xianghuo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-xianghuo-weekday",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 368,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 368 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-guangzhou-xianghuo-weekend",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 428,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 428 元，含 10 公里和 2 人全程搬运。周六日。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-guangzhou-xianghuo",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货同城超出 10 公里后 7 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xianghuo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-xianghuo-weekday",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 368,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 368 元，含 10 公里和 2 人全程搬运。周一至周五。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-shenzhen-xianghuo-weekend",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 448,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 448 元，含 10 公里和 2 人全程搬运。周六日。深圳厢货周六日是 448 元，北上广同一档是 428 元。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-shenzhen-xianghuo",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货同城超出 10 公里后 7 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xianghuo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-xianghuo-weekday",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 348,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 348 元，含 10 公里和 2 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekday"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-start-hangzhou-xianghuo-weekend",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 348,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货起步 348 元，含 10 公里和 2 人全程搬运。页面没有区分周一至周五和周六日，两个选项都用这一个公示价，不是另核验的周末加价。夜间费未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-start",
+      "lxn-vehicle": "xianghuo",
+      "lxn-day": "weekend"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-km-hangzhou-xianghuo",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 7,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。放心搬家厢货同城超出 10 公里后 7 元/公里。跨城小面和中面原文为 4.5 元/公里，不是整数元，未入库；跨城分段价也未并入。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-km",
+      "lxn-km-vehicle": "xianghuo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-beijing-full",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 1400,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式起步 1400 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用北京资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-beijing-half",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 1150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式起步 1150 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用北京资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-beijing-full",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式超出 5 立方米后 280 元/立方米。不加到 1400 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-beijing-half",
+    "serviceId": "small-moving",
+    "regionId": "beijing",
+    "price": 230,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家北京资费页 https://www.lanxiniu.com/price/110100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式超出 5 立方米后 230 元/立方米。不加到 1150 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-shanghai-full",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 1400,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式起步 1400 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用上海资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-shanghai-half",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 1150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式起步 1150 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用上海资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-shanghai-full",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式超出 5 立方米后 280 元/立方米。不加到 1400 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-shanghai-half",
+    "serviceId": "small-moving",
+    "regionId": "shanghai",
+    "price": 230,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家上海资费页 https://www.lanxiniu.com/price/310100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式超出 5 立方米后 230 元/立方米。不加到 1150 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-guangzhou-full",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 1400,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式起步 1400 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用广州资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-guangzhou-half",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 1150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式起步 1150 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用广州资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-guangzhou-full",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式超出 5 立方米后 280 元/立方米。不加到 1400 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-guangzhou-half",
+    "serviceId": "small-moving",
+    "regionId": "guangzhou",
+    "price": 230,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家广州资费页 https://www.lanxiniu.com/price/440100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式超出 5 立方米后 230 元/立方米。不加到 1150 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-shenzhen-full",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 1400,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式起步 1400 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用深圳资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-shenzhen-half",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 1150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式起步 1150 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用深圳资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-shenzhen-full",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式超出 5 立方米后 280 元/立方米。不加到 1400 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-shenzhen-half",
+    "serviceId": "small-moving",
+    "regionId": "shenzhen",
+    "price": 230,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家深圳资费页 https://www.lanxiniu.com/price/440300 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式超出 5 立方米后 230 元/立方米。不加到 1150 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-hangzhou-full",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 1400,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式起步 1400 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用杭州资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-jp-hangzhou-half",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 1150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式起步 1150 元，含 20 公里和 5 立方米。五城页面金额相同，本条仍用杭州资费页。超过 20 公里原文只写 7 元，没有写单位，未入库。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-jp",
+      "jp-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-hangzhou-full",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 280,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家全日式超出 5 立方米后 280 元/立方米。不加到 1400 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "sm-lxn-cube-hangzhou-half",
+    "serviceId": "small-moving",
+    "regionId": "hangzhou",
+    "price": 230,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "蓝犀牛搬家杭州资费页 https://www.lanxiniu.com/price/330100 2026-11-20 核验。放心搬家总费用原文为起步价加超公里、楼层和额外服务。高速、停车、路桥和轮渡由用户承担，未入库。日式搬家半日式超出 5 立方米后 230 元/立方米。不加到 1150 元起步价上。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "channel": "lxn-cube",
+      "cube-style": "half"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

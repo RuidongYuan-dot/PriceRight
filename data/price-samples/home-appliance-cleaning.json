@@ -1,0 +1,137 @@
+[
+  {
+    "id": "ha-fridge-side",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 158,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。对开门冰箱清洗 158 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "fridge-side"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-fridge-single",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 115,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。单开门冰箱清洗 115 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "fridge-single"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-washer-drum",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 110,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。滚筒洗衣机免拆清洗 110 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "washer-drum"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-washer-semi",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 138,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。波轮洗衣机半拆清洗 138 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "washer-semi"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-washer-full",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 198,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。波轮洗衣机全拆清洗 198 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "washer-full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-hood-gas",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 168,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。油烟机半拆加燃气灶 168 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "hood-gas"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-hood-full",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 158,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。油烟机全拆洗 158 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "hood-full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-hood-semi",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 138,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。油烟机半拆洗 138 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "hood-semi"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ha-hood-plain",
+    "serviceId": "home-appliance-cleaning",
+    "regionId": "shanghai",
+    "price": 128,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是家电清洗，不是日常保洁。深度清洁为面议。油烟机免拆洗 128 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "item": "hood-plain"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

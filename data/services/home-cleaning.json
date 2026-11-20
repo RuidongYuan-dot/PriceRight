@@ -1,0 +1,638 @@
+{
+  "id": "home-cleaning",
+  "categoryId": "home-cleaning",
+  "name": "日常保洁与深度保洁",
+  "slug": "home-cleaning",
+  "description": "查询自如日常保洁、北京部分区域的深度保洁和消杀，以及好慷在家写明以下单页为准的参考价。自如日常保洁不覆盖广州。深度保洁和消杀只限北京五环内以及天通苑、大兴、通州。区间价按端点分开查，不收成一个中间数。",
+  "keywords": [
+    "日常保洁",
+    "深度保洁",
+    "钟点工",
+    "家政保洁",
+    "保洁小时工",
+    "打扫卫生",
+    "自如保洁",
+    "好慷保洁",
+    "消杀保洁",
+    "厨房保洁",
+    "卫生间保洁",
+    "保洁报价",
+    "小时保洁"
+  ],
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要查哪一种保洁？",
+      "required": true,
+      "options": [
+        {
+          "id": "ziroom-hour",
+          "label": "自如按小时",
+          "value": "ziroom-hour",
+          "description": "35 元/小时，2 小时起约。广州没有这条。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "日常保洁",
+              "min": 35,
+              "max": 35,
+              "unitQuestionId": "hours",
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ziroom-area",
+          "label": "自如按面积档",
+          "value": "ziroom-area",
+          "description": "70 元，以及 105 至 140 元区间的两端，还有 175 元起。"
+        },
+        {
+          "id": "ziroom-deep",
+          "label": "自如深度保洁",
+          "value": "ziroom-deep",
+          "description": "只限北京五环内，以及天通苑、大兴、通州。"
+        },
+        {
+          "id": "ziroom-kill",
+          "label": "自如消杀保洁",
+          "value": "ziroom-kill",
+          "description": "同样只限上述北京范围。"
+        },
+        {
+          "id": "homeking",
+          "label": "好慷参考价",
+          "value": "homeking",
+          "description": "官网百科的公开参考，实际以下单页为准。"
+        }
+      ],
+      "description": "日常、深度、消杀和好慷参考价分开查。这里没有家电拆洗。"
+    },
+    {
+      "id": "hours",
+      "type": "number",
+      "title": "小时数",
+      "description": "自如写明 2 小时起约。价表没有分城差价；脚本里没有广州，广州查不到。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "ziroom-hour"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 2,
+        "max": 12
+      }
+    },
+    {
+      "id": "area-band",
+      "type": "single",
+      "title": "自如哪一档面积？",
+      "required": true,
+      "options": [
+        {
+          "id": "under-85",
+          "label": "85 平方米以下",
+          "value": "under-85",
+          "description": "70 元，参考 2 小时。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "85 平方米以下",
+              "min": 70,
+              "max": 70,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-low",
+          "label": "85 至 130 平方米低端",
+          "value": "mid-low",
+          "description": "页面写 105 元至 140 元。这里是 105 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "面积档低端",
+              "min": 105,
+              "max": 105,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mid-high",
+          "label": "85 至 130 平方米高端",
+          "value": "mid-high",
+          "description": "页面写 105 元至 140 元。这里是 140 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "面积档高端",
+              "min": 140,
+              "max": 140,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "over-135",
+          "label": "135 平方米以上起步",
+          "value": "over-135",
+          "description": "175 元起，不是封顶。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "135 平方米以上起步价",
+              "min": 175,
+              "max": 175,
+              "regionIds": [
+                "beijing",
+                "shanghai",
+                "shenzhen",
+                "hangzhou"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "85 至 130 平方米是一个区间。请选低端或高端，不要指望系统取中间值。130 与 135 平方米之间没有档。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "ziroom-area"
+        }
+      ]
+    },
+    {
+      "id": "deep-item",
+      "type": "single",
+      "title": "北京深度保洁哪一项？",
+      "required": true,
+      "options": [
+        {
+          "id": "one",
+          "label": "一居室",
+          "value": "one",
+          "description": "550 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "一居室深度保洁",
+              "min": 550,
+              "max": 550,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "two-one",
+          "label": "二居室一卫",
+          "value": "two-one",
+          "description": "800 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "二居室一卫深度保洁",
+              "min": 800,
+              "max": 800,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "two-two",
+          "label": "二居室二卫",
+          "value": "two-two",
+          "description": "900 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "二居室二卫深度保洁",
+              "min": 900,
+              "max": 900,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "three-one",
+          "label": "三居室一卫",
+          "value": "three-one",
+          "description": "1000 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "三居室一卫深度保洁",
+              "min": 1000,
+              "max": 1000,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "three-two",
+          "label": "三居室二卫",
+          "value": "three-two",
+          "description": "1100 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "三居室二卫深度保洁",
+              "min": 1100,
+              "max": 1100,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "four-rate",
+          "label": "四居以上每平方米",
+          "value": "four-rate",
+          "description": "9 元/平方米。不自动改成 1200 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "四居以上每平方米",
+              "min": 9,
+              "max": 9,
+              "unitQuestionId": "deep-area",
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "four-min",
+          "label": "四居以上起步",
+          "value": "four-min",
+          "description": "1200 元起。不和每平方米单价取高。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "四居以上起步价",
+              "min": 1200,
+              "max": 1200,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kitchen",
+          "label": "单独厨房",
+          "value": "kitchen",
+          "description": "300 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "单独厨房",
+              "min": 300,
+              "max": 300,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bath",
+          "label": "单独卫生间",
+          "value": "bath",
+          "description": "200 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "单独卫生间",
+              "min": 200,
+              "max": 200,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "服务范围只写北京五环内，以及天通苑、大兴、通州。四居以上的 9 元/平方米和 1200 元起分开查。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "ziroom-deep"
+        }
+      ]
+    },
+    {
+      "id": "deep-area",
+      "type": "number",
+      "title": "房屋面积",
+      "description": "按整数平方米乘 9 元。1200 元起请回到上一题另选。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "deep-item",
+          "operator": "equals",
+          "value": "four-rate"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 500
+      }
+    },
+    {
+      "id": "kill-item",
+      "type": "single",
+      "title": "北京消杀保洁哪一档？",
+      "required": true,
+      "options": [
+        {
+          "id": "one",
+          "label": "一居",
+          "value": "one",
+          "description": "300 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "一居消杀保洁",
+              "min": 300,
+              "max": 300,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "two",
+          "label": "二居",
+          "value": "two",
+          "description": "360 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "二居消杀保洁",
+              "min": 360,
+              "max": 360,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "three",
+          "label": "三居",
+          "value": "three",
+          "description": "420 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "三居消杀保洁",
+              "min": 420,
+              "max": 420,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "four",
+          "label": "四居",
+          "value": "four",
+          "description": "480 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "四居消杀保洁",
+              "min": 480,
+              "max": 480,
+              "regionIds": [
+                "beijing"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "只限北京五环内，以及天通苑、大兴、通州。页面写一次上门半年有效。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "ziroom-kill"
+        }
+      ]
+    },
+    {
+      "id": "hk-item",
+      "type": "single",
+      "title": "好慷哪一条参考价？",
+      "required": true,
+      "options": [
+        {
+          "id": "hour-low",
+          "label": "每小时低端",
+          "value": "hour-low",
+          "description": "45 元/小时，是 45 至 55 元的低端。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "小时参考低端",
+              "min": 45,
+              "max": 45,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hour-high",
+          "label": "每小时高端",
+          "value": "hour-high",
+          "description": "55 元/小时，是 45 至 55 元的高端。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "小时参考高端",
+              "min": 55,
+              "max": 55,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "four-low",
+          "label": "4 小时约低端",
+          "value": "four-low",
+          "description": "约 180 元，不是 200 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "4 小时参考低端",
+              "min": 180,
+              "max": 180,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "four-high",
+          "label": "4 小时约高端",
+          "value": "four-high",
+          "description": "约 220 元，不是 200 元。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "4 小时参考高端",
+              "min": 220,
+              "max": 220,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "trial",
+          "label": "3 次体验起步",
+          "value": "trial",
+          "description": "599 元起。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "3 次体验起步价",
+              "min": 599,
+              "max": 599,
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kitchen",
+          "label": "厨卫深度起步",
+          "value": "kitchen",
+          "description": "359 元起/间，须单独下单。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "厨卫深度起步价",
+              "min": 359,
+              "max": 359,
+              "unitQuestionId": "hk-rooms",
+              "regionIds": [
+                "cn"
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "实际以下单页实时展示为准。小时价是一个区间，这里只查你选的那一端。",
+      "visibility": [
+        {
+          "questionId": "job",
+          "operator": "equals",
+          "value": "homeking"
+        }
+      ]
+    },
+    {
+      "id": "hk-rooms",
+      "type": "number",
+      "title": "间数",
+      "description": "按页面的「每间」计算起步价，实际仍以下单页为准。",
+      "required": true,
+      "visibility": [
+        {
+          "questionId": "hk-item",
+          "operator": "equals",
+          "value": "kitchen"
+        }
+      ],
+      "validation": {
+        "integer": true,
+        "min": 1,
+        "max": 5
+      }
+    }
+  ],
+  "scope": {
+    "included": [
+      "自如日常保洁 35 元/小时，2 小时起约；85 平方米以下 70 元",
+      "自如 85 至 130 平方米的 105 元和 140 元两端，以及 135 平方米以上 175 元起",
+      "自如日常保洁只记在北京、上海、深圳、杭州。价表未分城，脚本没有广州",
+      "自如北京深度保洁：一居 550 元到三居二卫 1100 元，单独厨房 300 元，单独卫生间 200 元",
+      "四居以上 9 元/平方米和 1200 元起分开记录",
+      "自如北京消杀：一居 300 元、二居 360 元、三居 420 元、四居 480 元",
+      "好慷参考价的两端和起步价：45 元/小时、55 元/小时、4 小时约 180 元和 220 元、3 次体验 599 元起、厨卫深度 359 元起/间"
+    ],
+    "excluded": [
+      "广州没有自如日常保洁样本，不用其他城市的 35 元充当地价",
+      "深度保洁和消杀不外推到上海、广州、深圳、杭州",
+      "不把 105 至 140 元、45 至 55 元或 180 至 220 元收成中间价",
+      "130 与 135 平方米之间没有官方档位",
+      "9 元/平方米不自动封底成 1200 元",
+      "好慷包年套餐没有金额；轻喜到家 37 元/小时只是未写时长和城市的新客促销，未入库",
+      "开荒保洁、擦玻璃，以及上海热线的日常保洁，没有可核验项目",
+      "家电拆洗不是日常保洁"
+    ]
+  },
+  "status": "active",
+  "demo": false,
+  "pricing": {
+    "model": "composite",
+    "basePrice": {
+      "min": 0,
+      "max": 0
+    }
+  },
+  "metadata": {
+    "createdAt": "2026-11-20",
+    "updatedAt": "2026-11-20"
+  }
+}
