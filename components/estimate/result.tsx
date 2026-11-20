@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { PriceFactors, PriceFactor } from "../../lib/pricing/factors";
 import type { AnswerSummary } from "../../lib/share/query";
 import type { PriceRange } from "../../schemas/common";
 import type { PriceResult } from "../../lib/pricing/calculate";
@@ -9,14 +10,37 @@ const integer = new Intl.NumberFormat("zh-CN");
 function price(range: PriceRange) {
   return "¥" + integer.format(range.min) + (range.min === range.max ? "" : "–" + integer.format(range.max));
 }
+function yuan(amount: number) {
+  return "¥" + integer.format(amount);
+}
 const confidence = { high: "高", medium_high: "较高", medium: "一般", low: "低" };
 
 type CopyState = { status: "idle" } | { status: "copied" } | { status: "manual"; href: string };
+
+function FactorList({ factors }: { factors: PriceFactor[] }) {
+  return (
+    <>
+      {factors.map((factor, index) => (
+        <li key={`${factor.direction}-${index}`}>
+          <span className={factor.direction === "up" ? "factor-mark factor-up" : "factor-mark factor-down"} aria-hidden="true">
+            {factor.direction === "up" ? "↑" : "↓"}
+          </span>
+          <span className="sr-only">{factor.direction === "up" ? "会提高价格：" : "会降低价格："}</span>
+          <span>
+            <strong>{factor.label}</strong>
+            <small>{factor.detail}</small>
+          </span>
+        </li>
+      ))}
+    </>
+  );
+}
 
 export function EstimateResult({
   result,
   regionName,
   summaries,
+  factors,
   onBack,
   onRestart,
   onCopyLink,
@@ -24,6 +48,7 @@ export function EstimateResult({
   result: Exclude<PriceResult, { status: "invalid_input" }>;
   regionName: string;
   summaries: AnswerSummary[];
+  factors: PriceFactors;
   onBack: () => void;
   onRestart: () => void;
   onCopyLink: () => string;
@@ -36,6 +61,7 @@ export function EstimateResult({
       : copyState.status === "manual"
         ? "无法写入剪贴板，请手动复制下面的链接。"
         : "";
+  const hasFactors = factors.up.length > 0 || factors.down.length > 0;
 
   useEffect(() => {
     if (copyState.status !== "manual") return;
@@ -62,7 +88,15 @@ export function EstimateResult({
         <h2>
           {result.status === "estimated" ? (result.demo ? "演示价格区间" : "合理参考价格") : "数据不足"}
         </h2>
-        {result.status === "estimated" && <p className="price">{price(result.range)}</p>}
+        {result.status === "estimated" && (
+          <>
+            <p className="price">{price(result.range)}</p>
+            <p className="typical">
+              常见价格 <strong>{yuan(result.typical)}</strong>
+            </p>
+            <p className="typical-note">来自已匹配样本的中位数。</p>
+          </>
+        )}
         {result.status === "estimated" && result.demo && <p>合成数据 · 请勿作为实际询价依据</p>}
         {result.status === "insufficient_data" && <p>{result.warnings[0]}</p>}
       </div>
@@ -80,21 +114,33 @@ export function EstimateResult({
         </section>
       )}
       {result.status === "estimated" && (
+        <section className="surface result-details" aria-labelledby="breakdown-title">
+          <h3 id="breakdown-title">价格构成</h3>
+          <dl className="breakdown">
+            {result.breakdown.map((item, index) => (
+              <div key={index}>
+                <dt>
+                  {item.label}
+                  {item.operation === "replace" && <small>调整后小计</small>}
+                </dt>
+                <dd>{price(item.range)}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+      {hasFactors && (
+        <section className="surface result-details" aria-labelledby="price-factors">
+          <h3 id="price-factors">哪些因素会影响价格</h3>
+          <p className="muted">下面这些选择来自该服务的计价配置，会让参考价格升高或降低。</p>
+          <ul className="factors">
+            <FactorList factors={factors.up} />
+            <FactorList factors={factors.down} />
+          </ul>
+        </section>
+      )}
+      {result.status === "estimated" && (
         <>
-          <section className="surface result-details" aria-labelledby="breakdown-title">
-            <h3 id="breakdown-title">价格构成</h3>
-            <dl className="breakdown">
-              {result.breakdown.map((item, index) => (
-                <div key={index}>
-                  <dt>
-                    {item.label}
-                    {item.operation === "replace" && <small>调整后小计</small>}
-                  </dt>
-                  <dd>{price(item.range)}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
           <section className="surface result-details" aria-labelledby="evidence-title">
             <h3 id="evidence-title">数据依据</h3>
             <p>{result.assumptions.join("。")}</p>

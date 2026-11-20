@@ -190,16 +190,26 @@ button, select { cursor: pointer; }
 
 .result { display: grid; gap: 1rem; }
 .result-summary { background: var(--green-deep); color: #fff; border-radius: 16px; padding: clamp(1.25rem, 4vw, 2.15rem); }
-.result-summary > p:not(.price) { color: #e0eadc; }
+.result-summary > p:not(.price) { color: #e0eadc; overflow-wrap: anywhere; }
 .result-summary .price {
   font-size: clamp(2.3rem, 10vw, 4rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -.065em;
   font-variant-numeric: tabular-nums;
-  margin: .35rem 0 .6rem;
+  margin: .35rem 0 .35rem;
   overflow-wrap: anywhere;
 }
+.result-summary .typical { margin: 0; color: #fff; font-size: 1.02rem; }
+.result-summary .typical strong { font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+.result-summary .typical-note { margin: .15rem 0 .45rem; color: #e0eadc; font-size: .88rem; }
+.factors { list-style: none; margin: .8rem 0 0; padding: 0; display: grid; gap: .85rem; }
+.factors li { display: flex; gap: .7rem; align-items: flex-start; min-width: 0; }
+.factor-mark { font-weight: 800; line-height: 1.4; }
+.factor-up { color: #8a3b12; }
+.factor-down { color: var(--green); }
+.factors strong, .factors small { display: block; overflow-wrap: anywhere; }
+.factors small { color: var(--muted); font-weight: 400; }
 .breakdown > div { display: flex; justify-content: space-between; gap: .75rem; padding: .55rem 0; border-bottom: 1px solid var(--line); }
 .breakdown > div:last-child { border-bottom: 0; padding-bottom: 0; }
 .breakdown small { margin-inline-start: .45rem; color: var(--muted); }
