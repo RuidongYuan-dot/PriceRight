@@ -1,0 +1,93 @@
+name: Deploy GitHub Pages
+
+# Manual approval gate. Production is published only when someone runs this
+# workflow from the Actions tab. Pushes to main and pull requests do not deploy.
+on:
+  workflow_dispatch:
+
+# Same token scopes as GitHub's Next.js Pages starter. pages:write covers the
+# artifact upload and the deployment; id-token:write is required by deploy-pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Do not cancel a deploy that has already started publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_BASE_PATH: /PriceRight
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate data
+        run: pnpm validate:data
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Build static export
+        run: pnpm build
+
+      - name: Ensure .nojekyll
+        run: test -f out/.nojekyll || : > out/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: out
+          # .nojekyll is a hidden file. The default archive excludes it.
+          include-hidden-files: "true"
+
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Require GitHub Actions as the Pages source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          pages=$(gh api "repos/${GITHUB_REPOSITORY}/pages")
+          echo "Current Pages configuration: ${pages}"
+          build_type=$(printf '%s' "${pages}" | jq -r '.build_type // empty')
+          if [ "${build_type}" != "workflow" ]; then
+            echo "::error::Pages build_type is '${build_type:-unknown}'. The live site is still published from the gh-pages branch (Settings → Pages → Build and deployment → Source: Deploy from a branch). Switch Source to GitHub Actions before this workflow can publish. This workflow does not push to gh-pages, so the current site stays unchanged until that switch."
+            exit 1
+          fi
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
