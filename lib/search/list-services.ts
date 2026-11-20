@@ -15,6 +15,8 @@ export type DirectoryServiceInput = {
 };
 
 export type DirectoryCatalog = {
+  /** 为 true 时，与其他目录同名的分类会在筛选标签上标明演示。 */
+  demo?: boolean;
   categories: readonly { id: string; name: string; description?: string; order: number }[];
   services: readonly DirectoryServiceInput[];
 };
@@ -65,15 +67,29 @@ export function directoryGroup(catalog: DirectoryCatalog, demo: boolean): Direct
   };
 }
 
-/** 多个目录里同名 id 保留先出现的分类，供筛选标签使用。 */
+/** 多个目录里同名 id 保留先出现的分类，供筛选标签使用。显示名相同时，演示目录的标签追加「演示」。 */
 export function filterCategories(catalogs: readonly DirectoryCatalog[]): FilterCategory[] {
-  const chosen = new Map<string, FilterCategory>();
+  const chosen = new Map<string, FilterCategory & { demo: boolean }>();
   for (const catalog of catalogs) {
     for (const category of catalog.categories) {
       if (!chosen.has(category.id)) {
-        chosen.set(category.id, { id: category.id, name: category.name, order: category.order });
+        chosen.set(category.id, {
+          id: category.id,
+          name: category.name,
+          order: category.order,
+          demo: catalog.demo === true,
+        });
       }
     }
   }
-  return [...chosen.values()].sort((a, b) => a.order - b.order || a.name.localeCompare(b.name, "zh-CN"));
+  const nameCount = new Map<string, number>();
+  for (const category of chosen.values()) {
+    nameCount.set(category.name, (nameCount.get(category.name) ?? 0) + 1);
+  }
+  return [...chosen.values()]
+    .map(({ demo, ...category }) => ({
+      ...category,
+      name: demo && (nameCount.get(category.name) ?? 0) > 1 ? `${category.name} · 演示` : category.name,
+    }))
+    .sort((a, b) => a.order - b.order || a.name.localeCompare(b.name, "zh-CN"));
 }

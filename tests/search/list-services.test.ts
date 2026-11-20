@@ -88,3 +88,22 @@ it("筛选标签按顺序合并，同 id 保留先出现的名称", () => {
     "家居布置",
   ]);
 });
+
+it("正式与演示分类同名时，只给演示筛选标签加上区分", () => {
+  const formal: DirectoryCatalog = {
+    demo: false,
+    categories: [{ id: "home-installation", name: "家居安装", order: 1 }],
+    services: [],
+  };
+  const demo: DirectoryCatalog = {
+    demo: true,
+    categories: [{ id: "home", name: "家居安装", order: 1 }],
+    services: [],
+  };
+  expect(filterCategories([formal, demo]).map((category) => category.name)).toEqual(["家居安装", "家居安装 · 演示"]);
+  expect(filterCategories([demo, formal]).map((category) => ({ id: category.id, name: category.name }))).toEqual([
+    { id: "home-installation", name: "家居安装" },
+    { id: "home", name: "家居安装 · 演示" },
+  ]);
+  expect(filterCategories([demo]).map((category) => category.name)).toEqual(["家居安装"]);
+});

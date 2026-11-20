@@ -4,6 +4,7 @@
   "name": "吸顶灯安装",
   "slug": "ceiling-light-install",
   "description": "按已核验的公开价查询吸顶灯、吊灯和若干灯具附加费。上海优先用本地公示价；北京、广州、深圳、杭州没有本地价目时，会说明并改用全国品牌公开价。",
+  "keywords": ["装灯", "吊灯", "吸顶灯", "灯具安装", "拆灯", "风扇灯", "装饰灯"],
   "status": "active",
   "demo": false,
   "questions": [

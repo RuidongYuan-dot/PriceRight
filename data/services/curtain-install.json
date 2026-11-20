@@ -4,6 +4,7 @@
   "name": "窗帘安装",
   "slug": "curtain-install",
   "description": "按已核验的公开价查询窗帘杆、轨道、智能窗帘和测量。上海的杆轨安装用本地公示价。没有一口价的项目会显示数据不足，不把「起」价写成确定价格。",
+  "keywords": ["窗帘杆", "电动窗帘", "智能窗帘", "轨道安装", "窗帘测量"],
   "status": "active",
   "demo": false,
   "questions": [

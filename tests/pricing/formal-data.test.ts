@@ -4,6 +4,8 @@ import { calculatePrice, type PriceBreakdownItem } from "../../lib/pricing/calcu
 import { priceInfluenceFactors } from "../../lib/pricing/factors";
 import { regionChoices } from "../../lib/region/choices";
 import { regionCandidates } from "../../lib/region/resolve";
+import { directoryGroup } from "../../lib/search/list-services";
+import { searchServices } from "../../lib/search/services";
 import type { Answer } from "../../schemas/common";
 
 const asOf = "2026-11-20";
@@ -211,6 +213,17 @@ it("吊灯、其他灯具和附加费只使用对应来源，不把互斥价目�
   );
   expect(quote(ceiling, {}, "beijing").status).toBe("invalid_input");
   expect(quote(ceiling, ceilingInstall, "unknown").status).toBe("invalid_input");
+});
+
+it("正式服务的搜索关键词能单独命中，不靠写死分类名", async () => {
+  const { catalog } = await formal();
+  const group = directoryGroup(catalog, false);
+  const ids = (keyword: string) =>
+    searchServices(group.services, group.categories, { keyword }).map((hit) => hit.service.id);
+  expect(ids("装灯")).toEqual(["ceiling-light-install"]);
+  expect(ids("吊灯")).toEqual(["ceiling-light-install"]);
+  expect(ids("窗帘杆")).toEqual(["curtain-install"]);
+  expect(ids("电动窗帘")).toEqual(["curtain-install"]);
 });
 
 it("窗帘：上海杆轨命中本地价，其他城市回退全国品牌价或数据不足", async () => {
