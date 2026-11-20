@@ -217,6 +217,8 @@ type Service = {
   slug: string
   description: string
 
+  keywords?: string[]
+
   status: "active" | "draft" | "coming_soon"
 
   questions: Question[]
@@ -234,6 +236,8 @@ type Service = {
   }
 }
 ```
+
+`keywords` 可选，用来记录搜索别名、标签和关键词。目录检索会读取它。价格计算不读取它。
 
 ---
 

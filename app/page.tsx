@@ -1,12 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ServiceSearch } from "../components/catalog/service-search";
 import { catalogHref, getCatalog } from "../lib/data/site-catalog";
 import { publicAssetPath } from "../lib/public-asset";
+import { directoryGroup, filterCategories } from "../lib/search/list-services";
 
 export default async function HomePage() {
   const [catalog, demo] = await Promise.all([getCatalog(false), getCatalog(true)]);
   const categories = [...catalog.categories].sort((a, b) => a.order - b.order);
   const demos = [...demo.categories].sort((a, b) => a.order - b.order);
+  const groups = [directoryGroup(catalog, false), directoryGroup(demo, true)];
+  const filters = filterCategories([catalog, demo]);
 
   return (
     <>
@@ -38,38 +42,40 @@ export default async function HomePage() {
 
       <section id="services" className="directory" aria-labelledby="directory-title">
         <h2 id="directory-title">服务目录</h2>
-        {categories.length > 0 ? (
-          <div className="tile-grid">
-            {categories.map((category) => (
-              <Link className="tile" key={category.id} href={catalogHref("categories", category.id, false)}>
-                <span>
-                  <strong>{category.name}</strong>
-                  {category.description && <small>{category.description}</small>}
-                </span>
-                <span aria-hidden="true">→</span>
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p className="muted">正式价格数据建设中，审核通过的服务将在这里开放查询。</p>
-        )}
-        {demos.length > 0 && (
-          <div className="tile-grid demo-links">
-            {demos.map((category) => (
-              <Link
-                className="tile demo-tile"
-                key={category.id}
-                href={catalogHref("categories", category.id, true)}
-              >
-                <span>
-                  <strong>体验查询 · {category.name}</strong>
-                  <small>使用演示数据试走一次报价流程。</small>
-                </span>
-                <span aria-hidden="true">→</span>
-              </Link>
-            ))}
-          </div>
-        )}
+        <ServiceSearch groups={groups} categories={filters}>
+          {categories.length > 0 ? (
+            <div className="tile-grid">
+              {categories.map((category) => (
+                <Link className="tile" key={category.id} href={catalogHref("categories", category.id, false)}>
+                  <span>
+                    <strong>{category.name}</strong>
+                    {category.description && <small>{category.description}</small>}
+                  </span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="muted">正式价格数据建设中，审核通过的服务将在这里开放查询。</p>
+          )}
+          {demos.length > 0 && (
+            <div className="tile-grid demo-links">
+              {demos.map((category) => (
+                <Link
+                  className="tile demo-tile"
+                  key={category.id}
+                  href={catalogHref("categories", category.id, true)}
+                >
+                  <span>
+                    <strong>体验查询 · {category.name}</strong>
+                    <small>使用演示数据试走一次报价流程。</small>
+                  </span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </ServiceSearch>
       </section>
     </>
   );
