@@ -61,6 +61,13 @@ jobs:
       - name: End-to-end tests
         run: pnpm test:e2e
 
+      # Runs after the root build and e2e so those steps keep the default
+      # empty base path. This rebuild checks the GitHub Pages prefix.
+      - name: Verify Pages basePath export
+        run: |
+          NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build
+          test -f out/.nojekyll
+
       - name: Upload Playwright report
         if: failure()
         uses: actions/upload-artifact@v7
