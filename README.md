@@ -17,9 +17,49 @@ pnpm test:e2e
 pnpm build
 ```
 
-`dev` 启动 Next.js 开发服务器。从首页进入「服务目录」中的演示分类，选择吸顶灯安装或窗帘安装并开始查询。浏览器测试覆盖手机与桌面视口、条件问答、地区选择、价格明细和数据不足状态。构建依次执行数据校验、TypeScript 检查和 Next.js 生产构建。
+`dev` 启动 Next.js 开发服务器。从首页进入「服务目录」中的演示分类，选择吸顶灯安装或窗帘安装并开始查询。浏览器测试覆盖手机与桌面视口、条件问答、地区选择、价格明细和数据不足状态。构建依次执行数据校验、TypeScript 检查和 Next.js 静态导出。本地两种导出命令见下方「静态导出」。
 
-分类、服务和问答页面按已校验目录预渲染。演示页面在各栏目下使用独立的 `demo` 路径段，例如 `/estimate/demo/demo-lamp-install`。问答和报价在浏览器内使用当前服务配置和样本计算。
+分类、服务和问答页面按已校验目录预渲染。演示页面在各栏目下使用独立的 `demo` 路径段，例如 `/estimate/demo/demo-lamp-install/`。问答和报价在浏览器内使用当前服务配置和样本计算。
+
+## 静态导出
+
+`pnpm build` 依次执行数据校验、TypeScript 检查，并以 `output: "export"` 把站点写到 `out/`。静态导出不使用 Next.js 图片优化服务，因此 `images.unoptimized` 为 `true`。路由带尾部斜杠，页面文件是目录中的 `index.html`，与现有 `gh-pages` 分支一致。`public/` 会原样复制到 `out/`，其中包含空的 `.nojekyll`，避免 Jekyll 跳过 `_next`。
+
+`basePath` 与 `assetPrefix` 都来自 `NEXT_PUBLIC_BASE_PATH`。未设置或设为空字符串时不做前缀，用于本地开发、CI 和根路径托管。值必须为空，或以 `/` 开头且不以 `/` 结尾，例如 `/PriceRight`。`next/link` 会自动加上该前缀。`public/` 图片经 `publicAssetPath()` 拼接同一前缀后传给 `next/image`。
+
+根路径导出：
+
+```sh
+pnpm build
+```
+
+`out/index.html` 引用 `/_next/static/...` 与 `/images/ceiling-light.jpg`。对应文件在 `out/_next/` 和 `out/images/`。
+
+GitHub Pages 项目站点导出：
+
+```sh
+NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build
+```
+
+HTML 改为引用 `/PriceRight/_next/static/...` 与 `/PriceRight/images/ceiling-light.jpg`。导出文件位于 `out/` 根目录（`out/_next/`、`out/images/`、`out/index.html`）。`/PriceRight` 只出现在 URL 里。GitHub Pages 项目站点把发布根目录挂到 `/PriceRight`，因此与 `https://ruidongyuan-dot.github.io/PriceRight/` 以及当前 `gh-pages` 分支的文件布局一致。CI 的 `pnpm build` 使用默认空前缀，导出根路径站点。
+
+## 手动发布到 GitHub Pages
+
+线上站点是 <https://ruidongyuan-dot.github.io/PriceRight/>。仓库 Pages 当前从 **`gh-pages` 分支根目录**发布（Pages API 的 `build_type` 为 `legacy`，由 GitHub 内置工作流 `pages-build-deployment` 构建）。
+
+`.github/workflows/deploy-pages.yml`（工作流名 `Deploy GitHub Pages`）只能在 Actions 页面手动运行（`workflow_dispatch`）。拉取请求和向 `main` 的推送都不会触发它。
+
+手动运行时，工作流使用 Node.js 22 和 `pnpm install --frozen-lockfile`，然后按顺序执行：
+
+1. `pnpm validate:data`
+2. `pnpm lint`
+3. `pnpm exec tsc --noEmit`
+4. `pnpm test`
+5. `NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build`
+6. 确认 `out/.nojekyll` 存在
+7. 上传包含隐藏文件的 Pages 制品，并部署到 GitHub Pages
+
+`actions/deploy-pages` 要求 Pages 的 Source 为 **GitHub Actions**（`build_type: workflow`）。在 Settings → Pages → Build and deployment 完成这次切换之前，部署步骤会失败并保留现有站点；该工作流不会向 `gh-pages` 推送。切换之后，线上内容只随这个手动工作流更新，`gh-pages` 分支不再是发布来源。部署 job 使用名为 `github-pages` 的环境。若要在点击运行之后再要求批准，由仓库所有者给该环境加上 Required reviewers。
 
 ## 持续集成
 
