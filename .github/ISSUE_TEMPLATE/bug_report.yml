@@ -1,0 +1,67 @@
+name: 缺陷报告
+description: 报告问答、计价、地区回退、数据校验或页面流程中的错误。
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        计价结果应能由同一输入重复得到。报告价格问题时，请给出服务、答案、地区，以及用的是正式数据还是 `data/fixtures/` 演示数据。
+        不要在问题中附上无法追溯来源的市场价格，也不要把演示数字当作真实成交价。
+  - type: textarea
+    id: summary
+    attributes:
+      label: 现象
+      description: 实际看到了什么。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 从哪个页面开始，选了什么，期望下一步发生什么。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+      description: 例如应显示合理参考价格和价格构成、应提示数据不足，或应拒绝非法输入。
+    validations:
+      required: true
+  - type: input
+    id: service
+    attributes:
+      label: 服务与地区
+      description: 服务 ID 或名称，以及城市。与具体服务无关则填“无”。
+      placeholder: demo.lamp-install / 北京
+    validations:
+      required: true
+  - type: dropdown
+    id: dataset
+    attributes:
+      label: 使用的数据
+      description: 演示数据带有 demo 标记，不能用来判断市场行情。
+      options:
+        - 正式数据 data/
+        - 演示数据 data/fixtures/
+        - 不确定
+        - 与数据无关
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 环境
+      description: 浏览器或命令、Node 与 pnpm 版本。能附上的报错只保留技术信息，不要粘贴个人隐私。
+    validations:
+      required: false
+  - type: checkboxes
+    id: agents
+    attributes:
+      label: AGENTS.md 遵守要求
+      options:
+        - label: 我没有要求用 LLM 直接决定价格，也没有要求编造价格或数据来源来掩盖数据不足
+          required: true
+        - label: 若问题涉及演示数据，我知道 data/fixtures/ 与正式数据必须隔离，演示结果不是市场价格
+          required: true
