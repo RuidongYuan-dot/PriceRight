@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { catalogHref, getCatalog } from "../lib/data/site-catalog";
+import { publicAssetPath } from "../lib/public-asset";
 
 export default async function HomePage() {
   const [catalog, demo] = await Promise.all([getCatalog(false), getCatalog(true)]);
@@ -26,7 +27,7 @@ export default async function HomePage() {
         </div>
         <div className="hero-image">
           <Image
-            src="/images/ceiling-light.jpg"
+            src={publicAssetPath("/images/ceiling-light.jpg")}
             alt="家中安装的圆形吸顶灯"
             fill
             sizes="(max-width: 720px) 100vw, 50vw"
