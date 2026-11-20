@@ -308,7 +308,8 @@
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
-      "lamp-type": "ceiling"
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
     },
     "verified": true,
     "demo": false
@@ -320,12 +321,12 @@
     "price": 40,
     "currency": "CNY",
     "sampleType": "public_price",
-    "source": "黄浦区（南部）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/nanfangqu.jsp 本条在数量为 6 时参与匹配，单价适用于超过 5 只的情形。",
+    "source": "黄浦区（南部）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/nanfangqu.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
       "lamp-type": "ceiling",
-      "quantity": 6
+      "quantity": { "min": 6 }
     },
     "verified": true,
     "demo": false
@@ -341,7 +342,8 @@
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
-      "lamp-type": "ceiling"
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
     },
     "verified": true,
     "demo": false
@@ -353,12 +355,12 @@
     "price": 40,
     "currency": "CNY",
     "sampleType": "public_price",
-    "source": "黄浦区（卢湾）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/luwanqu.jsp 本条在数量为 6 时参与匹配，单价适用于超过 5 只的情形。",
+    "source": "黄浦区（卢湾）房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/luwanqu.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
       "lamp-type": "ceiling",
-      "quantity": 6
+      "quantity": { "min": 6 }
     },
     "verified": true,
     "demo": false
@@ -374,7 +376,8 @@
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
-      "lamp-type": "ceiling"
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
     },
     "verified": true,
     "demo": false
@@ -386,12 +389,12 @@
     "price": 40,
     "currency": "CNY",
     "sampleType": "public_price",
-    "source": "闵行区房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/minhang.jsp 本条在数量为 6 时参与匹配，单价适用于超过 5 只的情形。",
+    "source": "闵行区房屋维修应急中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/minhang.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
       "lamp-type": "ceiling",
-      "quantity": 6
+      "quantity": { "min": 6 }
     },
     "verified": true,
     "demo": false
@@ -407,7 +410,8 @@
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
-      "lamp-type": "ceiling"
+      "lamp-type": "ceiling",
+      "quantity": { "min": 1, "max": 5 }
     },
     "verified": true,
     "demo": false
@@ -419,12 +423,12 @@
     "price": 40,
     "currency": "CNY",
     "sampleType": "public_price",
-    "source": "浦东新区物业管理（房屋应急维修）96916 服务中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/pudongxinqu.jsp 本条在数量为 6 时参与匹配，单价适用于超过 5 只的情形。",
+    "source": "浦东新区物业管理（房屋应急维修）96916 服务中心在上海住宅物业网公示：安装、更换吸顶灯，超过 5 只为 40 元/只。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/pudongxinqu.jsp 数量不少于 6 只时参与匹配，单价适用于超过 5 只的情形。",
     "collectedAt": "2026-11-20",
     "conditions": {
       "job": "install",
       "lamp-type": "ceiling",
-      "quantity": 6
+      "quantity": { "min": 6 }
     },
     "verified": true,
     "demo": false

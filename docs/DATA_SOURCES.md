@@ -42,7 +42,7 @@ demo
 - `id` 在价格样本中唯一；服务、分类、地区 ID 也各自唯一
 - `price` 是非负整数元，`currency` 固定为 `CNY`
 - `collectedAt` 是采集日期，格式 `YYYY-MM-DD`
-- `conditions` 可选，键必须是该服务的问题 ID，值必须是合法答案
+- `conditions` 可选，键必须是该服务的问题 ID。值是合法答案，或数值题（`number`、`area`、`distance`）上的闭区间 `{ min?: number, max?: number }`。区间至少有一个边界，且下限不超过上限。匹配规则见 [PRICING_METHODOLOGY.md](PRICING_METHODOLOGY.md)
 - `source` 是可核对的来源名称；能公开的网址写在这里或 PR 说明中
 - 新提交的正式样本 `verified` 为 false，`demo` 为 false
 
