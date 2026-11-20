@@ -127,6 +127,7 @@ button, select { cursor: pointer; }
 }
 .muted { color: var(--muted); }
 .notice { margin-block: 1rem; padding: .65rem .9rem; border-left: 3px solid var(--green); background: var(--green-soft); color: var(--green-deep); font-size: .92rem; }
+.notice.warning { border-left-color: #8d342c; background: #fdecea; color: #6e241e; }
 .surface { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); padding: clamp(1.15rem, 3.8vw, 2rem); }
 .scope-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 1.2rem; margin-block: 1.5rem; }
 .scope-grid h2, .result-details h3 { font-size: 1.1rem; font-weight: 750; margin-bottom: .4rem; }
@@ -209,6 +210,22 @@ button, select { cursor: pointer; }
 .result-details summary { color: var(--green); cursor: pointer; min-height: 35px; }
 .result-details .muted { font-size: .88rem; }
 .result .form-actions { margin-top: .1rem; }
+.share-action { flex: 1 1 100%; }
+.share-status { margin: .15rem 0 0; }
+.share-status.error { color: #962e26; }
+.share-fallback { display: grid; gap: .35rem; }
+.share-fallback label { font-weight: 650; }
+.share-fallback input {
+  width: 100%;
+  min-height: 48px;
+  padding: .58rem .75rem;
+  border: 1px solid #899787;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  cursor: text;
+}
 
 @media (max-width: 720px) {
   .hero { grid-template-columns: minmax(0, 1fr); border-radius: 18px; }

@@ -43,6 +43,18 @@ NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build
 
 HTML 改为引用 `/PriceRight/_next/static/...` 与 `/PriceRight/images/ceiling-light.jpg`。导出文件位于 `out/` 根目录（`out/_next/`、`out/images/`、`out/index.html`）。`/PriceRight` 只出现在 URL 里。GitHub Pages 项目站点把发布根目录挂到 `/PriceRight`，因此与 `https://ruidongyuan-dot.github.io/PriceRight/` 以及当前 `gh-pages` 分支的文件布局一致。CI 的 `pnpm build` 使用默认空前缀，导出根路径站点。
 
+## 分享查询结果
+
+报价结果可以分享。页面把地区和已生效的答案写进当前地址的查询参数，再用原来的计价函数重算。不需要账号，也不保存服务器会话。打开链接时按该服务的问题配置用 Zod 校验参数。相同条件和相同数据得到相同区间、构成、可信度和提示。
+
+`region` 是地区 id。其他参数名是服务配置里的问题 id：布尔值为 `true` 或 `false`，数字为十进制，单选和多选为选项的 `value`，多选重复同一个参数名。问题 id 如果正好是 `region`，答案写在 `~region`。选项的文本、数字和布尔值若会写成同一个字符串，该题改用 `b:`、`n:`、`s:` 前缀。
+
+```text
+/estimate/demo/demo-lamp-install/?region=beijing&lamp-type=ceiling&quantity=2&remove-old=false
+```
+
+静态导出下，分享地址使用浏览器当前的 origin、`basePath` 和路径。结果页的「复制分享链接」复制这个地址；如果剪贴板不可用，页面会给出可手动复制的链接。无法识别、超长、超出范围或残缺的参数会被忽略并提示，问卷仍可继续。
+
 ## 手动发布到 GitHub Pages
 
 线上站点是 <https://ruidongyuan-dot.github.io/PriceRight/>。仓库 Pages 当前从 **`gh-pages` 分支根目录**发布（Pages API 的 `build_type` 为 `legacy`，由 GitHub 内置工作流 `pages-build-deployment` 构建）。
