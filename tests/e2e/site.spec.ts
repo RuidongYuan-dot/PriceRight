@@ -39,8 +39,7 @@ test("手机端从首页到报价，验证必填、地区切换和来源披露",
   await expect(page.locator(".factors strong").filter({ hasText: /^拆除旧灯$/ })).toBeVisible();
   await expect(page.locator(".factors strong").filter({ hasText: /^导轨安装人工$/ })).toHaveCount(0);
   expect(await page.locator("body").evaluate((body) => body.scrollWidth)).toBeLessThanOrEqual(390);
-  await page.getByText("查看数据来源").click();
-  await expect(page.getByText(/合成测试样本/)).toBeVisible();
+  await expect(page.getByRole("region", { name: "公开样本来源明细" }).getByText(/合成测试样本/)).toBeVisible();
 
   await page.getByRole("button", { name: "更换地区" }).click();
   await page.getByRole("combobox").selectOption("shanghai");
