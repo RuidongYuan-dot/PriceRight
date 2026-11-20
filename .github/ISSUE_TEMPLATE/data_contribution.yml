@@ -1,0 +1,94 @@
+name: 价格数据贡献
+description: 提交可核验的线下服务价格样本，需包含来源网址、采集日期、地区和再发布许可。
+title: "data: "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        正式样本用于说明价格规则的适用范围和数据依据。计价引擎不会把样本金额自动平均成报价。
+        没有可靠出处就不要填写金额。`data/fixtures/` 中的合成数字不能作为市场价格提交。
+        审核通过前样本保持 `verified: false`。规则见 `docs/DATA_SOURCES.md` 与 `docs/CONTRIBUTING.md`。
+  - type: input
+    id: service
+    attributes:
+      label: 服务
+      description: 服务名称。已经有配置时请写 serviceId。
+      placeholder: 吸顶灯安装
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: 服务条件
+      description: 与该价格对应的条件，例如灯具类型、数量、是否拆除旧件。条件要能对应到服务问题的 ID 和选项 value。
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: 地区
+      description: 城市，以及所属省份、城市等级（一线、新一线、二线或其他）如已知。请写名称；已有正式 regionId 时一并写上。
+    validations:
+      required: true
+  - type: dropdown
+    id: sample_type
+    attributes:
+      label: 样本类型
+      description: 实际成交为 A，服务商公开报价为 B，公开平台报价为 C，人工整理参考为 D。
+      options:
+        - actual_transaction（实际成交，A）
+        - provider_quote（服务商公开报价，B）
+        - public_price（公开平台报价，C）
+        - manual_reference（人工整理参考，D）
+    validations:
+      required: true
+  - type: textarea
+    id: prices
+    attributes:
+      label: 价格样本
+      description: |
+        每条一行，只写来源里实际出现的非负整数人民币元，并注明币种 CNY。
+        多条样本的条件、地区或日期不同时，在同一行写清。不要把区间估成一个“看起来完整”的数字。
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: 来源网址
+      description: 能核对金额的公开页面。页面含有他人隐私时，改为可公开的定位信息，并在来源说明里写清审核者如何核验，不要粘贴姓名、手机号、详细地址或订单号。
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: collected_at
+    attributes:
+      label: 采集日期
+      description: ISO 日期 YYYY-MM-DD。多条日期不同时，这里填最新一条，并在价格样本中逐条写明。
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: redistribution
+    attributes:
+      label: 再发布许可
+      description: |
+        说明这些内容为什么可以按 Open Database License (ODbL) 1.0 再发布。
+        例如页面明确允许转载、你是权利人，或你已获得授权。商业数据库、整站价格表、用户订单和未授权商家数据不能提交。无法确认许可时不要提交。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: AGENTS.md 与数据规则
+      options:
+        - label: 金额和来源都来自上面的出处，我没有编造价格或来源
+          required: true
+        - label: 我确认这些数据可以按 ODbL 1.0 再发布，并已在“再发布许可”中说明依据
+          required: true
+        - label: 已脱敏，不含姓名、手机号、详细地址、订单号、身份证或其他可识别个人信息
+          required: true
+        - label: 我没有把 data/fixtures/ 的演示数字当作正式市场价格，正式数据与演示数据保持隔离
+          required: true
+        - label: 我了解样本经人工审核后才应设为 verified，并且结果只作为合理参考价格，不是保证成交价
+          required: true
