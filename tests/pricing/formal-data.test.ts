@@ -46,13 +46,23 @@ const ceilingInstall = {
 
 it("正式目录只加载已核验样本，地区选择器只列出五城和全国回退", async () => {
   const { catalog, samples } = await formal();
-  expect(catalog.categories.map((category) => category.id)).toEqual(["home-installation"]);
+  expect(catalog.categories.map((category) => category.id)).toEqual([
+    "appliance-cleaning",
+    "home-installation",
+    "plumbing",
+  ]);
   expect(catalog.services.map((service) => service.id).sort()).toEqual([
+    "ac-cleaning",
+    "bathroom-fixture-install",
     "ceiling-light-install",
     "curtain-install",
+    "faucet-valve-install",
+    "smart-lock-install",
+    "switch-outlet-install",
   ]);
   expect(catalog.services.every((service) => service.demo === false && service.status === "active")).toBe(true);
-  expect(samples).toHaveLength(50);
+  expect(samples).toHaveLength(168);
+  expect(samples.filter((sample) => sample.serviceId === "ceiling-light-install" || sample.serviceId === "curtain-install")).toHaveLength(50);
   expect(samples.every((sample) => sample.demo === false && sample.verified && sample.currency === "CNY")).toBe(true);
   expect(samples.every((sample) => sample.collectedAt === "2026-11-20" && sample.source.includes("https://"))).toBe(true);
   expect(samples.some((sample) => /合成|demo|港币|HKD|1\.5/.test(sample.source))).toBe(false);

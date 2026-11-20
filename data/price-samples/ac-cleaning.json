@@ -1,0 +1,482 @@
+[
+  {
+    "id": "ac-sh-wall",
+    "serviceId": "ac-cleaning",
+    "regionId": "shanghai",
+    "price": 99,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是表内标准项；深度清洁为面议，不是深度拆洗一口价。 挂机空调 99 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "shanghai",
+      "sh-item": "wall"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-sh-floor",
+    "serviceId": "ac-cleaning",
+    "regionId": "shanghai",
+    "price": 128,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是表内标准项；深度清洁为面议，不是深度拆洗一口价。 立式空调 128 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "shanghai",
+      "sh-item": "floor"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-sh-cassette",
+    "serviceId": "ac-cleaning",
+    "regionId": "shanghai",
+    "price": 115,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是表内标准项；深度清洁为面议，不是深度拆洗一口价。 吊顶式空调 115 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "shanghai",
+      "sh-item": "cassette"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-sh-central",
+    "serviceId": "ac-cleaning",
+    "regionId": "shanghai",
+    "price": 115,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。页面路径含 hongkouqu，标题是全市热线 2026 版。本条是表内标准项；深度清洁为面议，不是深度拆洗一口价。 中央空调 115 元/组，单位是组不是台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "shanghai",
+      "sh-item": "central"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-deep-wall",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 99,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 深度清洗（内机）挂机 99 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "deep-wall"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-deep-square",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 149,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 深度清洗（内机）方型柜机 149 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "deep-square"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-deep-cylinder",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 189,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 深度清洗（内机）圆柱型柜机 189 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "deep-cylinder"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-deep-twin",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 229,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 深度清洗（内机）双塔型柜机 229 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "deep-twin"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-plain-in-wall",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 普通清洗（内机）挂机 50 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "plain-in-wall"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-plain-in-cabinet",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 普通清洗（内机）柜机 50 元/台，未再区分柜型。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "plain-in-cabinet"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-plain-out-wall",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 普通清洗（外机）挂机 70 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "plain-out-wall"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-plain-out-cabinet",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 普通清洗（外机）柜机 70 元/台。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-wall",
+      "wall-item": "plain-out-cabinet"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-high",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 4 楼及 4 楼以上高空作业费 100 元/套，同一用户同一套房封顶 300 元/次。本条只记录 100 元这一单价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-high-cap",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 常规高空作业费同一用户同一套房封顶 300 元/次。这是封顶额，不是在单价之外再加的一笔。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "high-cap"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-special",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 特殊室外机位高空作业费 300 元/套，需工业双绳，与常规高空费不可重复收取。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "special"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-special-cap",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 600,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 特殊室外机位高空作业费，同一用户非同一机位封顶 600 元。这是封顶额。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "special-cap"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-visit",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 「海尔柜挂空调——保外服务工时费指导价格标准」：上门未发生维修收上门费 50 元/次。收费前须至少完成清洗一个内机过滤网、上门咨询、功能演示或试机检测之一。不是清洗一口价的自动附加。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "visit"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-remote-mid",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 保外服务工时费：超过 20 公里后，20～80 公里远程费 50 元/次。不要套用家中机按公里规则。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "remote-mid"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-remote-far",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 保外服务工时费：超过 80 公里远程费 100 元/次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "remote-far"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-gas-small",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 140,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 保外补加制冷剂：Q＜5000W 为 140 元。不是清洗价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "gas-small"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-gas-large",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 柜挂表标题为「海尔柜挂空调 2025～2026 年度收费指导标准」。这是普通家庭用户的官方指导价，不是分城成交价，也不属于家中机 2024～2025 表。 保外补加制冷剂：5000W≤Q＜10000 为 200 元。10000 瓦及以上没有这条整数。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "wall-fee",
+      "wall-fee-item": "gas-large"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-indoor-basic",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 99,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 室内机基础保养 99 元/台：运行数据点检、安全测电，擦拭面板，水清洗过滤网和蒸发器。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-central",
+      "central-item": "indoor-basic"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-indoor-deep",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 499,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 室内机深度保养 499 元/台：在基础保养之外含水清洗接水盘、风扇、蜗壳、排水管、排水泵，以及蒸汽清洗滤网和蒸发器。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-central",
+      "central-item": "indoor-deep"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-outdoor",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 299,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 室外机保养 299 元/台，不含高空作业费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "haier-central",
+      "central-item": "outdoor"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-mid",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 高空作业费 4 楼至 10 楼 100 元/套，同一用户同一套房封顶 200 元/次。阳台且人不出外墙不得收取。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "central-fee",
+      "central-fee-item": "mid"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-mid-cap",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 家中机高空作业费同一用户同一套房封顶 200 元/次。这是封顶额。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "central-fee",
+      "central-fee-item": "mid-cap"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-high-floor",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 高空作业费 11 楼及以上 200 元/套，封顶同样是 200 元/次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "central-fee",
+      "central-fee-item": "high-floor"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-balcony",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 0,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 若施工点在阳台、人不出外墙，不得收取高空作业费。0 元表示不收取，不是清洗折扣。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "central-fee",
+      "central-fee-item": "balcony"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-louver",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 20,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 拆百叶 20 元/个，含拆除与安装，不并入基础保养价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "central-fee",
+      "central-fee-item": "louver"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "ac-haier-grille",
+    "serviceId": "ac-cleaning",
+    "regionId": "cn",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "海尔官网「海尔空调售后收费标准」https://www.haier.com/support/charges/air_conditioners/ 表标题为「2024～2025 年度家中机、柜嵌空调、家用水机产品基础服务费标准」。单台价，适用于普通家庭用户，不含商业与办公场所。与柜挂 2025～2026 表不是同一套。 拆防盗网 70 元/个，含拆除与安装，不并入基础保养价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "central-fee",
+      "central-fee-item": "grille"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

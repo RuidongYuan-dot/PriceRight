@@ -63,6 +63,31 @@ demo
 
 人工整理参考仍然必须指向整理时所依据的公开材料或可复核记录。不能用「经验上大概是这个数」充当 D 类来源。
 
+## 第二批已入库来源（2026-11-20）
+
+仓库所有者已批准将下列经原文核验的公开人民币价格写入正式目录，样本为 `verified: true`、`demo: false`，服务为 `active`。采集日一律 `2026-11-20`。金额只来自页面或 PDF 原文中的整数元；「xx 元起」、非整数元，以及原文没有写明计算顺序的系数，都没有换算成新的一口价。`data/fixtures/` 未改。
+
+| 服务 | 地区 | 来源 |
+| --- | --- | --- |
+| 空调清洗 `ac-cleaning` | `shanghai` | 上海住宅物业网 [962121 热线特约维修服务收费标准（2026 版）](https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp)。挂机 99 元/台、立式 128 元/台、吊顶式 115 元/台、中央空调 115 元/组。这是表内标准项，深度清洁仍是面议 |
+| 空调清洗 | `cn` | [海尔空调售后收费标准](https://www.haier.com/support/charges/air_conditioners/)。柜挂清洗用「2025～2026 年度」表；家中机、柜嵌和水机保养用「2024～2025 年度」表。高空、远程、上门和加氟按各自表格单列，不加到清洗价上 |
+| 智能门锁安装 `smart-lock-install` | `cn` | [小米米家智能门锁安装须知](https://www.mi.com/mj-smartlock/notes)、[安装服务介绍](https://ics-resources.xiaomi.com/ics-resources/articles/5d5d193d022dacc0cc80a828.html)、[公牛服务政策](https://www.gongniu.cn/server/policy.html)、[凯迪仕售后政策](https://www.kaadas.com/About/service.html) |
+| 卫浴洁具安装 `bathroom-fixture-install` | `shanghai` 或 `cn` | 同上 962121 2026 版；[上海市室内装饰行业协会 2025 版通知](https://www.snzsxh.com/node/25945)及 [PDF](https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf)中的整数元项；[宜家中国浴室安装](https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/)；[箭牌安装服务收费标准参考](https://www.arrow-home.cn/col37/index)；[TOTO 安装政策](https://www.toto.com.cn/cn/service_installment.html) |
+| 水龙头与角阀 `faucet-valve-install` | `shanghai` 或 `cn` | 962121 2026 版分档、协会整数项、宜家龙头/皂液器、箭牌龙头与小五金件基础价 |
+| 开关插座安装更换 `switch-outlet-install` | `shanghai` 或 `cn` | 962121 2026 版统一单价；箭牌电路改造 198 元/次整包 |
+
+口径边界：
+
+- 全国官方指导价的 `regionId` 是 `cn`。用户选北京、广州、深圳或杭州时，引擎回退并说明用的是全国参考，不把这些样本复制成城市价。
+- 上海热线价和协会价的 `regionId` 是 `shanghai`。其他城市没有对应样本时返回数据不足，不用上海价填上。
+- 普陀、徐汇、嘉定区应急中心与 2026 版冲突的项目（换水龙头「70 元起」、马桶更换 240 元、配件 70 元、开关插座分档）不入库、不取平均。空调清洗金额与 2026 版一致，因此不重复入库。
+- 海尔家中机远程费、公牛和箭牌的「超出部分 1.5 元/公里」不是整数元，未入库，也不改用另一张表的档位。
+- 箭牌北上广深杭系数 1.2 与「不满 50 元按 50 元收」的先后顺序原文未写明。入库的是基础价和单独的 50 元规则，没有写成 42 元或其他乘算结果。空跑费按原文分城：五城 50 元，其余已列入地区 40 元。新疆、西藏的 60 元因地区列表中没有这两地，未另建样本。
+- 小米首次安装、凯迪仕官方渠道、TOTO 官方授权智能产品的上门及人工是 0 元，并且只在对应条件下参与，避免把免费样本算进常规收费的中位数。辅材和坑管修补没有标价。
+- 智能门锁服务明确排除传统机械锁应急开锁和换锁芯。这两项在五城都没有可核验的公开官方价。
+
+后续贡献仍按下一节执行：新样本在审核通过前为 `verified: false`，服务在审核通过前不为 `active`。
+
 ## 结果页上的样本明细
 
 报价结果列出本次实际参与计算的合格样本。展示字段限于 `id`、`price`、`currency`、`sampleType`、`regionId`、`source`、`collectedAt`、`verified`、`demo`。页面用地区名称、样本类型、采集日期、核验状态和是否演示样本说明这些记录。样本标价是观察金额，不是合理参考价格。

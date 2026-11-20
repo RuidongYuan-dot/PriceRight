@@ -1,0 +1,950 @@
+[
+  {
+    "id": "bath-sh-toilet-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 150,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 马桶单个安装 150 元/个，仅限原孔位、原接口。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "hotline-install"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-toilet-replace",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 260,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 马桶单个更换（拆除+安装）260 元/个。区级旧表为 240 元，本条不取 240，也不取平均。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "hotline-replace"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-toilet-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 马桶拆除（单拆）100 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "hotline-remove"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-toilet-repair",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 马桶检修 100 元/次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "hotline-repair"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-toilet-parts",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 马桶更换配件 80 元/项。区级旧表为 70 元，本条不取 70，也不取平均。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "hotline-parts"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-toilet-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 96,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装坐便器 96 元/只。产品单价 1200 元以上按价格 8% 计取，本条只在不超过 1200 元时使用，不另算百分比。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "assoc-install",
+      "over-toilet": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-toilet-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 20,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 拆除坐式大便器连水箱 20 元/只。不是热线单拆的 100 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toilet",
+      "toilet-item": "assoc-remove"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-basin-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 130,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 台盆/水槽单个安装 130 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "hotline-install"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-basin-replace",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 180,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 台盆/水槽单个更换（拆除+安装）180 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "hotline-replace"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-basin-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 台盆/水槽拆除（单拆）100 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "hotline-remove"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-basin-repair",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 台盆/水槽检修 80 元/次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "hotline-repair"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-counter",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 96,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装台盆、水盘 96 元/只。产品单价 1200 元以上按 8% 计取，本条只在不超过 1200 元时使用。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "assoc-counter",
+      "over-counter": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-stand",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 96,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装立盆 96 元/只。产品单价 1200 元以上按 8% 计取，本条只在不超过 1200 元时使用。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "assoc-stand",
+      "over-stand": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-remove-counter",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 拆除台式洗脸盆 50 元/只。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "assoc-remove-counter"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-remove-stand",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 拆除立式洗脸盆 30 元/只。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "assoc-remove-stand"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-assoc-remove-sink",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 20,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 拆除水斗(水盘) 20 元/只。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "basin",
+      "basin-item": "assoc-remove-sink"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-unclog-manual",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 地漏等管道疏通，人工疏通 80 元/点位或次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "unclog",
+      "unclog-item": "manual"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-unclog-machine",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 150,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 地漏等管道疏通，机具疏通 150 元/点位或次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "unclog",
+      "unclog-item": "machine"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-sh-leak",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 水管渗漏维修 120 元/点位。断牙、烂牙为现场报价，没有并入本条。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "leak"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-full",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 完整浴室安装（1 个浴室柜 + 1 个台盆 + 1 个水龙头）200 元/套，不含镜柜，含接通上下水。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "full"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-annat",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 169,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 安纳特系列完整浴室安装 169 元/套，不含镜柜。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "annat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-cabinet",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 单个浴室柜/浴室配件安装 100 元/个，不含接水接电。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "cabinet"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-basin",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 单独浴室洗脸池安装（含开孔）50 元/个，不含接通上下水，不含水龙头。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "basin"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-water",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 单独浴室接通上下水 50 元/次，仅限宜家产品。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "water"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-mirror",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 单独内置照明镜子安装（含开孔）100 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "mirror"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-mirror-cabinet",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 单独内置照明镜柜安装（含开孔）150 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "mirror-cabinet"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-shower",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 69,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 花洒安装 69 元/个，包括淋浴头、喷雾装置，以及安装所需材料和服务费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "shower"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-thermo",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 99,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 温控阀安装 99 元/个，含所需材料和服务费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "thermo"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-glass-one",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 169,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 奥佩耶恩单片玻璃安装 169 元/次，不包含底盆。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "glass-one"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-glass-two",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 279,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 奥佩耶恩双片组合玻璃安装 279 元/次，不包含底盆。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "glass-two"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-ikea-removal",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 299,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 旧浴室拆除 299 元/套。须已购买宜家整套浴室；只拆柜体、镜子、龙头和台盆，不可恢复。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea",
+      "ikea-item": "removal"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-toilet-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 连体坐便器、分体坐便器安装 70 元/件。含角阀、进水管、金属三通安装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "toilet"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-toilet-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 连体坐便器、分体坐便器拆旧 35 元/件。含角阀、进水管、金属三通安装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "toilet"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-smart-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 智能坐便器（非隐藏式）安装 100 元/件。含角阀、进水管、金属三通安装、加装过滤器。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "smart"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-smart-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 智能坐便器（非隐藏式）拆旧 50 元/件。含角阀、进水管、金属三通安装、加装过滤器。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "smart"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-ceramic-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 智能坐便器陶瓷体安装 50 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "ceramic"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-ceramic-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 25,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 智能坐便器陶瓷体拆旧 25 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "ceramic"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-concealed-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 隐藏式坐便器安装 300 元/件。含水箱、架子预埋。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "concealed"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-concealed-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 隐藏式坐便器拆旧 150 元/件。含水箱、架子预埋。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "concealed"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-seat-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 60,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 智能盖板安装 60 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "seat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-seat-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 智能盖板拆旧 30 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "seat"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-basin-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 柜盆、柱盆、台上盆、台下盆、挂盆、角盆、半嵌盆、艺术盆、台盆、洗衣盆安装 35 元/件。含下水器、下水管；不含龙头安装费和台面开孔费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "basin"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-basin-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 18,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 柜盆、柱盆、台上盆、台下盆、挂盆、角盆、半嵌盆、艺术盆、台盆、洗衣盆拆旧 18 元/件。含下水器、下水管；不含龙头安装费和台面开孔费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "basin"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-sink-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 不锈钢水槽、石英石水槽安装 40 元/件。含下水器安装费，不含龙头安装费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "sink"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-sink-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 20,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 不锈钢水槽、石英石水槽拆旧 20 元/件。含下水器安装费，不含龙头安装费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "sink"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-shower-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 60,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 明杆淋浴花洒安装 60 元/件。入墙花洒不含泥水作业、预埋体组费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "shower"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-shower-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 明杆淋浴花洒拆旧 30 元/件。入墙花洒不含泥水作业、预埋体组费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "shower"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-waste-install",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 25,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 去水器安装 25 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "install",
+      "arrow-product": "waste"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-waste-remove",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 13,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 去水器拆旧 13 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-action": "remove",
+      "arrow-product": "waste"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-minimum",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 上门一次服务多件产品，总费用超过 50 元按实际收取；单次不满 50 元按 50 元收取。本条只记录这 50 元规则，不与基础价相加，也不乘 1.2。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "minimum"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-drill",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 2,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 特殊砖（玻化砖、抛光砖、大理石等）打孔费 2 元/个，单订单不超过 100 元。本条是单价，不自动并入洁具安装价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "drill"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-toto-labor",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 0,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "TOTO 官网安装政策 https://www.toto.com.cn/cn/service_installment.html 在官方线下授权门店和官方线上授权网店购买的智能产品，上门及人工免费，辅材另计。辅材和坑管修补未标金额。服务城市需热线确认。0 元只在该条件下参与，不与常规马桶安装费取中位数。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "toto",
+      "toto-official": true
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-dry-beijing",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "beijing",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 因用户原因空跑：北京、上海、广州、深圳、杭州 50 元/次。本条只记录这一城市档，不是把其他服务的全国价复制进来。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "dry"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-dry-shanghai",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 因用户原因空跑：北京、上海、广州、深圳、杭州 50 元/次。本条只记录这一城市档，不是把其他服务的全国价复制进来。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "dry"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-dry-guangzhou",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "guangzhou",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 因用户原因空跑：北京、上海、广州、深圳、杭州 50 元/次。本条只记录这一城市档，不是把其他服务的全国价复制进来。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "dry"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-dry-shenzhen",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "shenzhen",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 因用户原因空跑：北京、上海、广州、深圳、杭州 50 元/次。本条只记录这一城市档，不是把其他服务的全国价复制进来。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "dry"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-dry-hangzhou",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "hangzhou",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 因用户原因空跑：北京、上海、广州、深圳、杭州 50 元/次。本条只记录这一城市档，不是把其他服务的全国价复制进来。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "dry"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "bath-arrow-dry-other",
+    "serviceId": "bathroom-fixture-install",
+    "regionId": "cn",
+    "price": 40,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 因用户原因空跑：除北京、上海、广州、深圳、杭州以及新疆、西藏外，其余城市 40 元/次。新疆、西藏原文为 60 元，当前地区列表没有这两地，未另建样本。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow-visit",
+      "visit-item": "dry"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

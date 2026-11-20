@@ -1,0 +1,119 @@
+{
+  "id": "switch-outlet-install",
+  "categoryId": "plumbing",
+  "name": "开关插座安装更换",
+  "slug": "switch-outlet-install",
+  "description": "查询开关插座安装、更换和电路检修的已核验公开价。上海只用 962121 热线 2026 版的统一单价，不用区级旧表的分档，也不取平均。协会价目里带小数元的开关插座项目没有入库。箭牌电路改造是含材料的整包价。",
+  "keywords": ["换插座", "开关插座", "装插座", "换开关", "电路检修", "开关面板", "五孔插座"],
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要做哪一项？",
+      "required": true,
+      "options": [
+        {
+          "id": "install",
+          "label": "安装开关或插座",
+          "value": "install",
+          "description": "上海热线 2026 版 50 元/个。区级旧表按 3 只分档，与此冲突，不采用。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "开关插座安装",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "install-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "replace",
+          "label": "更换开关或插座",
+          "value": "replace",
+          "description": "上海热线 2026 版 50 元/个。不是区级旧表的 60 元或超过 3 只后的 50 元分档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "开关插座更换",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "replace-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "circuit",
+          "label": "室内电路检修",
+          "value": "circuit",
+          "description": "上海热线 120 元/次。",
+          "priceModifier": [
+            { "type": "fixed", "label": "室内电路检修", "min": 120, "max": 120, "regionIds": ["shanghai"] }
+          ]
+        },
+        {
+          "id": "box",
+          "label": "电路开关箱检修",
+          "value": "box",
+          "description": "上海热线 120 元/次。",
+          "priceModifier": [
+            { "type": "fixed", "label": "电路开关箱检修", "min": 120, "max": 120, "regionIds": ["shanghai"] }
+          ]
+        },
+        {
+          "id": "arrow",
+          "label": "箭牌电路改造",
+          "value": "arrow",
+          "description": "198 元/次，是整包价：含 2 次上门（勘察 60 元、安装 138 元）以及列明的线槽、电线、五孔插座、明装底盒和防溅盒。不再把 60 和 138 另加一遍。未乘 1.2。",
+          "priceModifier": [
+            { "type": "fixed", "label": "电路改造", "min": 198, "max": 198, "regionIds": ["cn"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "install-qty",
+      "type": "number",
+      "title": "个数",
+      "description": "按个计，不按区级旧表在超过 3 只后改单价。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "install" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "replace-qty",
+      "type": "number",
+      "title": "个数",
+      "description": "按个计，不按区级旧表分档。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "replace" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 }
+  },
+  "scope": {
+    "included": [
+      "上海 962121 2026 版：开关插座安装 50 元/个，更换 50 元/个",
+      "上海 962121 2026 版：室内电路检修 120 元/次，电路开关箱检修 120 元/次",
+      "箭牌电路改造 198 元/次，含两次上门和页内列明的材料"
+    ],
+    "excluded": [
+      "区级应急中心的分档：安装 3 只以内 50 元、超过 3 只 40 元；更换 3 只以内 60 元、超过 3 只 50 元。与 2026 版冲突，不取平均",
+      "新排电线 50 元起",
+      "协会价目中的安装开关插座 10.8 元、拆除 2.4 元、地插座 26.4 元，以及空气开关 13.2 元（含小数或用字待核，未入库）",
+      "公牛普通墙壁开关插座的安装人工（官方表未单列；智能开关维修不能当成五孔插座价）",
+      "明装、暗装、五孔和 16A 空调插座的加价（除箭牌整包改造外，没有已核验的分项一口价）",
+      "把箭牌改造包里的勘察 60 元和安装 138 元再加到 198 元上",
+      "箭牌 1.2 系数（顺序未写明，不代乘）",
+      "北京、广州、深圳、杭州的本地官方开关插座价"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}

@@ -1,0 +1,357 @@
+{
+  "id": "faucet-valve-install",
+  "categoryId": "plumbing",
+  "name": "水龙头与角阀",
+  "slug": "faucet-valve-install",
+  "description": "查询换水龙头、角阀和截止阀的已核验公开价。上海热线按龙头种类一口价计价；装修参考价、宜家和箭牌各自独立，不把「70 元起」写成一口价，也不把材料价当成人工费。箭牌基础价不乘 1.2。",
+  "keywords": [
+    "换水龙头",
+    "水龙头安装",
+    "角阀",
+    "三角阀",
+    "洗衣机龙头",
+    "冷热水龙头",
+    "面盆龙头",
+    "截止阀"
+  ],
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要按哪一种价目查？",
+      "required": true,
+      "options": [
+        {
+          "id": "hotline",
+          "label": "上海住宅热线",
+          "value": "hotline",
+          "description": "962121 的 2026 版已经按龙头种类标了一口价。区级旧表的「70 元起」不采用。"
+        },
+        {
+          "id": "association",
+          "label": "上海装修人工参考",
+          "value": "association",
+          "description": "协会 2025 版的整数项。超过指定产品单价后按百分比计取的，没有售价就不估。"
+        },
+        {
+          "id": "ikea",
+          "label": "宜家浴室龙头或皂液器",
+          "value": "ikea",
+          "description": "50 元/个，含开孔，不含接通上下水。只适用于当地有宜家商场的城市。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "浴室龙头或皂液器安装",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "arrow",
+          "label": "箭牌基础价",
+          "value": "arrow",
+          "description": "全国指导基础价，未乘 1.2。小五金件里包含直角阀，同时也包含毛巾架等，不是「只换一只角阀」的价。"
+        }
+      ]
+    },
+    {
+      "id": "hotline-item",
+      "type": "single",
+      "title": "热线要换哪一种龙头？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "hotline" }],
+      "options": [
+        {
+          "id": "cold",
+          "label": "单冷水龙头",
+          "value": "cold",
+          "description": "80 元/个。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "单冷水龙头",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "hotline-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "mixer",
+          "label": "冷热水龙头",
+          "value": "mixer",
+          "description": "120 元/个。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "冷热水龙头",
+              "min": 120,
+              "max": 120,
+              "unitQuestionId": "hotline-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "washer",
+          "label": "洗衣机龙头",
+          "value": "washer",
+          "description": "50 元/个。这是人工费，不是材料参考价里的 35 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "洗衣机龙头",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "hotline-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assoc-item",
+      "type": "single",
+      "title": "装修参考要做哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "association" }],
+      "options": [
+        {
+          "id": "basin",
+          "label": "安装面盆龙头",
+          "value": "basin",
+          "description": "30 元/只。产品单价超过 500 元时按 6% 计取。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装面盆龙头",
+              "min": 30,
+              "max": 30,
+              "unitQuestionId": "assoc-qty",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "over-basin", "operator": "equals", "value": false }]
+            }
+          ]
+        },
+        {
+          "id": "bath",
+          "label": "安装浴缸龙头",
+          "value": "bath",
+          "description": "48 元/只。产品单价超过 800 元时按 6% 计取。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装浴缸龙头",
+              "min": 48,
+              "max": 48,
+              "unitQuestionId": "assoc-qty",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "over-bath", "operator": "equals", "value": false }]
+            }
+          ]
+        },
+        {
+          "id": "sink",
+          "label": "安装水盘龙头（单冷）",
+          "value": "sink",
+          "description": "20 元/只。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装水盘龙头（单冷）",
+              "min": 20,
+              "max": 20,
+              "unitQuestionId": "assoc-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "angle",
+          "label": "安装三角阀",
+          "value": "angle",
+          "description": "12 元/只。这是装修人工参考价。热线没有公布「只换角阀」的人工一口价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装三角阀",
+              "min": 12,
+              "max": 12,
+              "unitQuestionId": "assoc-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "stop",
+          "label": "安装截止阀",
+          "value": "stop",
+          "description": "12 元/只。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装截止阀",
+              "min": 12,
+              "max": 12,
+              "unitQuestionId": "assoc-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arrow-item",
+      "type": "single",
+      "title": "箭牌基础价要看哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "arrow" }],
+      "options": [
+        {
+          "id": "install",
+          "label": "龙头或延时水嘴安装",
+          "value": "install",
+          "description": "35 元/件。未乘 1.2，也不自动改成 50 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "龙头或延时水嘴安装",
+              "min": 35,
+              "max": 35,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "remove",
+          "label": "龙头或延时水嘴拆旧",
+          "value": "remove",
+          "description": "18 元/件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "龙头或延时水嘴拆旧",
+              "min": 18,
+              "max": 18,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "hardware-install",
+          "label": "小五金件安装",
+          "value": "hardware-install",
+          "description": "70 元/件。原文包含置物架、毛巾架、直角阀、地漏、花洒头、排水管、编织管等，不能单独理解成只换角阀。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小五金件安装",
+              "min": 70,
+              "max": 70,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "hardware-remove",
+          "label": "小五金件拆旧",
+          "value": "hardware-remove",
+          "description": "35 元/件。范围与安装项相同，不是单只角阀的拆旧价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小五金件拆旧",
+              "min": 35,
+              "max": 35,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "over-basin",
+      "type": "boolean",
+      "title": "这个面盆龙头的产品单价是否高于 500 元？",
+      "description": "高于 500 元时按售价的 6% 计取。没有具体售价，就不能继续用 30 元。",
+      "required": true,
+      "visibility": [{ "questionId": "assoc-item", "operator": "equals", "value": "basin" }]
+    },
+    {
+      "id": "over-bath",
+      "type": "boolean",
+      "title": "这个浴缸龙头的产品单价是否高于 800 元？",
+      "description": "高于 800 元时按售价的 6% 计取。没有具体售价，就不能继续用 48 元。",
+      "required": true,
+      "visibility": [{ "questionId": "assoc-item", "operator": "equals", "value": "bath" }]
+    },
+    {
+      "id": "hotline-qty",
+      "type": "number",
+      "title": "个数",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "hotline" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "assoc-qty",
+      "type": "number",
+      "title": "只数",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "association" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "ikea-qty",
+      "type": "number",
+      "title": "个数",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "ikea" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "arrow-qty",
+      "type": "number",
+      "title": "件数",
+      "description": "基础价按件。不满 50 元的上门规则在卫浴洁具安装里单独查，这里不加。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "arrow" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 }
+  },
+  "scope": {
+    "included": [
+      "上海 962121 2026 版：单冷水龙头 80 元/个，冷热水龙头 120 元/个，洗衣机龙头 50 元/个",
+      "上海协会 2025：面盆龙头 30 元/只（单价不超过 500 元），浴缸龙头 48 元/只（单价不超过 800 元），水盘龙头（单冷）20 元/只",
+      "上海协会 2025：安装三角阀 12 元/只，安装截止阀 12 元/只",
+      "宜家：单独浴室龙头或皂液器 50 元/个，含开孔，不含接通上下水",
+      "箭牌全国基础价：龙头、延时水嘴安装 35 元、拆旧 18 元；小五金件安装 70 元、拆旧 35 元"
+    ],
+    "excluded": [
+      "区级应急中心「换水龙头 70 元起」（含多种龙头，与 2026 版分档冲突，不取 70，也不取平均）",
+      "热线可选材料里的进水角阀 60 元/个、进水软管和洗衣机龙头材料 35 元/个（不是人工费）",
+      "只换角阀的热线人工费，以及断牙、断丝取出（原文是现场报价）",
+      "把箭牌小五金件 70 元理解成只换一只角阀",
+      "箭牌 1.2 系数和不满 50 元按 50 元收的乘算（顺序未写明；50 元规则在卫浴洁具安装中单独查询）",
+      "协会超过产品单价门槛后的 6%（没有具体售价，不算百分比）",
+      "抽拉龙头的单独一口价（热线和协会都没有单列）",
+      "北京、广州、深圳、杭州的本地官方水龙头或角阀价"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}
