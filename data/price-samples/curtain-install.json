@@ -1,0 +1,206 @@
+[
+  {
+    "id": "curtain-ikea-measure",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「窗帘安装服务」窗帘测量 50 元/窗。https://www.ikea.cn/cn/zh/customer-service/services/complete-window-service-pubab28e5d0 适用于当地有宜家商场的城市，与安装分列。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "counted",
+      "item": "measure-window"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-ikea-alter",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 39,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「窗帘安装服务」成品窗帘改高拼宽 39 元/两片。https://www.ikea.cn/cn/zh/customer-service/services/complete-window-service-pubab28e5d0 这是改尺，不是轨道安装。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "counted",
+      "item": "alter"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-bull-smart",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策：智能窗帘上门安装 100 元/台。https://www.gongniu.cn/server/policy.html 保修期内上门服务类产品免费，本条为有偿安装标准。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "counted",
+      "item": "smart-bull"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-bull-measure",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策：智能窗帘上门测量（十窗内）80 元/单。https://www.gongniu.cn/server/policy.html",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "fixed",
+      "visit": "measure-order"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-aqara-measure",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》智能窗帘测量 80 元/根。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。非强制指导价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "counted",
+      "item": "measure-rod"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-aqara-install",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 130,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》智能窗帘安装调试 130 元/根，价格已包含超高和复杂墙体拆旧。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "counted",
+      "item": "smart-aqara"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-aqara-high",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》窗帘、晾衣架超高 3 米后，每增加 1 米 50 元/米。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。不要与已含超高的安装调试价简单相加。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "high"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-aqara-remote",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 2,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》远程费为（实际公里数-20）×2 元/公里。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "distance"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-aqara-cap",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 300,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》远程费单程封顶 300 元/次。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。这是封顶额，不是每公里价格。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "cap"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-aqara-dry",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "绿米 Aqara《2026 年度全屋智能服务收费指导标准》空跑费 50 元/次。目录 https://www.aqara.cn/business_charge ，PDF https://static-resource.aqara.com/temp/盖章-Aqara全屋智能服务收费标准-版本20260630_1784283354679.pdf 。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "fixed",
+      "visit": "dry-run"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-sh962121-rail",
+    "serviceId": "curtain-install",
+    "regionId": "shanghai",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」窗帘杆/轨道 100 元/个，主材用户自备。https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "counted",
+      "item": "rail"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-mi-first",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 0,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "米家智能窗帘安装须知：「米家智能窗帘首次安装服务免费」。https://cdn.cnbj1.fds.api.mi-img.com/ics-resources/articles/5edddedeeeb9723dde3275b9.html 不支持毛坯房、窗帘盒内径不够和直线轨以外的轨道；空跑金额该页未写出。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "fixed",
+      "visit": "mi-first"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "curtain-mi-pack",
+    "serviceId": "curtain-install",
+    "regionId": "cn",
+    "price": 69,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "米家智能窗帘安装须知配图：1 米轨道拓展包指导价 69 元，导轨长度超过 3 米时使用，最多不超过 2 个。https://cdn.cnbj1.fds.api.mi-img.com/ics-resources/articles/5edddedeeeb9723dde3275b9.html 这是配件指导价，不是安装人工费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "pack"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

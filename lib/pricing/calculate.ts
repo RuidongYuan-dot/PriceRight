@@ -110,12 +110,15 @@ function calculateRange(service: Service, answers: Record<string, Answer>, match
     return n;
   }
   const base = rule?.priceOverride ?? p.basePrice;
-  line("base", rule?.priceOverride ? matched.name + "基础价格" : "基础价格", base);
-  if (p.unitQuestionId) {
-    const question = service.questions.find((q) => q.id === p.unitQuestionId)!;
-    const n = units(question.id);
-    const source = question.type === "area" || question.type === "distance" ? question.type : "quantity";
-    line(source, question.title + " × " + n, scaled(base, n), "replace");
+  // 基础价为 0 且不按它乘数量时，金额来自附加项，不另画一条 0 元基础价格。
+  if (p.unitQuestionId !== undefined || base.min !== 0 || base.max !== 0) {
+    line("base", rule?.priceOverride ? matched.name + "基础价格" : "基础价格", base);
+    if (p.unitQuestionId) {
+      const question = service.questions.find((q) => q.id === p.unitQuestionId)!;
+      const n = units(question.id);
+      const source = question.type === "area" || question.type === "distance" ? question.type : "quantity";
+      line(source, question.title + " × " + n, scaled(base, n), "replace");
+    }
   }
   const modifiers = [...p.modifiers];
   for (const q of service.questions) {
@@ -126,7 +129,10 @@ function calculateRange(service: Service, answers: Record<string, Answer>, match
       }
     }
   }
-  const active = modifiers.filter((m) => matchesConditions(m.conditions, answers));
+  const active = modifiers.filter(
+    (m) =>
+      (m.regionIds === undefined || m.regionIds.includes(matched.id)) && matchesConditions(m.conditions, answers),
+  );
   for (const m of active) {
     if (m.type === "fixed") line("modifier", m.label, m);
     if (m.type === "per_unit" && Object.hasOwn(answers, m.unitQuestionId)) {

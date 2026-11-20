@@ -3,7 +3,8 @@ import { expect, test } from "@playwright/test";
 test("手机端从首页到报价，验证必填、地区切换和来源披露", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await expect(page.getByText(/正式价格数据建设中/)).toBeVisible();
+  await expect(page.getByRole("link", { name: /^家居安装/ })).toBeVisible();
+  await expect(page.getByText(/正式价格数据建设中/)).toHaveCount(0);
   await page.getByRole("link", { name: /体验查询/ }).click();
   await expect(page.getByRole("heading", { name: "家居安装" })).toBeVisible();
   await page.getByRole("link", { name: /吸顶灯安装/ }).click();
@@ -88,6 +89,7 @@ test("从目录查询窗帘安装，显示导轨费用及当地样本状态", as
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
   await page.getByRole("link", { name: /体验查询/ }).click();
+  await expect(page.getByText("演示服务使用合成价格数据")).toBeVisible();
   await page.getByRole("link", { name: /窗帘安装/ }).click();
   await page.getByRole("link", { name: "开始演示查询" }).click();
 

@@ -10,7 +10,10 @@ export default async function HomePage() {
   const categories = [...catalog.categories].sort((a, b) => a.order - b.order);
   const demos = [...demo.categories].sort((a, b) => a.order - b.order);
   const groups = [directoryGroup(catalog, false), directoryGroup(demo, true)];
-  const filters = filterCategories([catalog, demo]);
+  const filters = filterCategories([
+    { ...catalog, demo: false },
+    { ...demo, demo: true },
+  ]);
 
   return (
     <>

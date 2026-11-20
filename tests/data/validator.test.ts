@@ -89,6 +89,12 @@ const invalid: [string, (data: Catalog) => void][] = [
     },
   ],
   [
+    "附加费地区",
+    (d) => {
+      d.services[0].pricing.modifiers[0].regionIds = ["missing"];
+    },
+  ],
+  [
     "无效样本条件",
     (d) => {
       d["price-samples"][0].conditions = { quantity: -1 };

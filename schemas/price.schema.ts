@@ -1,7 +1,12 @@
 import { z } from "zod";
 import { answer, conditionSchema, id, money, priceRangeSchema, text, unique } from "./common";
 
-const modifierFields = { label: text, conditions: z.array(conditionSchema).optional() };
+const modifierFields = {
+  label: text,
+  conditions: z.array(conditionSchema).optional(),
+  // 只在命中这些地区时收取。省略则任何命中地区都收取。互斥价目不要叠在同一个地区上。
+  regionIds: z.array(id).min(1).optional(),
+};
 const amount = { min: money, max: money };
 
 export const priceModifierSchema = z
