@@ -1,7 +1,7 @@
 import { z } from "zod";
 import type { Answer, PriceRange } from "../../schemas/common";
 import type { Service } from "../../schemas/service.schema";
-import type { PriceSample } from "../../schemas/price.schema";
+import { isNumericRange, type NumericRange, type PriceSample, type SampleCondition } from "../../schemas/price.schema";
 import type { Region } from "../../schemas/region.schema";
 import { evaluateQuestions, matchesConditions } from "../question-engine/evaluate";
 import { regionCandidates } from "../region/resolve";
@@ -111,6 +111,20 @@ function sameAnswer(left: Answer | undefined, right: Answer): boolean {
   return Array.isArray(left) && left.length === right.length && right.every((value) => left.includes(value));
 }
 
+// 闭区间：min、max 都包含。缺的一侧不限制。空区间或颠倒的边界不命中任何答案。
+function matchesNumericRange(actual: Answer | undefined, range: NumericRange): boolean {
+  if (typeof actual !== "number" || !Number.isFinite(actual)) return false;
+  const { min, max } = range;
+  if ((min !== undefined && !Number.isFinite(min)) || (max !== undefined && !Number.isFinite(max))) return false;
+  if (min === undefined && max === undefined) return false;
+  if (min !== undefined && max !== undefined && min > max) return false;
+  return (min === undefined || actual >= min) && (max === undefined || actual <= max);
+}
+
+function matchesSampleCondition(actual: Answer | undefined, expected: SampleCondition): boolean {
+  return isNumericRange(expected) ? matchesNumericRange(actual, expected) : sameAnswer(actual, expected);
+}
+
 function calculateRange(service: Service, answers: Record<string, Answer>, matched: Region) {
   const p = service.pricing;
   const rule = p.regionRules.find((r) => r.regionId === matched.id);
@@ -196,7 +210,7 @@ export function calculatePrice(
       s.demo === service.demo &&
       s.serviceId === service.id &&
       (!data.asOf || s.collectedAt <= data.asOf) &&
-      Object.entries(s.conditions ?? {}).every(([key, value]) => sameAnswer(state.answers[key], value)),
+      Object.entries(s.conditions ?? {}).every(([key, value]) => matchesSampleCondition(state.answers[key], value)),
   );
   if (service.status === "active") {
     for (const region of candidates) {
