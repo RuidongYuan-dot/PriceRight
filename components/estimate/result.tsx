@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { PriceFactors, PriceFactor } from "../../lib/pricing/factors";
+import { buildInquiryChecklist } from "../../lib/pricing/checklist";
+import type { PriceResult } from "../../lib/pricing/calculate";
+import type { PriceFactor, PriceFactors } from "../../lib/pricing/factors";
 import type { AnswerSummary } from "../../lib/share/query";
 import type { PriceRange } from "../../schemas/common";
-import type { PriceResult } from "../../lib/pricing/calculate";
+import type { Service } from "../../schemas/service.schema";
+import { ServiceScope } from "../service-scope";
 import { SampleProvenance } from "./sample-provenance";
 
 const integer = new Intl.NumberFormat("zh-CN");
@@ -16,7 +19,101 @@ function yuan(amount: number) {
 }
 const confidence = { high: "高", medium_high: "较高", medium: "一般", low: "低" };
 
-type CopyState = { status: "idle" } | { status: "copied" } | { status: "manual"; href: string };
+type CopyState = { status: "idle" } | { status: "copied" } | { status: "manual"; text: string };
+
+function useClipboard() {
+  const [state, setState] = useState<CopyState>({ status: "idle" });
+
+  async function copy(getText: () => string, fallback?: () => string) {
+    let text = "";
+    try {
+      text = getText();
+      if (!navigator.clipboard?.writeText) throw new Error("clipboard unavailable");
+      await navigator.clipboard.writeText(text);
+      setState({ status: "copied" });
+    } catch {
+      setState({ status: "manual", text: text || fallback?.() || "" });
+    }
+  }
+
+  return { state, copy };
+}
+
+function ManualField({ id, value, multiline }: { id: string; value: string; multiline: boolean }) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const areaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    const node = multiline ? areaRef.current : inputRef.current;
+    node?.focus();
+    node?.select();
+  }, [multiline, value]);
+
+  if (multiline) {
+    return (
+      <textarea
+        id={id}
+        ref={areaRef}
+        readOnly
+        rows={12}
+        spellCheck={false}
+        value={value}
+        onFocus={(event) => event.currentTarget.select()}
+      />
+    );
+  }
+
+  return (
+    <input
+      id={id}
+      ref={inputRef}
+      readOnly
+      spellCheck={false}
+      autoCapitalize="off"
+      value={value}
+      onFocus={(event) => event.currentTarget.select()}
+    />
+  );
+}
+
+function CopyFeedback({
+  state,
+  successMessage,
+  failureMessage,
+  statusId,
+  fallbackLabel,
+  fallbackId,
+  multiline = false,
+}: {
+  state: CopyState;
+  successMessage: string;
+  failureMessage: string;
+  statusId: string;
+  fallbackLabel: string;
+  fallbackId: string;
+  multiline?: boolean;
+}) {
+  const message = state.status === "copied" ? successMessage : state.status === "manual" ? failureMessage : "";
+
+  return (
+    <>
+      <p
+        id={statusId}
+        className={state.status === "manual" ? "share-status error" : state.status === "copied" ? "share-status" : "sr-only"}
+        role="status"
+        aria-live="polite"
+      >
+        {message}
+      </p>
+      {state.status === "manual" && (
+        <div className="share-fallback">
+          <label htmlFor={fallbackId}>{fallbackLabel}</label>
+          <ManualField id={fallbackId} value={state.text} multiline={multiline} />
+        </div>
+      )}
+    </>
+  );
+}
 
 function FactorList({ factors }: { factors: PriceFactor[] }) {
   return (
@@ -38,49 +135,40 @@ function FactorList({ factors }: { factors: PriceFactor[] }) {
 }
 
 export function EstimateResult({
+  service,
   result,
   regionName,
+  regionId,
+  answers,
   summaries,
   factors,
   onBack,
   onRestart,
   onCopyLink,
 }: {
+  service: Service;
   result: Exclude<PriceResult, { status: "invalid_input" }>;
   regionName: string;
+  regionId?: string;
+  answers: Readonly<Record<string, unknown>>;
   summaries: AnswerSummary[];
   factors: PriceFactors;
   onBack: () => void;
   onRestart: () => void;
   onCopyLink: () => string;
 }) {
-  const [copyState, setCopyState] = useState<CopyState>({ status: "idle" });
-  const manualInput = useRef<HTMLInputElement>(null);
-  const copyMessage =
-    copyState.status === "copied"
-      ? "链接已复制。"
-      : copyState.status === "manual"
-        ? "无法写入剪贴板，请手动复制下面的链接。"
-        : "";
+  const checklist = useClipboard();
+  const link = useClipboard();
+  const pricingRegionId = result.status === "estimated" ? result.region.id : regionId;
+  const checklistText = buildInquiryChecklist({
+    service,
+    regionName,
+    summaries,
+    result,
+    answers,
+    regionId: pricingRegionId,
+  });
   const hasFactors = factors.up.length > 0 || factors.down.length > 0;
-
-  useEffect(() => {
-    if (copyState.status !== "manual") return;
-    manualInput.current?.focus();
-    manualInput.current?.select();
-  }, [copyState]);
-
-  async function copyLink() {
-    let href = "";
-    try {
-      href = onCopyLink();
-      if (!navigator.clipboard?.writeText) throw new Error("clipboard unavailable");
-      await navigator.clipboard.writeText(href);
-      setCopyState({ status: "copied" });
-    } catch {
-      setCopyState({ status: "manual", href: href || window.location.href });
-    }
-  }
 
   return (
     <div className="result">
@@ -114,6 +202,7 @@ export function EstimateResult({
           </dl>
         </section>
       )}
+      <ServiceScope service={service} layout="result" regionId={pricingRegionId} />
       {result.status === "estimated" && (
         <section className="surface result-details" aria-labelledby="breakdown-title">
           <h3 id="breakdown-title">价格构成</h3>
@@ -178,7 +267,20 @@ export function EstimateResult({
         </section>
       )}
       <div className="form-actions">
-        <button type="button" className="button secondary share-action" onClick={() => void copyLink()} aria-describedby="share-copy-status">
+        <button
+          type="button"
+          className="button secondary copy-action"
+          onClick={() => void checklist.copy(() => checklistText)}
+          aria-describedby="checklist-copy-status"
+        >
+          复制询价清单
+        </button>
+        <button
+          type="button"
+          className="button secondary copy-action"
+          onClick={() => void link.copy(onCopyLink, () => window.location.href)}
+          aria-describedby="share-copy-status"
+        >
           复制分享链接
         </button>
         <button type="button" className="button secondary" onClick={onBack}>
@@ -188,30 +290,23 @@ export function EstimateResult({
           重新查询
         </button>
       </div>
-      <p
-        id="share-copy-status"
-        className={
-          copyState.status === "manual" ? "share-status error" : copyState.status === "copied" ? "share-status" : "sr-only"
-        }
-        role="status"
-        aria-live="polite"
-      >
-        {copyMessage}
-      </p>
-      {copyState.status === "manual" && (
-        <div className="share-fallback">
-          <label htmlFor="share-link">分享链接</label>
-          <input
-            id="share-link"
-            ref={manualInput}
-            readOnly
-            spellCheck={false}
-            autoCapitalize="off"
-            value={copyState.href}
-            onFocus={(event) => event.currentTarget.select()}
-          />
-        </div>
-      )}
+      <CopyFeedback
+        state={checklist.state}
+        successMessage="询价清单已复制。"
+        failureMessage="无法写入剪贴板，请手动复制下面的询价清单。"
+        statusId="checklist-copy-status"
+        fallbackLabel="询价清单"
+        fallbackId="inquiry-checklist"
+        multiline
+      />
+      <CopyFeedback
+        state={link.state}
+        successMessage="链接已复制。"
+        failureMessage="无法写入剪贴板，请手动复制下面的链接。"
+        statusId="share-copy-status"
+        fallbackLabel="分享链接"
+        fallbackId="share-link"
+      />
     </div>
   );
 }

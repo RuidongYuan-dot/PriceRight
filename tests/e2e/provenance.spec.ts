@@ -3,13 +3,21 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, test } from "@playwright/test";
 import { EstimateResult } from "../../components/estimate/result";
 import { calculatePrice, type PriceResult } from "../../lib/pricing/calculate";
+import type { Service } from "../../schemas/service.schema";
 import { loadDemo } from "../demo";
 
-function renderResult(result: Exclude<PriceResult, { status: "invalid_input" }>, regionName: string) {
+function renderResult(
+  service: Service,
+  result: Exclude<PriceResult, { status: "invalid_input" }>,
+  regionName: string,
+  answers: Readonly<Record<string, unknown>>,
+) {
   return renderToStaticMarkup(
     createElement(EstimateResult, {
+      service,
       result,
       regionName,
+      answers,
       summaries: [],
       factors: { up: [], down: [] },
       onBack: () => undefined,
@@ -64,7 +72,7 @@ test("全国回退样本展示地区标签，并且只把安全网址做成外�
   expect(result.region).toMatchObject({ id: "cn", name: "全国" });
   expect(result.range).toEqual({ min: 80, max: 120 });
 
-  await page.setContent(renderResult(result, "北京"));
+  await page.setContent(renderResult(service, result, "北京", answers));
   const samples = page.getByRole("region", { name: "公开样本来源明细" });
   await expect(samples.getByText("70 元")).toBeVisible();
   await expect(samples.getByText("全国 · 全国参考")).toBeVisible();
@@ -101,7 +109,7 @@ test("样本较多时默认折叠，展开后按采集日期阅读", async ({ pa
   });
   expect(result.status).toBe("estimated");
   if (result.status !== "estimated") return;
-  await page.setContent(renderResult(result, "北京"));
+  await page.setContent(renderResult(service, result, "北京", answers));
   const summary = page.getByText("查看全部 4 条公开样本来源");
   await expect(summary).toBeVisible();
   await expect(page.getByText("10 元")).toBeHidden();

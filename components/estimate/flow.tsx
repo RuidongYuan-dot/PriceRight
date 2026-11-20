@@ -164,8 +164,11 @@ export function EstimateFlow({ service, data }: { service: Service; data: PriceD
       <ShareFeedbackList items={feedback} />
       {showingResult && result ? (
         <EstimateResult
+          service={service}
           result={result}
           regionName={selected?.label ?? ""}
+          regionId={selected?.id}
+          answers={answers}
           summaries={describeShareAnswers(service.questions, answers)}
           factors={factors}
           onBack={() => showStep(null)}
