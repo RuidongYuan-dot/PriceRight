@@ -25,7 +25,7 @@ pnpm build
 
 `pnpm build` 依次执行数据校验、TypeScript 检查，并以 `output: "export"` 把站点写到 `out/`。静态导出不使用 Next.js 图片优化服务，因此 `images.unoptimized` 为 `true`。路由带尾部斜杠，页面文件是目录中的 `index.html`，与现有 `gh-pages` 分支一致。`public/` 会原样复制到 `out/`，其中包含空的 `.nojekyll`，避免 Jekyll 跳过 `_next`。
 
-`basePath` 与 `assetPrefix` 都来自 `NEXT_PUBLIC_BASE_PATH`。未设置或设为空字符串时不做前缀，用于本地开发、CI 和根路径托管。值必须为空，或以 `/` 开头且不以 `/` 结尾，例如 `/PriceRight`。`next/link` 会自动加上该前缀。`public/` 图片经 `publicAssetPath()` 拼接同一前缀后传给 `next/image`。
+`basePath` 与 `assetPrefix` 都来自 `NEXT_PUBLIC_BASE_PATH`。未设置或设为空字符串时不做前缀，用于本地开发、CI 和根路径托管。值必须为空，或以 `/` 开头且不以 `/` 结尾，例如 `/PriceRight`。根目录 [`.env.example`](.env.example) 记录了这个变量：本地和根路径构建留空，GitHub Pages 构建使用 `/PriceRight`。`next/link` 会自动加上该前缀。`public/` 图片经 `publicAssetPath()` 拼接同一前缀后传给 `next/image`。
 
 根路径导出：
 
@@ -41,7 +41,7 @@ GitHub Pages 项目站点导出：
 NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build
 ```
 
-HTML 改为引用 `/PriceRight/_next/static/...` 与 `/PriceRight/images/ceiling-light.jpg`。导出文件位于 `out/` 根目录（`out/_next/`、`out/images/`、`out/index.html`）。`/PriceRight` 只出现在 URL 里。GitHub Pages 项目站点把发布根目录挂到 `/PriceRight`，因此与 `https://ruidongyuan-dot.github.io/PriceRight/` 以及当前 `gh-pages` 分支的文件布局一致。CI 的 `pnpm build` 使用默认空前缀，导出根路径站点。
+HTML 改为引用 `/PriceRight/_next/static/...` 与 `/PriceRight/images/ceiling-light.jpg`。导出文件位于 `out/` 根目录（`out/_next/`、`out/images/`、`out/index.html`）。`/PriceRight` 只出现在 URL 里。GitHub Pages 项目站点把发布根目录挂到 `/PriceRight`，因此与 `https://ruidongyuan-dot.github.io/PriceRight/` 以及当前 `gh-pages` 分支的文件布局一致。CI 的 `pnpm build` 和端到端测试使用默认空前缀。端到端测试通过后，CI 再执行 `NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build`，并确认 `out/.nojekyll` 存在。
 
 ## 手动发布到 GitHub Pages
 
@@ -73,6 +73,7 @@ HTML 改为引用 `/PriceRight/_next/static/...` 与 `/PriceRight/images/ceiling
 4. `pnpm test`
 5. `pnpm build`
 6. 安装 Playwright Chromium 后执行 `pnpm test:e2e`
+7. `NEXT_PUBLIC_BASE_PATH=/PriceRight pnpm build`，并确认 `out/.nojekyll` 存在
 
 CI 中的端到端测试会生成 HTML 报告，并在失败时保留截图和 trace。该步骤失败时，工作流上传名为 `playwright-report` 的产物，包含 `playwright-report/` 与 `test-results/`，保留 7 天。本工作流只做检查。
 

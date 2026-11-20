@@ -57,7 +57,7 @@ jobs:
         run: pnpm build
 
       - name: Ensure .nojekyll
-        run: test -f out/.nojekyll || : > out/.nojekyll
+        run: test -f out/.nojekyll || touch out/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
