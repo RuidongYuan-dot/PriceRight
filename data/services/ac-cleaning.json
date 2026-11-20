@@ -1,0 +1,617 @@
+{
+  "id": "ac-cleaning",
+  "categoryId": "appliance-cleaning",
+  "name": "空调清洗",
+  "slug": "ac-cleaning",
+  "description": "按已核验的公开价查询空调清洗。上海住宅小区用 962121 热线 2026 版的标准项；海尔挂机和柜机用 2025–2026 年度指导价，家中机用另一张 2024–2025 年度表。两套表以及高空费、远程费、上门费都分开查，不会加在一起。没有本地公示的城市，不会被填上上海的价格。",
+  "keywords": [
+    "空调清洗",
+    "挂机清洗",
+    "柜机清洗",
+    "洗空调",
+    "空调保养",
+    "中央空调清洗",
+    "家中机保养",
+    "空调深度清洗",
+    "立式空调清洗",
+    "吊顶空调清洗",
+    "空调高空作业",
+    "加氟"
+  ],
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要查哪一种价目？",
+      "required": true,
+      "options": [
+        {
+          "id": "shanghai",
+          "label": "上海住宅热线的标准清洗",
+          "value": "shanghai",
+          "description": "只有上海公布了这组一口价。深度清洁写的是面议，这里不估成深度拆洗。"
+        },
+        {
+          "id": "haier-wall",
+          "label": "海尔挂机或柜机清洗",
+          "value": "haier-wall",
+          "description": "官网 2025–2026 年度指导价，按台。不是家中机那张 2024–2025 表。"
+        },
+        {
+          "id": "haier-central",
+          "label": "海尔家中机保养",
+          "value": "haier-central",
+          "description": "官网 2024–2025 年度家中机、柜嵌和水机的基础服务费，按台。不能和挂机柜机清洗价混用。"
+        },
+        {
+          "id": "wall-fee",
+          "label": "海尔挂机柜机的附加费",
+          "value": "wall-fee",
+          "description": "高空、远程、上门和加氟单独查，不会加到清洗价上。用的是 2025–2026 柜挂相关表，不是家中机的按公里远程费。"
+        },
+        {
+          "id": "central-fee",
+          "label": "海尔家中机的附加费",
+          "value": "central-fee",
+          "description": "用的是 2024–2025 家中机表。阳台且人不出外墙不收高空费。超出 20 公里后每公里 1.5 元不是整数元，没有收成一口价。"
+        }
+      ]
+    },
+    {
+      "id": "sh-item",
+      "type": "single",
+      "title": "上海热线要洗哪一种？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "shanghai" }],
+      "options": [
+        {
+          "id": "wall",
+          "label": "挂机空调",
+          "value": "wall",
+          "description": "99 元/台。带☆的人工清洗标准项，不是深度拆洗一口价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "挂机空调清洗",
+              "min": 99,
+              "max": 99,
+              "unitQuestionId": "sh-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "floor",
+          "label": "立式空调",
+          "value": "floor",
+          "description": "128 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "立式空调清洗",
+              "min": 128,
+              "max": 128,
+              "unitQuestionId": "sh-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "cassette",
+          "label": "吊顶式空调",
+          "value": "cassette",
+          "description": "115 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "吊顶式空调清洗",
+              "min": 115,
+              "max": 115,
+              "unitQuestionId": "sh-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "central",
+          "label": "中央空调（按组）",
+          "value": "central",
+          "description": "115 元/组。单位是组，不是台，也不是海尔家中机保养价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "中央空调清洗",
+              "min": 115,
+              "max": 115,
+              "unitQuestionId": "sh-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wall-item",
+      "type": "single",
+      "title": "海尔挂机或柜机要做哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "haier-wall" }],
+      "options": [
+        {
+          "id": "deep-wall",
+          "label": "深度清洗内机 · 挂机",
+          "value": "deep-wall",
+          "description": "99 元/台。这是海尔深度清洗，不要当成上海热线的标准项。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "深度清洗内机（挂机）",
+              "min": 99,
+              "max": 99,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "deep-square",
+          "label": "深度清洗内机 · 方型柜机",
+          "value": "deep-square",
+          "description": "149 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "深度清洗内机（方型柜机）",
+              "min": 149,
+              "max": 149,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "deep-cylinder",
+          "label": "深度清洗内机 · 圆柱型柜机",
+          "value": "deep-cylinder",
+          "description": "189 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "深度清洗内机（圆柱型柜机）",
+              "min": 189,
+              "max": 189,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "deep-twin",
+          "label": "深度清洗内机 · 双塔型柜机",
+          "value": "deep-twin",
+          "description": "229 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "深度清洗内机（双塔型柜机）",
+              "min": 229,
+              "max": 229,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "plain-in-wall",
+          "label": "普通清洗内机 · 挂机",
+          "value": "plain-in-wall",
+          "description": "50 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "普通清洗内机（挂机）",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "plain-in-cabinet",
+          "label": "普通清洗内机 · 柜机",
+          "value": "plain-in-cabinet",
+          "description": "50 元/台。这一行没有再区分方柜、圆柜或双塔。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "普通清洗内机（柜机）",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "plain-out-wall",
+          "label": "普通清洗外机 · 挂机",
+          "value": "plain-out-wall",
+          "description": "70 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "普通清洗外机（挂机）",
+              "min": 70,
+              "max": 70,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "plain-out-cabinet",
+          "label": "普通清洗外机 · 柜机",
+          "value": "plain-out-cabinet",
+          "description": "70 元/台。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "普通清洗外机（柜机）",
+              "min": 70,
+              "max": 70,
+              "unitQuestionId": "wall-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central-item",
+      "type": "single",
+      "title": "海尔家中机要做哪一项保养？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "haier-central" }],
+      "options": [
+        {
+          "id": "indoor-basic",
+          "label": "室内机基础保养",
+          "value": "indoor-basic",
+          "description": "99 元/台。含运行点检、安全测电、擦面板，以及水清洗过滤网和蒸发器。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "室内机基础保养",
+              "min": 99,
+              "max": 99,
+              "unitQuestionId": "central-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "indoor-deep",
+          "label": "室内机深度保养",
+          "value": "indoor-deep",
+          "description": "499 元/台。在基础保养上增加接水盘、风扇、蜗壳、排水管和排水泵的水清洗，以及滤网、蒸发器的蒸汽清洗。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "室内机深度保养",
+              "min": 499,
+              "max": 499,
+              "unitQuestionId": "central-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "outdoor",
+          "label": "室外机保养",
+          "value": "outdoor",
+          "description": "299 元/台。不含高空作业费。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "室外机保养",
+              "min": 299,
+              "max": 299,
+              "unitQuestionId": "central-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wall-fee-item",
+      "type": "single",
+      "title": "要看挂机柜机的哪一项附加费？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "wall-fee" }],
+      "options": [
+        {
+          "id": "high",
+          "label": "高空作业费（4 楼及以上）",
+          "value": "high",
+          "description": "100 元/套。同一用户同一套房封顶 300 元/次，所以这里最多填 3 套。封顶额请另选，不会自动再加一笔。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "高空作业费",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "high-sets",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "high-cap",
+          "label": "高空作业费封顶",
+          "value": "high-cap",
+          "description": "同一套房最多 300 元/次。这是封顶额，不是在 100 元之外再加 300 元。",
+          "priceModifier": [
+            { "type": "fixed", "label": "高空作业费封顶", "min": 300, "max": 300, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "special",
+          "label": "特殊室外机位高空作业费",
+          "value": "special",
+          "description": "300 元/套，需工业双绳。与常规高空费不能重复收。非同一机位封顶 600 元，所以这里最多填 2 套。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "特殊室外机位高空作业费",
+              "min": 300,
+              "max": 300,
+              "unitQuestionId": "special-sets",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "special-cap",
+          "label": "特殊机位高空费封顶",
+          "value": "special-cap",
+          "description": "非同一机位最多 600 元。这是封顶额，不是再加一笔。",
+          "priceModifier": [
+            { "type": "fixed", "label": "特殊机位高空费封顶", "min": 600, "max": 600, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "visit",
+          "label": "上门费（上门未维修）",
+          "value": "visit",
+          "description": "保外服务工时费里的 50 元/次。收费前至少要完成过滤网清洗、上门咨询、功能演示或试机检测之一。不是清洗一口价的自动附加。",
+          "priceModifier": [
+            { "type": "fixed", "label": "上门费（未维修）", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "remote-mid",
+          "label": "远程费（20 至 80 公里）",
+          "value": "remote-mid",
+          "description": "保外服务工时费：超过 20 公里后，20 至 80 公里 50 元/次。不要套到家中机的按公里规则上。",
+          "priceModifier": [
+            { "type": "fixed", "label": "远程费（20 至 80 公里）", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "remote-far",
+          "label": "远程费（超过 80 公里）",
+          "value": "remote-far",
+          "description": "保外服务工时费：超过 80 公里 100 元/次。",
+          "priceModifier": [
+            { "type": "fixed", "label": "远程费（超过 80 公里）", "min": 100, "max": 100, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "gas-small",
+          "label": "补加制冷剂（5000 瓦以下）",
+          "value": "gas-small",
+          "description": "保外项目 140 元。不是清洗价，也没有套用到格力或美的。",
+          "priceModifier": [
+            { "type": "fixed", "label": "补加制冷剂（5000 瓦以下）", "min": 140, "max": 140, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "gas-large",
+          "label": "补加制冷剂（5000 至不满 10000 瓦）",
+          "value": "gas-large",
+          "description": "保外项目 200 元。10000 瓦及以上没有公开整数，这里不估。",
+          "priceModifier": [
+            { "type": "fixed", "label": "补加制冷剂（5000 至不满 10000 瓦）", "min": 200, "max": 200, "regionIds": ["cn"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central-fee-item",
+      "type": "single",
+      "title": "要看家中机的哪一项附加费？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "central-fee" }],
+      "options": [
+        {
+          "id": "mid",
+          "label": "高空作业费（4 至 10 楼）",
+          "value": "mid",
+          "description": "100 元/套。同一套房封顶 200 元/次，所以这里最多填 2 套。人在阳台、不出外墙则不能收，请改选下一项。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "高空作业费（4 至 10 楼）",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "mid-sets",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "mid-cap",
+          "label": "家中机高空费封顶",
+          "value": "mid-cap",
+          "description": "同一套房最多 200 元/次。这是封顶额。",
+          "priceModifier": [
+            { "type": "fixed", "label": "家中机高空费封顶", "min": 200, "max": 200, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "high-floor",
+          "label": "高空作业费（11 楼及以上）",
+          "value": "high-floor",
+          "description": "200 元/套，封顶也是 200 元/次。多套不再相加，这里只给出封顶后的 200 元。",
+          "priceModifier": [
+            { "type": "fixed", "label": "高空作业费（11 楼及以上）", "min": 200, "max": 200, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "balcony",
+          "label": "阳台作业且人不出外墙",
+          "value": "balcony",
+          "description": "原文规定不得收取高空作业费。结果是 0 元，不是清洗折扣。",
+          "priceModifier": [
+            { "type": "fixed", "label": "不收高空作业费", "min": 0, "max": 0, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "louver",
+          "label": "拆百叶",
+          "value": "louver",
+          "description": "20 元/个，含拆除和安装。不并入保养价，用户也可以自己找人拆装。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆百叶",
+              "min": 20,
+              "max": 20,
+              "unitQuestionId": "louver-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "grille",
+          "label": "拆防盗网",
+          "value": "grille",
+          "description": "70 元/个，含拆除和安装。不并入保养价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆防盗网",
+              "min": 70,
+              "max": 70,
+              "unitQuestionId": "grille-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sh-qty",
+      "type": "number",
+      "title": "数量",
+      "description": "挂机、立式、吊顶按台，中央空调按组。参考价格按数量合计；常见价格是这条公开单价。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "shanghai" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "wall-qty",
+      "type": "number",
+      "title": "台数",
+      "description": "海尔柜挂清洗按台。常见价格是公开单价。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "haier-wall" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "central-qty",
+      "type": "number",
+      "title": "台数",
+      "description": "家中机保养按台，适用于普通家庭用户。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "haier-central" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "high-sets",
+      "type": "number",
+      "title": "套数",
+      "description": "同一套房封顶 300 元，按 100 元/套最多计 3 套。",
+      "required": true,
+      "visibility": [{ "questionId": "wall-fee-item", "operator": "equals", "value": "high" }],
+      "validation": { "integer": true, "min": 1, "max": 3 }
+    },
+    {
+      "id": "special-sets",
+      "type": "number",
+      "title": "套数",
+      "description": "非同一机位封顶 600 元，按 300 元/套最多计 2 套。",
+      "required": true,
+      "visibility": [{ "questionId": "wall-fee-item", "operator": "equals", "value": "special" }],
+      "validation": { "integer": true, "min": 1, "max": 2 }
+    },
+    {
+      "id": "mid-sets",
+      "type": "number",
+      "title": "套数",
+      "description": "同一套房封顶 200 元，按 100 元/套最多计 2 套。",
+      "required": true,
+      "visibility": [{ "questionId": "central-fee-item", "operator": "equals", "value": "mid" }],
+      "validation": { "integer": true, "min": 1, "max": 2 }
+    },
+    {
+      "id": "louver-qty",
+      "type": "number",
+      "title": "个数",
+      "required": true,
+      "visibility": [{ "questionId": "central-fee-item", "operator": "equals", "value": "louver" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    },
+    {
+      "id": "grille-qty",
+      "type": "number",
+      "title": "个数",
+      "required": true,
+      "visibility": [{ "questionId": "central-fee-item", "operator": "equals", "value": "grille" }],
+      "validation": { "integer": true, "min": 1, "max": 20 }
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 }
+  },
+  "scope": {
+    "included": [
+      "上海 962121 热线 2026 版：挂机 99 元/台、立式 128 元/台、吊顶式 115 元/台、中央空调 115 元/组。这是表内标准项，深度清洁面议",
+      "海尔柜挂 2025–2026：深度清洗内机，挂机 99、方型柜机 149、圆柱型柜机 189、双塔型柜机 229 元/台",
+      "海尔柜挂 2025–2026：普通清洗内机，挂机和柜机各 50 元/台；普通清洗外机，挂机和柜机各 70 元/台",
+      "海尔柜挂高空：4 楼及以上 100 元/套，同一套房封顶 300 元/次；特殊室外机位 300 元/套，与常规高空费不重复收取，非同一机位封顶 600 元",
+      "海尔柜挂保外远程：20 至 80 公里 50 元/次，超过 80 公里 100 元/次；上门未维修 50 元/次",
+      "海尔保外补加制冷剂：5000 瓦以下 140 元，5000 瓦至不满 10000 瓦 200 元",
+      "海尔家中机 2024–2025：室内基础保养 99 元/台，室内深度保养 499 元/台，室外保养 299 元/台（不含高空作业费）",
+      "海尔家中机高空：4 至 10 楼 100 元/套，11 楼及以上 200 元/套，同一套房封顶 200 元/次；阳台且人不出外墙不收",
+      "家中机附加：拆百叶 20 元/个、拆防盗网 70 元/个，含拆和装，不并入保养价"
+    ],
+    "excluded": [
+      "把柜挂 2025–2026 与家中机 2024–2025 两套表混用、相加或互相替代",
+      "把高空费、远程费、上门费或加氟自动加到清洗价上",
+      "家中机超出 20 公里后每公里 1.5 元（不是整数元，也不改用柜挂表的 50 元或 100 元档）",
+      "上海 962121 超时上门 50 元起；区级应急中心有的写成 50 元，措辞不一致，不取 50 也不取平均",
+      "深度清洁面议、特殊吊装无固定整数，以及脚手架、吊车等由客户自担的设备费",
+      "把上海挂机 99 元标成海尔深度清洗，或把海尔深度清洗标成上海热线价",
+      "北京、广州、深圳、杭州的本地官方空调清洗价（没有公示，不用上海价或全国指导价冒充当地成交价）",
+      "美的、格力、京东服务+、苏宁帮客等待核验价目",
+      "商业和办公场所，以及 10000 瓦及以上的补加制冷剂"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}

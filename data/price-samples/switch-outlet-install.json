@@ -1,0 +1,77 @@
+[
+  {
+    "id": "switch-sh-install",
+    "serviceId": "switch-outlet-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 开关插座安装 50 元/个。区级旧表按只数分档，与 2026 版冲突，本条不采用分档，也不取平均。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "install"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "switch-sh-replace",
+    "serviceId": "switch-outlet-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 开关插座更换 50 元/个。区级旧表为 3 只以内 60 元、超过 3 只 50 元，本条只用 2026 版的统一 50 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "replace"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "switch-sh-circuit",
+    "serviceId": "switch-outlet-install",
+    "regionId": "shanghai",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 室内电路检修 120 元/次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "circuit"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "switch-sh-box",
+    "serviceId": "switch-outlet-install",
+    "regionId": "shanghai",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 电路开关箱检修 120 元/次。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "box"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "switch-arrow-circuit",
+    "serviceId": "switch-outlet-install",
+    "regionId": "cn",
+    "price": 198,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 电路改造服务 198 元/次，含 2 次上门：勘察 60 元、安装 138 元，并含页内列明的线槽、电线、五孔插座、明装底盒、防溅盒等材料。本条只记录 198 元整包，不再把 60 与 138 另计。未乘 1.2。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

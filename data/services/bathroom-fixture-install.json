@@ -1,0 +1,1048 @@
+{
+  "id": "bathroom-fixture-install",
+  "categoryId": "plumbing",
+  "name": "卫浴洁具安装",
+  "slug": "bathroom-fixture-install",
+  "description": "查询马桶、台盆、疏通和浴室安装的已核验公开价。上海维修用 962121 热线 2026 版，装修人工用协会 2025 版的整数项，品牌安装单独列出。这几套口径不会加在一起，也不会取平均。宜家没有马桶安装价。箭牌只展示全国基础价，不代乘 1.2。",
+  "keywords": [
+    "马桶安装",
+    "坐便器",
+    "换马桶",
+    "台盆安装",
+    "浴室柜安装",
+    "花洒安装",
+    "卫浴安装",
+    "疏通下水道",
+    "水管维修",
+    "智能马桶"
+  ],
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要办的是哪一件？",
+      "required": true,
+      "options": [
+        {
+          "id": "toilet",
+          "label": "马桶或坐便器",
+          "value": "toilet",
+          "description": "上海热线和装修参考价分开。不含宜家，因为宜家浴室页没有马桶安装。"
+        },
+        {
+          "id": "basin",
+          "label": "台盆或水槽",
+          "value": "basin",
+          "description": "热线的台盆、水槽一口价，以及协会按种类列出的安装和拆除。"
+        },
+        {
+          "id": "unclog",
+          "label": "管道疏通",
+          "value": "unclog",
+          "description": "只有上海热线公布了人工和机具的一口价。拆装疏通是 400 元起，这里不估。"
+        },
+        {
+          "id": "leak",
+          "label": "水管渗漏维修",
+          "value": "leak",
+          "description": "上海热线 120 元/点位。断牙、烂牙要现场报价，没有固定金额。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "水管渗漏维修",
+              "min": 120,
+              "max": 120,
+              "unitQuestionId": "leak-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "ikea",
+          "label": "宜家浴室安装",
+          "value": "ikea",
+          "description": "只适用于当地有宜家商场的城市。产品另计。没有马桶这一项。"
+        },
+        {
+          "id": "arrow",
+          "label": "箭牌洁具基础价",
+          "value": "arrow",
+          "description": "全国指导基础价。北上广深杭系数 1.2 和「不满 50 元按 50 元收」的先后顺序原文没写，这里不乘、不相加。"
+        },
+        {
+          "id": "arrow-visit",
+          "label": "箭牌上门规则",
+          "value": "arrow-visit",
+          "description": "最低上门、空跑和特殊砖打孔单独查，不并进洁具基础价。"
+        },
+        {
+          "id": "toto",
+          "label": "TOTO 官方智能产品安装",
+          "value": "toto",
+          "description": "符合条件时上门和人工为 0 元。辅材另计，但没标价。这 0 元不会拿去和马桶安装费算中位数。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "官方智能产品上门及人工",
+              "min": 0,
+              "max": 0,
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "toto-official", "operator": "equals", "value": true }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "toilet-item",
+      "type": "single",
+      "title": "马桶要做哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "toilet" }],
+      "options": [
+        {
+          "id": "hotline-install",
+          "label": "热线：单个安装",
+          "value": "hotline-install",
+          "description": "上海 962121 2026 版 150 元/个。主材自备，仅限原孔位、原接口。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "马桶安装",
+              "min": 150,
+              "max": 150,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-replace",
+          "label": "热线：拆除并安装",
+          "value": "hotline-replace",
+          "description": "260 元/个。区级旧表有 240 元，这里不以旧表为准，也不取平均。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "马桶拆除并安装",
+              "min": 260,
+              "max": 260,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-remove",
+          "label": "热线：只拆除",
+          "value": "hotline-remove",
+          "description": "100 元/个，尽可能保留可用件。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "马桶拆除",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-repair",
+          "label": "热线：检修",
+          "value": "hotline-repair",
+          "description": "100 元/次。数量填次数。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "马桶检修",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-parts",
+          "label": "热线：更换配件",
+          "value": "hotline-parts",
+          "description": "80 元/项。区级旧表有 70 元，这里用 2026 版，不取平均。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "马桶更换配件",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "assoc-install",
+          "label": "装修参考：安装坐便器",
+          "value": "assoc-install",
+          "description": "协会 2025 版 96 元/只。产品单价超过 1200 元时按售价 8% 计取，没有售价就不估。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装坐便器",
+              "min": 96,
+              "max": 96,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "over-toilet", "operator": "equals", "value": false }]
+            }
+          ]
+        },
+        {
+          "id": "assoc-remove",
+          "label": "装修参考：拆除坐便器连水箱",
+          "value": "assoc-remove",
+          "description": "20 元/只。这是装修拆除参考价，不是热线的 100 元单拆。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆除坐便器连水箱",
+              "min": 20,
+              "max": 20,
+              "unitQuestionId": "toilet-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "basin-item",
+      "type": "single",
+      "title": "台盆或水槽要做哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "basin" }],
+      "options": [
+        {
+          "id": "hotline-install",
+          "label": "热线：单个安装",
+          "value": "hotline-install",
+          "description": "130 元/个。2026 版把台盆和水槽安装写在一起。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "台盆或水槽安装",
+              "min": 130,
+              "max": 130,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-replace",
+          "label": "热线：拆除并安装",
+          "value": "hotline-replace",
+          "description": "180 元/个。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "台盆或水槽拆除并安装",
+              "min": 180,
+              "max": 180,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-remove",
+          "label": "热线：只拆除",
+          "value": "hotline-remove",
+          "description": "100 元/个。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "台盆或水槽拆除",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "hotline-repair",
+          "label": "热线：检修",
+          "value": "hotline-repair",
+          "description": "80 元/次。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "台盆或水槽检修",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "assoc-counter",
+          "label": "装修参考：安装台盆、水盘",
+          "value": "assoc-counter",
+          "description": "96 元/只。产品单价超过 1200 元时按 8% 计取。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装台盆、水盘",
+              "min": 96,
+              "max": 96,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "over-counter", "operator": "equals", "value": false }]
+            }
+          ]
+        },
+        {
+          "id": "assoc-stand",
+          "label": "装修参考：安装立盆",
+          "value": "assoc-stand",
+          "description": "96 元/只。产品单价超过 1200 元时按 8% 计取。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安装立盆",
+              "min": 96,
+              "max": 96,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"],
+              "conditions": [{ "questionId": "over-stand", "operator": "equals", "value": false }]
+            }
+          ]
+        },
+        {
+          "id": "assoc-remove-counter",
+          "label": "装修参考：拆除台式洗脸盆",
+          "value": "assoc-remove-counter",
+          "description": "50 元/只。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆除台式洗脸盆",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "assoc-remove-stand",
+          "label": "装修参考：拆除立式洗脸盆",
+          "value": "assoc-remove-stand",
+          "description": "30 元/只。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆除立式洗脸盆",
+              "min": 30,
+              "max": 30,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "assoc-remove-sink",
+          "label": "装修参考：拆除水斗（水盘）",
+          "value": "assoc-remove-sink",
+          "description": "20 元/只。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "拆除水斗（水盘）",
+              "min": 20,
+              "max": 20,
+              "unitQuestionId": "basin-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unclog-item",
+      "type": "single",
+      "title": "用哪种方式疏通？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "unclog" }],
+      "options": [
+        {
+          "id": "manual",
+          "label": "人工疏通",
+          "value": "manual",
+          "description": "80 元/点位或次。洗脸池、洗菜池、厨房下水道、浴缸下水道和地漏同列。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "人工疏通",
+              "min": 80,
+              "max": 80,
+              "unitQuestionId": "unclog-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        },
+        {
+          "id": "machine",
+          "label": "机具疏通",
+          "value": "machine",
+          "description": "150 元/点位或次。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "机具疏通",
+              "min": 150,
+              "max": 150,
+              "unitQuestionId": "unclog-qty",
+              "regionIds": ["shanghai"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ikea-item",
+      "type": "single",
+      "title": "宜家浴室要装哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "ikea" }],
+      "options": [
+        {
+          "id": "full",
+          "label": "完整浴室安装",
+          "value": "full",
+          "description": "200 元/套：1 个浴室柜 + 1 个台盆 + 1 个水龙头。不含镜柜，含接通上下水。数量填套数。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "完整浴室安装",
+              "min": 200,
+              "max": 200,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "annat",
+          "label": "安纳特系列完整浴室安装",
+          "value": "annat",
+          "description": "169 元/套，同样是一柜、一盆、一龙头，不含镜柜。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "安纳特系列完整浴室安装",
+              "min": 169,
+              "max": 169,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "cabinet",
+          "label": "单个浴室柜或浴室配件",
+          "value": "cabinet",
+          "description": "100 元/个，不含接水接电。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "浴室柜或配件安装",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "basin",
+          "label": "单独浴室洗脸池",
+          "value": "basin",
+          "description": "50 元/个，含开孔。不含接通上下水，也不含水龙头。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "浴室洗脸池安装",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "water",
+          "label": "单独接通上下水",
+          "value": "water",
+          "description": "50 元/次，仅限宜家产品。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "接通上下水",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "mirror",
+          "label": "内置照明镜子",
+          "value": "mirror",
+          "description": "100 元/个，含开孔。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "内置照明镜子安装",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "mirror-cabinet",
+          "label": "内置照明镜柜",
+          "value": "mirror-cabinet",
+          "description": "150 元/个，含开孔。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "内置照明镜柜安装",
+              "min": 150,
+              "max": 150,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "shower",
+          "label": "花洒",
+          "value": "shower",
+          "description": "69 元/个。含淋浴头、喷雾装置，以及安装所需材料和服务费。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "花洒安装",
+              "min": 69,
+              "max": 69,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "thermo",
+          "label": "温控阀",
+          "value": "thermo",
+          "description": "99 元/个，含所需材料和服务费。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "温控阀安装",
+              "min": 99,
+              "max": 99,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "glass-one",
+          "label": "奥佩耶恩单片玻璃",
+          "value": "glass-one",
+          "description": "169 元/次，不含底盆。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "奥佩耶恩单片玻璃安装",
+              "min": 169,
+              "max": 169,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "glass-two",
+          "label": "奥佩耶恩双片组合玻璃",
+          "value": "glass-two",
+          "description": "279 元/次，不含底盆。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "奥佩耶恩双片玻璃安装",
+              "min": 279,
+              "max": 279,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "removal",
+          "label": "旧浴室拆除",
+          "value": "removal",
+          "description": "299 元/套。须已在宜家购买整套浴室。只拆柜体、镜子、龙头和台盆，不可恢复。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "旧浴室拆除",
+              "min": 299,
+              "max": 299,
+              "unitQuestionId": "ikea-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arrow-action",
+      "type": "single",
+      "title": "箭牌这项是安装还是拆旧？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "arrow" }],
+      "options": [
+        { "id": "install", "label": "安装", "value": "install" },
+        { "id": "remove", "label": "拆旧", "value": "remove" }
+      ]
+    },
+    {
+      "id": "arrow-product",
+      "type": "single",
+      "title": "箭牌是哪一种洁具？",
+      "description": "下面都是全国基础价，没有乘 1.2。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "arrow" }],
+      "options": [
+        {
+          "id": "toilet",
+          "label": "连体或分体坐便器",
+          "value": "toilet",
+          "description": "安装 70 元，拆旧 35 元。含角阀、进水管和金属三通。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "连体或分体坐便器安装",
+              "min": 70,
+              "max": 70,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "连体或分体坐便器拆旧",
+              "min": 35,
+              "max": 35,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "smart",
+          "label": "智能坐便器（非隐藏式）",
+          "value": "smart",
+          "description": "安装 100 元，拆旧 50 元。含角阀、进水管、金属三通和加装过滤器。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能坐便器安装",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "智能坐便器拆旧",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "ceramic",
+          "label": "智能坐便器陶瓷体",
+          "value": "ceramic",
+          "description": "安装 50 元，拆旧 25 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能坐便器陶瓷体安装",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "智能坐便器陶瓷体拆旧",
+              "min": 25,
+              "max": 25,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "concealed",
+          "label": "隐藏式坐便器",
+          "value": "concealed",
+          "description": "安装 300 元，拆旧 150 元。含水箱和架子预埋。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "隐藏式坐便器安装",
+              "min": 300,
+              "max": 300,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "隐藏式坐便器拆旧",
+              "min": 150,
+              "max": 150,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "seat",
+          "label": "智能盖板",
+          "value": "seat",
+          "description": "安装 60 元，拆旧 30 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "智能盖板安装",
+              "min": 60,
+              "max": 60,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "智能盖板拆旧",
+              "min": 30,
+              "max": 30,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "basin",
+          "label": "柜盆、柱盆、台盆等",
+          "value": "basin",
+          "description": "安装 35 元，拆旧 18 元。含下水器和下水管，不含龙头，也不含台面开孔。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "盆类安装",
+              "min": 35,
+              "max": 35,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "盆类拆旧",
+              "min": 18,
+              "max": 18,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "sink",
+          "label": "不锈钢或石英石水槽",
+          "value": "sink",
+          "description": "安装 40 元，拆旧 20 元。含下水器，不含龙头。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "水槽安装",
+              "min": 40,
+              "max": 40,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "水槽拆旧",
+              "min": 20,
+              "max": 20,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "shower",
+          "label": "明杆淋浴花洒",
+          "value": "shower",
+          "description": "安装 60 元，拆旧 30 元。入墙花洒不含泥水作业和预埋。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "明杆花洒安装",
+              "min": 60,
+              "max": 60,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "明杆花洒拆旧",
+              "min": 30,
+              "max": 30,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        },
+        {
+          "id": "waste",
+          "label": "去水器",
+          "value": "waste",
+          "description": "安装 25 元，拆旧 13 元。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "去水器安装",
+              "min": 25,
+              "max": 25,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "install" }]
+            },
+            {
+              "type": "per_unit",
+              "label": "去水器拆旧",
+              "min": 13,
+              "max": 13,
+              "unitQuestionId": "arrow-qty",
+              "regionIds": ["cn"],
+              "conditions": [{ "questionId": "arrow-action", "operator": "equals", "value": "remove" }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "visit-item",
+      "type": "single",
+      "title": "要看箭牌的哪一条上门规则？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "arrow-visit" }],
+      "options": [
+        {
+          "id": "minimum",
+          "label": "单次不满 50 元时的最低上门服务费",
+          "value": "minimum",
+          "description": "只展示 50 元这一条。不和基础价相加，也不处理尚未写明顺序的 1.2 系数。",
+          "priceModifier": [
+            { "type": "fixed", "label": "最低上门服务费", "min": 50, "max": 50, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "dry",
+          "label": "因用户原因空跑",
+          "value": "dry",
+          "description": "北京、上海、广州、深圳、杭州 50 元/次，其他已列入地区 40 元/次。新疆、西藏原文是 60 元，地区列表里没有这两地。",
+          "priceModifier": [
+            {
+              "type": "fixed",
+              "label": "空跑费",
+              "min": 50,
+              "max": 50,
+              "regionIds": ["beijing", "shanghai", "guangzhou", "shenzhen", "hangzhou"]
+            },
+            { "type": "fixed", "label": "空跑费", "min": 40, "max": 40, "regionIds": ["cn"] }
+          ]
+        },
+        {
+          "id": "drill",
+          "label": "特殊砖打孔",
+          "value": "drill",
+          "description": "玻化砖、抛光砖、大理石等 2 元/个。单订单不超过 100 元，最多填 50 个。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "特殊砖打孔",
+              "min": 2,
+              "max": 2,
+              "unitQuestionId": "drill-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "over-toilet",
+      "type": "boolean",
+      "title": "这只坐便器的产品单价是否高于 1200 元？",
+      "description": "高于 1200 元时按售价的 8% 计取。没有具体售价，就不能继续用 96 元。",
+      "required": true,
+      "visibility": [{ "questionId": "toilet-item", "operator": "equals", "value": "assoc-install" }]
+    },
+    {
+      "id": "over-counter",
+      "type": "boolean",
+      "title": "这个台盆或水盘的产品单价是否高于 1200 元？",
+      "description": "高于 1200 元时按售价的 8% 计取。没有具体售价，就不能继续用 96 元。",
+      "required": true,
+      "visibility": [{ "questionId": "basin-item", "operator": "equals", "value": "assoc-counter" }]
+    },
+    {
+      "id": "over-stand",
+      "type": "boolean",
+      "title": "这个立盆的产品单价是否高于 1200 元？",
+      "description": "高于 1200 元时按售价的 8% 计取。没有具体售价，就不能继续用 96 元。",
+      "required": true,
+      "visibility": [{ "questionId": "basin-item", "operator": "equals", "value": "assoc-stand" }]
+    },
+    {
+      "id": "toto-official",
+      "type": "boolean",
+      "title": "是不是在 TOTO 官方授权门店或官方线上授权网店买的智能产品？",
+      "description": "只有这类零售客户，官网才写上门和人工免费。辅材另收费但没标金额，坑管修补也没标价。服务城市还要打热线确认。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "toto" }]
+    },
+    {
+      "id": "toilet-qty",
+      "type": "number",
+      "title": "数量",
+      "description": "安装和拆除按个或只，检修按次，更换配件按项。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "toilet" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "basin-qty",
+      "type": "number",
+      "title": "数量",
+      "description": "按个或只。检修按次。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "basin" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "unclog-qty",
+      "type": "number",
+      "title": "点位或次数",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "unclog" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "leak-qty",
+      "type": "number",
+      "title": "点位数",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "leak" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "ikea-qty",
+      "type": "number",
+      "title": "数量",
+      "description": "成套项目填套数，单件填个数，按次的项目填次数。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "ikea" }],
+      "validation": { "integer": true, "min": 1, "max": 5 }
+    },
+    {
+      "id": "arrow-qty",
+      "type": "number",
+      "title": "件数",
+      "description": "基础价按件。不满 50 元是否改按 50 元，请到「箭牌上门规则」单独看，这里不相加。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "arrow" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    },
+    {
+      "id": "drill-qty",
+      "type": "number",
+      "title": "打孔个数",
+      "description": "单订单不超过 100 元，按 2 元/个最多填 50 个。",
+      "required": true,
+      "visibility": [{ "questionId": "visit-item", "operator": "equals", "value": "drill" }],
+      "validation": { "integer": true, "min": 1, "max": 50 }
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 }
+  },
+  "scope": {
+    "included": [
+      "上海 962121 2026 版：马桶安装 150、拆除并安装 260、单拆 100、检修 100、更换配件 80 元",
+      "上海 962121 2026 版：台盆或水槽安装 130、拆除并安装 180、单拆 100、检修 80 元",
+      "上海 962121 2026 版：人工疏通 80 元、机具疏通 150 元；水管渗漏维修 120 元/点位",
+      "上海协会 2025 整数项：安装坐便器、台盆水盘、立盆各 96 元/只（单价不超过 1200 元）；拆除坐便器连水箱 20 元，台式洗脸盆 50 元，立式洗脸盆 30 元，水斗 20 元",
+      "宜家中国浴室安装：完整浴室 200 元/套，安纳特系列 169 元/套，以及洗脸池、镜柜、花洒、玻璃和旧浴室拆除等价",
+      "箭牌全国基础价：连体或分体 70/35，智能非隐藏式 100/50，陶瓷体 50/25，隐藏式 300/150，盖板 60/30，盆类 35/18，水槽 40/20，明杆花洒 60/30，去水器 25/13",
+      "箭牌上门规则：单次不满 50 元按 50 元；北上广深杭空跑 50 元，其余已列入城市 40 元；特殊砖打孔 2 元/个、单订单不超过 100 元",
+      "TOTO：官方授权渠道的智能产品，上门和人工免费。0 元只在这条条件下出现"
+    ],
+    "excluded": [
+      "把热线价、协会参考价、宜家价和箭牌基础价加总或取平均",
+      "区级应急中心与 2026 版冲突的马桶更换 240 元、配件 70 元，以及水槽分档。以 2026 版为准，不取平均",
+      "拆装疏通 400 元起、超时上门 50 元起、新排电线 50 元起",
+      "协会含小数元的项目，以及后排水坐便器 316.25 元",
+      "产品单价超过协会门槛后的 8% 或 6%（没有具体售价，不算百分比）",
+      "宜家马桶安装（官方浴室页未列出），以及把宜家浴室套餐当成马桶价",
+      "箭牌 1.2 系数与 50 元保底的乘算结果（原文没写先后顺序）",
+      "箭牌超出 20 公里后每公里 1.5 元（不是整数元）",
+      "新疆、西藏空跑 60 元（当前地区列表没有这两地）",
+      "TOTO 辅材费和坑管修补（官网未标金额）",
+      "层高超高费 72 元/平方米已记在吸顶灯安装的协会附加费里，不在洁具价上重复加收",
+      "龙头和角阀的人工价在「水龙头与角阀」，开关插座在「开关插座安装更换」",
+      "北京、广州、深圳、杭州没有本地热线或协会公示时，不用上海价冒充当地价"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}

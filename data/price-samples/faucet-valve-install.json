@@ -1,0 +1,211 @@
+[
+  {
+    "id": "faucet-sh-cold",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 80,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 换水龙头：单冷水龙头 80 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "hotline",
+      "hotline-item": "cold"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-sh-mixer",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 换水龙头：冷热水龙头 120 元/个。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "hotline",
+      "hotline-item": "mixer"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-sh-washer",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海住宅物业网「962121热线特约维修服务收费标准（2026版）」https://962121.fgj.sh.gov.cn/wyweb/web/front/13weixiu/hongkouqu.jsp 适用于上海住宅小区家庭用户，主材用户自备。与区级应急中心旧表冲突的项目以 2026 版为准，不取平均。 换水龙头：洗衣机龙头 50 元/个。这是人工费，不是材料参考价里的 35 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "hotline",
+      "hotline-item": "washer"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-assoc-basin",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装面盆龙头 30 元/只。产品单价 500 元以上按 6% 计取，本条只在不超过 500 元时使用。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "association",
+      "assoc-item": "basin",
+      "over-basin": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-assoc-bath",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 48,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装浴缸龙头 48 元/只。产品单价 800 元以上按 6% 计取，本条只在不超过 800 元时使用。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "association",
+      "assoc-item": "bath",
+      "over-bath": false
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-assoc-sink",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 20,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装水盘龙头(单冷) 20 元/只。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "association",
+      "assoc-item": "sink"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-assoc-angle",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 12,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装三角阀 12 元/只。热线没有「只换角阀」的人工一口价，材料参考价 60 元/个也不是这条人工费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "association",
+      "assoc-item": "angle"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-assoc-stop",
+    "serviceId": "faucet-valve-install",
+    "regionId": "shanghai",
+    "price": 12,
+    "currency": "CNY",
+    "sampleType": "public_price",
+    "source": "上海市室内装饰行业协会《上海市住宅装饰装修人工费参考价（2025版）》。通知 https://www.snzsxh.com/node/25945 ，PDF https://www.snzsxh.com/sites/default/files/2025-01/%E5%85%B3%E4%BA%8E%E3%80%8A%E4%B8%8A%E6%B5%B7%E5%B8%82%E4%BD%8F%E5%AE%85%E8%A3%85%E9%A5%B0%E8%A3%85%E4%BF%AE%E4%BA%BA%E5%B7%A5%E8%B4%B9%E5%8F%82%E8%80%83%E4%BB%B7%EF%BC%882025%E7%89%88%EF%BC%89%E3%80%8B%E7%9A%84%E5%8F%91%E5%B8%83%E9%80%9A%E7%9F%A5.pdf 。通知页日期 2025-01-13。这是住宅装饰装修人工参考价，不是 962121 应急维修价，也不是成交价。 安装截止阀 12 元/只。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "association",
+      "assoc-item": "stop"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-ikea",
+    "serviceId": "faucet-valve-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "宜家中国官网「浴室安装服务」https://www.ikea.cn/cn/zh/customer-service/services/kitchen-installation/ 适用于当地有宜家商场的城市，产品与服务分开收费。未列出马桶安装。 单独浴室龙头/皂液器安装（含开孔）50 元/个，不含接通上下水。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "ikea"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-arrow-install",
+    "serviceId": "faucet-valve-install",
+    "regionId": "cn",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 龙头、延时水嘴安装 35 元/件。未乘 1.2，也没有改写成 50 元。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-item": "install"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-arrow-remove",
+    "serviceId": "faucet-valve-install",
+    "regionId": "cn",
+    "price": 18,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 龙头、延时水嘴拆旧 18 元/件。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-item": "remove"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-arrow-hardware-install",
+    "serviceId": "faucet-valve-install",
+    "regionId": "cn",
+    "price": 70,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 小五金件（含置物架、毛巾架、直角阀、地漏、花洒头、排水管、编织管等）安装 70 元/件。不是只换一只角阀的价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-item": "hardware-install"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "faucet-arrow-hardware-remove",
+    "serviceId": "faucet-valve-install",
+    "regionId": "cn",
+    "price": 35,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "箭牌家居集团官网「安装服务收费标准参考」https://www.arrow-home.cn/col37/index 本条是全国指导基础价，未乘北京、上海、广州、深圳、杭州的 1.2 系数。原文未写明该系数与「单次不满 50 元按 50 元收取」的先后顺序，故不代为乘算。 小五金件拆旧 35 元/件。范围与安装项相同，不是单只角阀的拆旧价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "arrow",
+      "arrow-item": "hardware-remove"
+    },
+    "verified": true,
+    "demo": false
+  }
+]

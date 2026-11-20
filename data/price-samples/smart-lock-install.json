@@ -1,0 +1,194 @@
+[
+  {
+    "id": "lock-mi-first-notes",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 0,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米商城《小米米家智能门锁安装须知》https://www.mi.com/mj-smartlock/notes 安装费用写明「首次安装免费，后续收费」。0 元只表示首次安装。覆盖范围以能否下单为准。不是应急开锁或换普通锁芯。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "first"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-mi-first-intro",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 0,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米智能门锁安装服务介绍 https://ics-resources.xiaomi.com/ics-resources/articles/5d5d193d022dacc0cc80a828.html 普通系列和人脸识别智能门锁 X 均为首次安装免费。覆盖范围以能否下单为准。不是应急开锁。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "first"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-mi-later-notes",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 170,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米商城《小米米家智能门锁安装须知》https://www.mi.com/mj-smartlock/notes 后续安装 170 元/台。不能把 170 元写成首次安装价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "later"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-mi-later-intro",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 170,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米智能门锁安装服务介绍 https://ics-resources.xiaomi.com/ics-resources/articles/5d5d193d022dacc0cc80a828.html 小米智能门锁系列非首次安装 170 元/台。首次安装免费，免费拆除安装位置的旧锁；打孔、扩孔、门体改造不另收费。人脸识别 X 不是这一档。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "later"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-mi-later-x",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 200,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米智能门锁安装服务介绍 https://ics-resources.xiaomi.com/ics-resources/articles/5d5d193d022dacc0cc80a828.html 小米人脸识别智能门锁 X 非首次安装 200 元/台。首次安装免费。该金额只出现在这一页。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "later-x"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-mi-remove",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 50,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米商城《小米米家智能门锁安装须知》https://www.mi.com/mj-smartlock/notes 拆机 50 元/台，仅限拆除本产品。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "remove"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-mi-move",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 220,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "小米商城《小米米家智能门锁安装须知》https://www.mi.com/mj-smartlock/notes 移机 220 元/次，仅限本产品上门拆卸和安装，不提供运输，不收取远程费。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "xiaomi",
+      "xiaomi-item": "move"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-bull-install",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 150,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策 https://www.gongniu.cn/server/policy.html 智能门锁上门安装 150 元/把。保修期内免费，本条是有偿安装标准。不是应急开锁。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bull",
+      "bull-item": "install"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-bull-repair",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 120,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策 https://www.gongniu.cn/server/policy.html 智能门锁维修为 120 元加配件费。120 元只是人工，不是含配件总价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bull",
+      "bull-item": "repair"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-bull-hole",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 100,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策 https://www.gongniu.cn/server/policy.html 特殊场景：智能门锁全新木门开孔或扩锁体孔 100 元/台。不自动并入 150 元安装价。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bull-extra",
+      "extra-item": "hole"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-bull-strip",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 30,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "公牛集团官网服务政策 https://www.gongniu.cn/server/policy.html 特殊场景：智能门锁非包装内标配边条 30 元/条。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "bull-extra",
+      "extra-item": "strip"
+    },
+    "verified": true,
+    "demo": false
+  },
+  {
+    "id": "lock-kaadas-free",
+    "serviceId": "smart-lock-install",
+    "regionId": "cn",
+    "price": 0,
+    "currency": "CNY",
+    "sampleType": "provider_quote",
+    "source": "凯迪仕官网售后政策 https://www.kaadas.com/About/service.html 本政策仅用于中国大陆官方渠道销售的智能门锁；官方渠道购买享受免费上门安装。页面未列开锁、换锁芯或夜间费。0 元只在官方渠道条件下成立。",
+    "collectedAt": "2026-11-20",
+    "conditions": {
+      "job": "kaadas",
+      "kaadas-official": true
+    },
+    "verified": true,
+    "demo": false
+  }
+]

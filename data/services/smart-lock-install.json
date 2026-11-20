@@ -1,0 +1,300 @@
+{
+  "id": "smart-lock-install",
+  "categoryId": "home-installation",
+  "name": "智能门锁安装",
+  "slug": "smart-lock-install",
+  "description": "只查询智能门锁的官方安装、拆机、移机和维修人工。传统机械锁应急开锁和换锁芯没有公开官方价，五城都不估价，这里的价格也不能当成开锁价。小米价只适用于能下单的安装覆盖区域。",
+  "keywords": [
+    "智能锁",
+    "指纹锁",
+    "密码锁",
+    "人脸锁",
+    "智能门锁",
+    "门锁安装",
+    "小米门锁",
+    "米家门锁",
+    "公牛门锁",
+    "换智能锁",
+    "凯迪仕"
+  ],
+  "status": "active",
+  "demo": false,
+  "questions": [
+    {
+      "id": "job",
+      "type": "single",
+      "title": "要查哪个品牌的哪一类费用？",
+      "required": true,
+      "options": [
+        {
+          "id": "xiaomi",
+          "label": "小米智能门锁",
+          "value": "xiaomi",
+          "description": "安装须知里的安装、拆机和移机。不是应急开锁，也不是换普通锁芯。"
+        },
+        {
+          "id": "bull",
+          "label": "公牛智能门锁安装或维修",
+          "value": "bull",
+          "description": "全国官方标准。保修期内免费；超出保修再按这里的有偿标准。"
+        },
+        {
+          "id": "bull-extra",
+          "label": "公牛开孔或边条",
+          "value": "bull-extra",
+          "description": "这两项单独查，不会自动加到 150 元安装价上。"
+        },
+        {
+          "id": "kaadas",
+          "label": "凯迪仕官方渠道安装",
+          "value": "kaadas",
+          "description": "只覆盖中国大陆官方渠道的免费上门安装。页面没有开锁或换锁芯的有偿价。"
+        }
+      ]
+    },
+    {
+      "id": "xiaomi-item",
+      "type": "single",
+      "title": "小米这笔费用是哪一种？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "xiaomi" }],
+      "options": [
+        {
+          "id": "first",
+          "label": "首次安装",
+          "value": "first",
+          "description": "免费。不能把后续的 170 元或 200 元写成首次安装价。是否覆盖以下单地址为准。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小米智能门锁首次安装",
+              "min": 0,
+              "max": 0,
+              "unitQuestionId": "xiaomi-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "later",
+          "label": "后续安装（普通系列）",
+          "value": "later",
+          "description": "170 元/台。安装须知和安装服务介绍都是这个数。人脸识别智能门锁 X 不是这一档。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小米智能门锁后续安装",
+              "min": 170,
+              "max": 170,
+              "unitQuestionId": "xiaomi-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "later-x",
+          "label": "后续安装（人脸识别智能门锁 X）",
+          "value": "later-x",
+          "description": "200 元/台。只出现在安装服务介绍页，首次安装仍然免费。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "人脸识别智能门锁 X 后续安装",
+              "min": 200,
+              "max": 200,
+              "unitQuestionId": "xiaomi-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "remove",
+          "label": "拆机",
+          "value": "remove",
+          "description": "50 元/台，仅限拆除本产品。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小米智能门锁拆机",
+              "min": 50,
+              "max": 50,
+              "unitQuestionId": "xiaomi-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "move",
+          "label": "移机",
+          "value": "move",
+          "description": "220 元/次。只含本产品上门拆卸和安装，不含运输，不收远程费。数量填次数。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "小米智能门锁移机",
+              "min": 220,
+              "max": 220,
+              "unitQuestionId": "xiaomi-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bull-item",
+      "type": "single",
+      "title": "公牛要查安装还是维修？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "bull" }],
+      "options": [
+        {
+          "id": "install",
+          "label": "上门安装",
+          "value": "install",
+          "description": "150 元/把。保修期外或政策规定的有偿安装。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "公牛智能门锁安装",
+              "min": 150,
+              "max": 150,
+              "unitQuestionId": "bull-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "repair",
+          "label": "维修人工",
+          "value": "repair",
+          "description": "120 元再加配件费。这里只给人工，不要把 120 元当成含配件的总价。",
+          "priceModifier": [
+            { "type": "fixed", "label": "公牛智能门锁维修人工", "min": 120, "max": 120, "regionIds": ["cn"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "extra-item",
+      "type": "single",
+      "title": "公牛附加的是哪一项？",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "bull-extra" }],
+      "options": [
+        {
+          "id": "hole",
+          "label": "全新木门开孔或扩锁体孔",
+          "value": "hole",
+          "description": "100 元/台。不会自动加进安装价。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "开孔或扩锁体孔",
+              "min": 100,
+              "max": 100,
+              "unitQuestionId": "hole-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        },
+        {
+          "id": "strip",
+          "label": "非包装内标配边条",
+          "value": "strip",
+          "description": "30 元/条。这是配件，不是安装人工。",
+          "priceModifier": [
+            {
+              "type": "per_unit",
+              "label": "非标配边条",
+              "min": 30,
+              "max": 30,
+              "unitQuestionId": "strip-qty",
+              "regionIds": ["cn"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kaadas-official",
+      "type": "boolean",
+      "title": "这把锁是不是在凯迪仕中国大陆官方渠道买的？",
+      "description": "只有官方渠道写明免费上门安装。选「否」就没有可引用的有偿价。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "kaadas" }]
+    },
+    {
+      "id": "xiaomi-qty",
+      "type": "number",
+      "title": "数量",
+      "description": "安装和拆机按台，移机按次。覆盖范围以下单地址为准。",
+      "required": true,
+      "visibility": [{ "questionId": "job", "operator": "equals", "value": "xiaomi" }],
+      "validation": { "integer": true, "min": 1, "max": 5 }
+    },
+    {
+      "id": "bull-qty",
+      "type": "number",
+      "title": "把数",
+      "required": true,
+      "visibility": [{ "questionId": "bull-item", "operator": "equals", "value": "install" }],
+      "validation": { "integer": true, "min": 1, "max": 5 }
+    },
+    {
+      "id": "hole-qty",
+      "type": "number",
+      "title": "台数",
+      "required": true,
+      "visibility": [{ "questionId": "extra-item", "operator": "equals", "value": "hole" }],
+      "validation": { "integer": true, "min": 1, "max": 5 }
+    },
+    {
+      "id": "strip-qty",
+      "type": "number",
+      "title": "条数",
+      "required": true,
+      "visibility": [{ "questionId": "extra-item", "operator": "equals", "value": "strip" }],
+      "validation": { "integer": true, "min": 1, "max": 10 }
+    }
+  ],
+  "pricing": {
+    "model": "composite",
+    "basePrice": { "min": 0, "max": 0 },
+    "modifiers": [
+      {
+        "type": "fixed",
+        "label": "凯迪仕官方渠道上门安装",
+        "min": 0,
+        "max": 0,
+        "regionIds": ["cn"],
+        "conditions": [
+          { "questionId": "job", "operator": "equals", "value": "kaadas" },
+          { "questionId": "kaadas-official", "operator": "equals", "value": true }
+        ]
+      }
+    ]
+  },
+  "scope": {
+    "included": [
+      "小米智能门锁：首次安装免费；普通系列后续安装 170 元/台；人脸识别智能门锁 X 后续安装 200 元/台",
+      "小米：拆机 50 元/台，仅限拆除本产品；移机 220 元/次，不含运输，不收远程费",
+      "公牛智能门锁：上门安装 150 元/把；维修人工 120 元，配件另计",
+      "公牛特殊场景：全新木门开孔或扩锁体孔 100 元/台；非包装内标配边条 30 元/条",
+      "凯迪仕：中国大陆官方渠道免费上门安装"
+    ],
+    "excluded": [
+      "传统机械锁应急开锁、无损或破坏性开锁、室内房门开锁和汽车开锁",
+      "更换普通机械锁芯（含 C 级、超 B 级，以及含芯或不含芯的人工费）",
+      "夜间加急、110 联动，以及五城均未公布的开锁官方价",
+      "把小米、公牛或凯迪仕的智能门锁安装价写成传统锁开锁价",
+      "德施曼、鹿客、Aqara 门锁等价目（本轮没有可核验金额）",
+      "公牛超出购买门店服务范围 20 公里后每公里 1.5 元（不是整数元，未入库）",
+      "凯迪仕官方渠道以外的安装，以及页面未列出的开锁、换锁芯和夜间费",
+      "小米安装服务未覆盖、无法下单的地址",
+      "协会价目里「成品木门安装含锁」的装修配套，不是开锁或换锁芯",
+      "公牛维修的配件费（只记录了 120 元人工）"
+    ]
+  },
+  "metadata": { "createdAt": "2026-11-20", "updatedAt": "2026-11-20" }
+}
