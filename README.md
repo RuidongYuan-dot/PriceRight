@@ -36,7 +36,7 @@ pnpm build
 
 CI 中的端到端测试会生成 HTML 报告，并在失败时保留截图和 trace。该步骤失败时，工作流上传名为 `playwright-report` 的产物，包含 `playwright-report/` 与 `test-results/`，保留 7 天。本工作流只做检查。
 
-保护 `main` 时，由仓库所有者在 GitHub 的分支保护或规则集里把 status check **`CI / ci`** 设为 required。这是本工作流唯一的检查（job 名为 `ci`）。需要等该检查至少成功运行一次后，才能在设置里搜到它。
+保护 `main` 时，由仓库所有者在 GitHub 的分支保护或规则集里把 status check **`ci`** 设为 required。这是本工作流唯一的检查运行名称（工作流名 `CI`，job 名 `ci`）。规则集界面里它显示为 **`CI / ci`**。需要等该检查至少成功运行一次后，才能在设置里搜到它。
 
 ## 数据与审核
 
