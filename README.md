@@ -21,6 +21,23 @@ pnpm build
 
 分类、服务和问答页面按已校验目录预渲染。演示页面在各栏目下使用独立的 `demo` 路径段，例如 `/estimate/demo/demo-lamp-install`。问答和报价在浏览器内使用当前服务配置和样本计算。
 
+## 持续集成
+
+`.github/workflows/ci.yml`（工作流名 `CI`）在拉取请求和向 `main` 的推送上运行。同一拉取请求的新推送会取消仍在进行的运行；推送到 `main` 的运行会跑完。运行环境与 `package.json` 一致：Node.js 22（`engines` 要求 22.18 及以上）以及 `packageManager` 声明的 pnpm。依赖用 `pnpm install --frozen-lockfile` 安装，并通过 setup-node 缓存 pnpm store。
+
+以下步骤按顺序执行。任何一步失败，job `ci` 与整个工作流都会失败：
+
+1. `pnpm validate:data`
+2. `pnpm lint`
+3. `pnpm exec tsc --noEmit`
+4. `pnpm test`
+5. `pnpm build`
+6. 安装 Playwright Chromium 后执行 `pnpm test:e2e`
+
+CI 中的端到端测试会生成 HTML 报告，并在失败时保留截图和 trace。该步骤失败时，工作流上传名为 `playwright-report` 的产物，包含 `playwright-report/` 与 `test-results/`，保留 7 天。本工作流只做检查。
+
+保护 `main` 时，由仓库所有者在 GitHub 的分支保护或规则集里把 status check **`ci`** 设为 required。这是本工作流唯一的检查运行名称（工作流名 `CI`，job 名 `ci`）。规则集界面里它显示为 **`CI / ci`**。需要等该检查至少成功运行一次后，才能在设置里搜到它。
+
 ## 数据与审核
 
 | 目录 | 内容 |
